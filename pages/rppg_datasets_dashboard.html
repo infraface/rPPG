@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rPPG Datasets Comparison Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN SYSTEM — editorial / research-paper aesthetic
+   ═══════════════════════════════════════════════════ */
+:root {
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --bg: #FAFAF7;
+  --bg2: #F0EFE9;
+  --bg3: #E6E5DF;
+  --fg: #1C1C1A;
+  --fg2: #6B6A65;
+  --fg3: #9E9D97;
+  --border: #D8D7D1;
+  --accent: #2563EB;
+  --accent-bg: #EFF6FF;
+  --accent2: #0D9488;
+  --accent2-bg: #F0FDFA;
+  --accent3: #D97706;
+  --accent3-bg: #FFFBEB;
+  --accent4: #DC2626;
+  --accent4-bg: #FEF2F2;
+  --accent5: #7C3AED;
+  --accent5-bg: #F5F3FF;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 3px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.08);
+  --chart-1: #2563EB;
+  --chart-2: #0D9488;
+  --chart-3: #D97706;
+  --chart-4: #DC2626;
+  --chart-5: #7C3AED;
+  --chart-6: #059669;
+  --chart-7: #EA580C;
+  --chart-8: #BE185D;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --bg2: #1E1E1C;
+    --bg3: #2A2A27;
+    --fg: #EEEEE8;
+    --fg2: #A3A29C;
+    --fg3: #6B6A65;
+    --border: #3A3A36;
+    --accent: #60A5FA;
+    --accent-bg: #1E293B;
+    --accent2: #2DD4BF;
+    --accent2-bg: #134E4A;
+    --accent3: #FBBF24;
+    --accent3-bg: #422006;
+    --accent4: #F87171;
+    --accent4-bg: #450A0A;
+    --accent5: #A78BFA;
+    --accent5-bg: #2E1065;
+    --shadow: 0 1px 3px rgba(0,0,0,.3);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,.4);
+    --chart-1: #60A5FA;
+    --chart-2: #2DD4BF;
+    --chart-3: #FBBF24;
+    --chart-4: #F87171;
+    --chart-5: #A78BFA;
+    --chart-6: #34D399;
+    --chart-7: #FB923C;
+    --chart-8: #F472B6;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--fg); line-height: 1.6; }
+ 
+.page { max-width: 1280px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+ 
+/* Header */
+.header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+.header h1 { font-size: 26px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 4px; }
+.header p { color: var(--fg2); font-size: 14px; }
+.header .hint { margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: var(--fg3); background: var(--bg2); padding: 8px 14px; border-radius: var(--radius-sm); display: inline-block; border: 1px dashed var(--border); }
+ 
+/* Metric strip */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 2rem; }
+.metric { background: var(--bg2); border-radius: var(--radius); padding: 16px 18px; transition: transform .15s; }
+.metric:hover { transform: translateY(-1px); }
+.metric-label { font-size: 12px; color: var(--fg3); text-transform: uppercase; letter-spacing: .8px; font-weight: 500; }
+.metric-val { font-size: 28px; font-weight: 600; letter-spacing: -1px; margin-top: 2px; }
+.metric-sub { font-size: 12px; color: var(--fg2); margin-top: 2px; }
+ 
+/* Cards */
+.card { background: var(--bg2); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); margin-bottom: 16px; }
+.card-title { font-size: 14px; font-weight: 500; color: var(--fg2); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .5px; }
+ 
+/* Table */
+.table-wrap { overflow-x: auto; margin-bottom: 2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg2); }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 1100px; }
+thead th { text-align: left; padding: 12px 10px; font-weight: 500; color: var(--fg3); font-size: 11px; text-transform: uppercase; letter-spacing: .6px; border-bottom: 2px solid var(--border); position: sticky; top: 0; background: var(--bg2); }
+thead th.r { text-align: right; }
+tbody td { padding: 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--bg3); }
+td.r { text-align: right; font-variant-numeric: tabular-nums; }
+td.name { font-weight: 500; white-space: nowrap; }
+.tag { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+.tag-real { background: var(--accent-bg); color: var(--accent); }
+.tag-synthetic { background: var(--accent3-bg); color: var(--accent3); }
+.tag-mobile { background: var(--accent2-bg); color: var(--accent2); }
+.tag-multimodal { background: var(--accent5-bg); color: var(--accent5); }
+.tag-thermal { background: var(--accent4-bg); color: var(--accent4); }
+ 
+/* Chart grid */
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.chart-box { position: relative; height: 340px; }
+@media (max-width: 800px) {
+  .chart-row { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+}
+ 
+/* Footer */
+.footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 12px; color: var(--fg3); }
+.footer code { font-family: var(--font-mono); background: var(--bg2); padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+ 
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.animate { animation: fadeUp .5s ease both; }
+.d1 { animation-delay: .05s; } .d2 { animation-delay: .1s; }
+.d3 { animation-delay: .15s; } .d4 { animation-delay: .2s; }
+.d5 { animation-delay: .25s; } .d6 { animation-delay: .3s; }
+</style>
+</head>
+<body>
+ 
+<div class="page">
+ 
+<div class="header animate">
+  <h1>rPPG estimation datasets</h1>
+  <p>Comparative dashboard — 10 benchmark datasets for remote photoplethysmography research</p>
+  <div class="hint">To add a dataset → click <a href="https://github.com/infraface/rPPG/issues/1">here</a> for adding a comment. </div>
+</div>
+ 
+<div id="metrics" class="metrics animate d1"></div>
+<div id="table" class="animate d2"></div>
+ 
+<div class="chart-row animate d3">
+  <div class="card">
+    <div class="card-title">Subject count (log scale)</div>
+    <div class="chart-box"><canvas id="chartSubjects"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Video count (log scale)</div>
+    <div class="chart-box"><canvas id="chartVideos"></canvas></div>
+  </div>
+</div>
+ 
+<div class="chart-row animate d4">
+  <div class="card">
+    <div class="card-title">Ground truth signal coverage</div>
+    <div class="chart-box"><canvas id="chartGT"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Modality timeline (bubble = subject count)</div>
+    <div class="chart-box"><canvas id="chartTimeline"></canvas></div>
+  </div>
+</div>
+ 
+<div class="card animate d5">
+  <div class="card-title">Total recording hours estimate</div>
+  <div class="chart-box" style="height:280px"><canvas id="chartHours"></canvas></div>
+</div>
+ 
+<div class="footer animate d6">
+  Data compiled from original publications. Some values are approximate where papers did not report exact figures.
+  Bubble sizes in the timeline chart are proportional to √(subject count).
+</div>
+ 
+</div>
+ 
+<script>
+/* ═══════════════════════════════════════════════════════════
+   ★ SINGLE SOURCE OF TRUTH — EDIT THIS ARRAY TO UPDATE ALL ★
+   
+   To add a new dataset, just append an object to this array.
+   All metrics, tables, and charts will regenerate automatically.
+   
+   Fields:
+     name        : string   — dataset name
+     year        : number   — publication year
+     subjects    : number   — number of subjects / identities
+     videos      : number   — number of video sequences
+     resolution  : string   — video resolution (display text)
+     fps         : string   — frame rate (display text)
+     videoLen    : string   — video length (display text)
+     camera      : string   — camera device(s)
+     gt          : string[] — ground truth signals available
+     scenario    : string   — recording scenario description
+     type        : string   — one of: "real","synthetic","mobile","multimodal","thermal"
+     modality    : string   — sensing modality for timeline chart
+     hourEstimate: number   — approximate total recording hours
+   ═══════════════════════════════════════════════════════════ */
+ 
+const DATASETS = [
+  {
+    name: "UBFC-rPPG",
+    year: 2017,
+    subjects: 42,
+    videos: 50,
+    resolution: "640×480",
+    fps: "30",
+    videoLen: "~1 min",
+    camera: "Logitech C920",
+    gt: ["PPG", "HR"],
+    scenario: "Indoor, still / math game",
+    type: "real",
+    modality: "RGB",
+    hourEstimate: 0.8,
+  },
+  {
+    name: "PURE",
+    year: 2014,
+    subjects: 10,
+    videos: 60,
+    resolution: "640×480",
+    fps: "30",
+    videoLen: "1 min",
+    camera: "eco274CVGE",
+    gt: ["PPG", "SpO2"],
+    scenario: "6 head-motion setups",
+    type: "real",
+    modality: "RGB",
+    hourEstimate: 1.0,
+  },
+  {
+    name: "OBF",
+    year: 2018,
+    subjects: 106,
+    videos: 212,
+    resolution: "1920×1080 (RGB)\n640×480 (NIR)",
+    fps: "60 / 30",
+    videoLen: "5 min × 2",
+    camera: "Blackmagic URSA mini",
+    gt: ["ECG", "BVP", "Resp"],
+    scenario: "Rest + exercise / AF patients",
+    type: "real",
+    modality: "RGB + NIR",
+    hourEstimate: 17.7,
+  },
+  {
+    name: "BP4D+",
+    year: 2016,
+    subjects: 140,
+    videos: 1400,
+    resolution: "1040×1392 (2D)",
+    fps: "25",
+    videoLen: "~5 min / task",
+    camera: "Di3D + 2D RGB",
+    gt: ["HR", "BP", "EDA", "Resp"],
+    scenario: "10 emotion-induction tasks",
+    type: "real",
+    modality: "RGB + 3D + Thermal",
+    hourEstimate: 116.7,
+  },
+  {
+    name: "SCAMPS",
+    year: 2022,
+    subjects: 2800,
+    videos: 2800,
+    resolution: "320×240",
+    fps: "30",
+    videoLen: "~20 s",
+    camera: "Synthetic render",
+    gt: ["PPG", "ECG", "Resp", "AU"],
+    scenario: "Synthetic (diverse appearance)",
+    type: "synthetic",
+    modality: "Synthetic",
+    hourEstimate: 15.6,
+  },
+  {
+    name: "MMPD",
+    year: 2023,
+    subjects: 33,
+    videos: 660,
+    resolution: "320×240 (stored)\n1280×720 (raw)",
+    fps: "30",
+    videoLen: "1 min",
+    camera: "Galaxy S22 Ultra",
+    gt: ["PPG", "HR"],
+    scenario: "4 lights × 4 motions × exercise",
+    type: "mobile",
+    modality: "Mobile RGB",
+    hourEstimate: 11.0,
+  },
+  {
+    name: "iBVP",
+    year: 2024,
+    subjects: 31,
+    videos: 124,
+    resolution: "640×480 (RGB)\n640×512 (thermal)",
+    fps: "30",
+    videoLen: "3 min",
+    camera: "Logitech BRIO 4K\n+ FLIR A65SC",
+    gt: ["PPG"],
+    scenario: "Breathing, math, head motion",
+    type: "thermal",
+    modality: "RGB + Thermal",
+    hourEstimate: 6.2,
+  },
+  {
+    name: "PhysDrive",
+    year: 2025,
+    subjects: 48,
+    videos: 192,
+    resolution: "640×480",
+    fps: "30",
+    videoLen: "~5 min",
+    camera: "RGB + NIR + mmWave",
+    gt: ["ECG", "BVP", "Resp", "HR", "RR", "SpO2"],
+    scenario: "In-vehicle real-world driving",
+    type: "multimodal",
+    modality: "RGB + NIR + mmWave",
+    hourEstimate: 16.0,
+  },
+  {
+    name: "SUMS",
+    year: 2024,
+    subjects: 10,
+    videos: 80,
+    resolution: "640×480",
+    fps: "30",
+    videoLen: "~2 min",
+    camera: "RGB (face + finger)",
+    gt: ["PPG", "RR", "SpO2"],
+    scenario: "High-altitude exercise + O₂ recovery",
+    type: "real",
+    modality: "RGB (dual camera)",
+    hourEstimate: 2.7,
+  },
+  {
+    name: "LADH",
+    year: 2025,
+    subjects: 21,
+    videos: 240,
+    resolution: "640×480",
+    fps: "30",
+    videoLen: "2 min × 5 states",
+    camera: "RGB + IR module",
+    gt: ["PPG", "SpO2", "RR"],
+    scenario: "Daily personal care (10-day longitudinal)",
+    type: "multimodal",
+    modality: "RGB + IR",
+    hourEstimate: 8.0,
+  },
+ 
+  /* ─────────────────────────────────────────────
+     ★ ADD NEW DATASETS HERE ★
+     Copy any block above and change the values.
+     Everything on the page will auto-update.
+     ───────────────────────────────────────────── */
+];
+ 
+ 
+/* ═══════════════════════════════════════
+   RENDERING ENGINE — do not edit below
+   unless you want to change the layout
+   ═══════════════════════════════════════ */
+ 
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+const CS = getComputedStyle(document.documentElement);
+const cv = (v) => CS.getPropertyValue(v).trim();
+const gridC = dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)';
+const txtC = dark ? '#a3a29c' : '#6b6a65';
+const palette = ['--chart-1','--chart-2','--chart-3','--chart-4','--chart-5','--chart-6','--chart-7','--chart-8'];
+const getColor = (i) => cv(palette[i % palette.length]);
+ 
+// ── Derived data ──
+const totalSubjects = DATASETS.reduce((s, d) => s + d.subjects, 0);
+const totalVideos = DATASETS.reduce((s, d) => s + d.videos, 0);
+const totalHours = DATASETS.reduce((s, d) => s + d.hourEstimate, 0);
+const years = DATASETS.map(d => d.year);
+const yearSpan = Math.min(...years) + '–' + Math.max(...years);
+const allGT = [...new Set(DATASETS.flatMap(d => d.gt))];
+ 
+// ── 1. Metric cards ──
+const metricsHTML = [
+  { label: 'Datasets', val: DATASETS.length, sub: 'benchmarks surveyed' },
+  { label: 'Subjects', val: totalSubjects.toLocaleString() + '+', sub: 'unique identities' },
+  { label: 'Videos', val: totalVideos.toLocaleString() + '+', sub: 'recorded sequences' },
+  { label: 'Hours', val: '~' + Math.round(totalHours), sub: 'total recording time' },
+  { label: 'Year span', val: yearSpan, sub: 'publication range' },
+  { label: 'GT signals', val: allGT.length, sub: 'distinct signal types' },
+].map(m => `
+  <div class="metric">
+    <div class="metric-label">${m.label}</div>
+    <div class="metric-val">${m.val}</div>
+    <div class="metric-sub">${m.sub}</div>
+  </div>
+`).join('');
+document.getElementById('metrics').innerHTML = metricsHTML;
+ 
+// ── 2. Table ──
+const typeTag = (t) => {
+  const map = {
+    real: 'tag-real', synthetic: 'tag-synthetic', mobile: 'tag-mobile',
+    multimodal: 'tag-multimodal', thermal: 'tag-thermal'
+  };
+  return `<span class="tag ${map[t] || 'tag-real'}">${t}</span>`;
+};
+const nlbr = (s) => s.replace(/\n/g, '<br>');
+ 
+const tableRows = DATASETS.map(d => `
+  <tr>
+    <td class="name">${d.name}</td>
+    <td>${d.year}</td>
+    <td class="r">${d.subjects.toLocaleString()}</td>
+    <td class="r">${d.videos.toLocaleString()}</td>
+    <td>${nlbr(d.resolution)}</td>
+    <td class="r">${d.fps}</td>
+    <td>${d.videoLen}</td>
+    <td>${nlbr(d.camera)}</td>
+    <td>${d.gt.join(', ')}</td>
+    <td>${d.scenario}</td>
+    <td>${typeTag(d.type)}</td>
+  </tr>
+`).join('');
+ 
+document.getElementById('table').innerHTML = `
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>Dataset</th><th>Year</th><th class="r">Subjects</th><th class="r">Videos</th>
+    <th>Resolution</th><th class="r">FPS</th><th>Length</th>
+    <th>Camera</th><th>GT signals</th><th>Scenario</th><th>Type</th>
+  </tr></thead>
+  <tbody>${tableRows}</tbody>
+</table>
+</div>`;
+ 
+// ── 3. Charts ──
+const names = DATASETS.map(d => d.name);
+const barBg = DATASETS.map((_, i) => getColor(i));
+ 
+const commonBar = (canvasId, data) => {
+  new Chart(document.getElementById(canvasId), {
+    type: 'bar',
+    data: { labels: names, datasets: [{ data, backgroundColor: barBg, borderRadius: 5, borderSkipped: false }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw.toLocaleString() } } },
+      scales: {
+        x: { type: 'logarithmic', grid: { color: gridC }, ticks: { color: txtC, font: { family: cv('--font-body'), size: 11 } } },
+        y: { grid: { display: false }, ticks: { color: txtC, font: { family: cv('--font-body'), size: 11 } } }
+      }
+    }
+  });
+};
+commonBar('chartSubjects', DATASETS.map(d => d.subjects));
+commonBar('chartVideos', DATASETS.map(d => d.videos));
+ 
+// GT stacked bar
+const gtDatasets = allGT.map((sig, i) => ({
+  label: sig,
+  data: DATASETS.map(d => d.gt.includes(sig) ? 1 : 0),
+  backgroundColor: getColor(i),
+  borderRadius: 3, borderSkipped: false,
+}));
+new Chart(document.getElementById('chartGT'), {
+  type: 'bar',
+  data: { labels: names, datasets: gtDatasets },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top', labels: { color: txtC, font: { family: cv('--font-body'), size: 11 }, boxWidth: 10, padding: 10 } } },
+    scales: {
+      x: { stacked: true, grid: { display: false }, ticks: { color: txtC, font: { size: 11 }, maxRotation: 45, autoSkip: false } },
+      y: { stacked: true, grid: { color: gridC }, ticks: { color: txtC, stepSize: 1 }, title: { display: true, text: 'Signals', color: txtC, font: { size: 11 } } }
+    }
+  }
+});
+ 
+// Timeline scatter
+const uniqueModalities = [...new Set(DATASETS.map(d => d.modality))];
+new Chart(document.getElementById('chartTimeline'), {
+  type: 'bubble',
+  data: {
+    datasets: DATASETS.map((d, i) => ({
+      label: d.name,
+      data: [{ x: d.year, y: uniqueModalities.indexOf(d.modality), r: Math.max(5, Math.min(28, Math.sqrt(d.subjects) * 0.85)) }],
+      backgroundColor: getColor(i) + 'CC',
+      borderColor: getColor(i),
+      borderWidth: 1.5,
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => DATASETS[ctx.datasetIndex].name + ' — ' + DATASETS[ctx.datasetIndex].subjects + ' subjects' } }
+    },
+    scales: {
+      x: { min: Math.min(...years) - 1, max: Math.max(...years) + 1, grid: { color: gridC },
+        ticks: { color: txtC, stepSize: 1, font: { size: 11 } }, title: { display: true, text: 'Year', color: txtC } },
+      y: { grid: { color: gridC }, min: -0.5, max: uniqueModalities.length - 0.5,
+        ticks: { color: txtC, font: { size: 10 }, stepSize: 1, callback: v => uniqueModalities[v] || '' } }
+    }
+  }
+});
+ 
+// Hours bar
+new Chart(document.getElementById('chartHours'), {
+  type: 'bar',
+  data: {
+    labels: names,
+    datasets: [{ data: DATASETS.map(d => d.hourEstimate), backgroundColor: barBg, borderRadius: 5, borderSkipped: false }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw + ' hours' } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: txtC, font: { size: 11 }, maxRotation: 45, autoSkip: false } },
+      y: { grid: { color: gridC }, ticks: { color: txtC }, title: { display: true, text: 'Hours', color: txtC, font: { size: 11 } } }
+    }
+  }
+});
+</script>
+ 
+</body>
+</html>
