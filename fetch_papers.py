@@ -7,7 +7,7 @@ from cs.CV and cs.AI, scores relevance to rPPG research.
 
 Outputs:
   - data/weekly_papers.json          (this week's papers, shown on index.html)
-  - data/recent_papers.json          (rolling 30-day window, shown on recent page)
+  - data/recent_papers.json          (rolling 90-day window, shown on recent page)
   - data/archive/YYYY-MM-DD.json     (weekly snapshot, keyed by Friday date)
   - data/archive_index.json          (index of all archive weeks)
 
@@ -68,7 +68,7 @@ TIER1_WEIGHT, TIER2_WEIGHT, TIER3_WEIGHT = 15, 6, 3
 TIER1_CAP, TIER2_CAP, TIER3_CAP = 60, 30, 15
 RELEVANCE_THRESHOLD = 12
 MAX_PAPERS_PER_WEEK = 50
-RECENT_WINDOW_DAYS = 30
+RECENT_WINDOW_DAYS = 90
 ARCHIVE_RETENTION_DAYS = 180
 
 ARXIV_API_URL = "http://export.arxiv.org/api/query"
@@ -237,7 +237,7 @@ def save_archive(weekly_output, week_end):
         print(f"  🗑 Removed {removed} archives older than {ARCHIVE_RETENTION_DAYS} days")
 
 def build_recent(days=RECENT_WINDOW_DAYS):
-    """Merge recent archive files into recent_papers.json (past 30 days)."""
+    """Merge recent archive files into recent_papers.json (past 90 days)."""
     archive_dir = Path("data/archive")
     if not archive_dir.exists():
         return

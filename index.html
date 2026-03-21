@@ -67,7 +67,7 @@ const SITE = { title: "rPPG Hub" };
 const NAV_LINKS = [
   { label: "Home", href: "index.html", active: true },
   { label: "Datasets", href: "pages/rppg_datasets_dashboard.html" },
-  { label: "Recent 30 days", href: "pages/recent_papers.html" },
+  { label: "Recent 90 days", href: "pages/recent_papers.html" },
   { label: "Archive", href: "pages/paper_archive.html" },
 ];
 const FOOTER = {
@@ -93,7 +93,7 @@ document.getElementById('pageHeader').innerHTML = `
     <h1>This week's rPPG-relevant papers</h1>
     <p>From arXiv cs.CV and cs.AI — updated every Friday.</p>
   </div>
-  <a href="pages/recent_papers.html" class="link-arrow">Recent 30 days ${IC.arrowR}</a>`;
+  <a href="pages/recent_papers.html" class="link-arrow">Recent 90 days ${IC.arrowR}</a>`;
 
 document.getElementById('footer').innerHTML = `
   <p>${FOOTER.copyright}</p>
@@ -137,7 +137,7 @@ async function loadPapers() {
       <div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent3)"></div> Medium (≥12)</div>
     </div>
     <div class="paper-list">${papers.length ? papers.map(renderCard).join('') : '<div class="papers-empty"><p>No relevant papers this week. Check back next Friday!</p></div>'}</div>
-    ${papers.length ? `<div style="text-align:center;margin-top:20px"><a href="pages/recent_papers.html" class="btn">Browse recent 30 days ${IC.arrowR}</a></div>` : ''}`;
+    ${papers.length ? `<div style="text-align:center;margin-top:20px"><a href="pages/recent_papers.html" class="btn">Browse recent 90 days ${IC.arrowR}</a></div>` : ''}`;
 }
 loadPapers();
 </script>

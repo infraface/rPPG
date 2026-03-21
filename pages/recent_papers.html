@@ -54,7 +54,7 @@
     <div class="nav-links">
       <a href="../index.html" class="nav-link">Home</a>
       <a href="rppg_datasets_dashboard.html" class="nav-link">Datasets</a>
-      <a href="recent_papers.html" class="nav-link active">Recent 30 days</a>
+      <a href="recent_papers.html" class="nav-link active">Recent 90 days</a>
       <a href="paper_archive.html" class="nav-link">Archive</a>
     </div>
   </nav>
@@ -68,12 +68,12 @@ async function init() {
   const el = document.getElementById('content');
   let data;
   try { const r = await fetch('../data/recent_papers.json'); if (!r.ok) throw 0; data = await r.json(); }
-  catch (e) { hdr.innerHTML = '<h1>Recent papers</h1><p>Past 30 days of rPPG-relevant papers from arXiv.</p>'; el.innerHTML = '<div class="empty">No data yet. Run the weekly GitHub Action first.</div>'; return; }
+  catch (e) { hdr.innerHTML = '<h1>Recent papers</h1><p>Past 90 days of rPPG-relevant papers from arXiv.</p>'; el.innerHTML = '<div class="empty">No data yet. Run the weekly GitHub Action first.</div>'; return; }
 
   const papers = data.papers || [];
-  hdr.innerHTML = `<h1>Recent papers — past 30 days</h1><p>rPPG-relevant papers from arXiv cs.CV and cs.AI, grouped by publication date.</p><div class="stats">${papers.length} papers · ${data.weeks?.length || 0} weeks collected</div>`;
+  hdr.innerHTML = `<h1>Recent papers — past 90 days</h1><p>rPPG-relevant papers from arXiv cs.CV and cs.AI, grouped by publication date.</p><div class="stats">${papers.length} papers · ${data.weeks?.length || 0} weeks collected</div>`;
 
-  if (!papers.length) { el.innerHTML = '<div class="empty">No relevant papers in the past 30 days.</div>'; return; }
+  if (!papers.length) { el.innerHTML = '<div class="empty">No relevant papers in the past 90 days.</div>'; return; }
 
   // Group by date
   const groups = {};
