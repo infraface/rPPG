@@ -99,14 +99,14 @@ const cv=(c)=>`var(--${c})`,cbg=(c)=>`var(--${c}-bg)`;
 // Nav
 document.getElementById('nav').innerHTML=`<a href="#" class="nav-brand"><div class="nav-logo">${ICONS.pulse}</div><span class="nav-title">${SITE.title}</span></a><div class="nav-links">${NAV_LINKS.map(l=>`<a href="${l.href}" class="nav-link${l.active?' active':''}">${l.label}</a>`).join('')}</div>`;
  
-// Hero
-document.getElementById('hero').innerHTML=`<div class="hero-badge">${SITE.tagline}</div><h1>${SITE.heroTitle}</h1><p>${SITE.heroDescription}</p>`;
+// // Hero
+// document.getElementById('hero').innerHTML=`<div class="hero-badge">${SITE.tagline}</div><h1>${SITE.heroTitle}</h1><p>${SITE.heroDescription}</p>`;
  
-// Stats
-document.getElementById('statsSection').innerHTML=`<div class="stats-row">${STATS.map(s=>`<div class="stat-card"><div class="stat-val">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('')}</div>`;
+// // Stats
+// document.getElementById('statsSection').innerHTML=`<div class="stats-row">${STATS.map(s=>`<div class="stat-card"><div class="stat-val">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('')}</div>`;
  
-// Resources
-document.getElementById('resourcesSection').innerHTML=`<div class="section-header"><div class="section-label">Resources</div><div class="section-title">Explore the ecosystem</div><div class="section-desc">Datasets, tools, benchmarks, and learning materials for remote physiological sensing research.</div></div><div class="cards-grid">${RESOURCES.map(r=>`<a href="${r.href}" class="res-card"><div class="res-card-icon" style="background:${cbg(r.color)};color:${cv(r.color)}">${ICONS[r.icon]||ICONS.paper}</div><h3>${r.title}</h3><p>${r.description}</p><div class="res-card-footer">${r.tags.map(t=>`<span class="res-card-tag" style="background:${cbg(r.color)};color:${cv(r.color)}">${t}</span>`).join('')}<div class="res-card-arrow">${ICONS.arrow}</div></div></a>`).join('')}</div>`;
+// // Resources
+// document.getElementById('resourcesSection').innerHTML=`<div class="section-header"><div class="section-label">Resources</div><div class="section-title">Explore the ecosystem</div><div class="section-desc">Datasets, tools, benchmarks, and learning materials for remote physiological sensing research.</div></div><div class="cards-grid">${RESOURCES.map(r=>`<a href="${r.href}" class="res-card"><div class="res-card-icon" style="background:${cbg(r.color)};color:${cv(r.color)}">${ICONS[r.icon]||ICONS.paper}</div><h3>${r.title}</h3><p>${r.description}</p><div class="res-card-footer">${r.tags.map(t=>`<span class="res-card-tag" style="background:${cbg(r.color)};color:${cv(r.color)}">${t}</span>`).join('')}<div class="res-card-arrow">${ICONS.arrow}</div></div></a>`).join('')}</div>`;
  
 // Footer
 document.getElementById('footer').innerHTML=`<p>${FOOTER.copyright}</p><div class="footer-links">${FOOTER.links.map(l=>`<a href="${l.href}" target="_blank">${l.label}</a>`).join('')}</div>`;
@@ -147,11 +147,11 @@ async function loadDailyPapers(){
  
   const papers=data.papers||[],dateStr=data.date||'unknown';
   el.innerHTML=`
-    <div class="section-header-row"><div><div class="section-label">Daily papers</div><div class="section-title">Today's rPPG-relevant papers</div><div class="section-desc">Auto-fetched from arXiv cs.CV and cs.AI, scored by relevance to rPPG research.</div></div><div class="section-action"><a href="paper_archive.html" class="link-arrow">View 90-day archive ${ICONS.arrowRight}</a></div></div>
+    <div class="section-header-row"><div><div class="section-label">Daily papers</div><div class="section-title">Today's rPPG-relevant papers</div><div class="section-desc">Auto-fetched from arXiv cs.CV and cs.AI, scored by relevance to rPPG research.</div></div><div class="section-action"><a href="pages/paper_archive.html" class="link-arrow">View 90-day archive ${ICONS.arrowRight}</a></div></div>
     <div class="papers-date-bar"><span class="papers-date">${dateStr}</span><span class="papers-count">${papers.length} paper${papers.length!==1?'s':''} found</span><span class="papers-live">Auto-updated daily</span></div>
     <div class="tier-legend"><div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent)"></div> Core rPPG (score ≥ 60)</div><div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent2)"></div> High relevance (≥ 30)</div><div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent3)"></div> Medium (≥ 12)</div></div>
     <div class="paper-list">${papers.length?papers.map(renderPaperCard).join(''):'<div class="papers-empty"><p>No relevant papers found for today. Check back tomorrow!</p></div>'}</div>
-    ${papers.length?`<div style="text-align:center;margin-top:20px"><a href="paper_archive.html" class="btn btn-secondary">Browse full archive ${ICONS.arrowRight}</a></div>`:''}`;
+    ${papers.length?`<div style="text-align:center;margin-top:20px"><a href="pages/paper_archive.html" class="btn btn-secondary">Browse full archive ${ICONS.arrowRight}</a></div>`:''}`;
 }
  
 loadDailyPapers();

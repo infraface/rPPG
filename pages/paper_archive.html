@@ -94,10 +94,10 @@ a{color:inherit;text-decoration:none}
       <span class="nav-title">rPPG Hub</span>
     </a>
     <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="pages/rppg_datasets_dashboard.html" class="nav-link">Datasets</a>
-      <a href="index.html#dailyPapersSection" class="nav-link">Daily papers</a>
-      <a href="pages/paper_archive.html" class="nav-link active">Archive</a>
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./rppg_datasets_dashboard.html" class="nav-link">Datasets</a>
+      <a href="../index.html#dailyPapersSection" class="nav-link">Daily papers</a>
+      <a href="./paper_archive.html" class="nav-link active">Archive</a>
     </div>
   </nav>
 </div>
@@ -244,7 +244,7 @@ async function loadDate(dateStr) {
   renderCalendar();
  
   try {
-    const resp = await fetch(`data/archive/${dateStr}.json`);
+    const resp = await fetch(`../data/archive/${dateStr}.json`);
     if (!resp.ok) throw new Error('Not found');
     const data = await resp.json();
     currentPapers = data.papers || [];
@@ -263,7 +263,7 @@ async function loadDate(dateStr) {
 // ── Init ──
 async function init() {
   try {
-    const resp = await fetch('data/archive_index.json');
+    const resp = await fetch('../data/archive_index.json');
     const data = await resp.json();
     allDates = data.dates || [];
   } catch (e) {
