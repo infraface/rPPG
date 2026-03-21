@@ -4,282 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paper archive — rPPG Hub</title>
+<link rel="icon" href="https://github.com/infraface/infraface.github.io/blob/main/asset/profile.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════
-   Shared design system (same as index + dashboard)
-   ═══════════════════════════════════════════════════ */
-:root{--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--bg:#FAFAF7;--bg2:#F0EFE9;--bg3:#E6E5DF;--fg:#1C1C1A;--fg2:#6B6A65;--fg3:#9E9D97;--border:#D8D7D1;--accent:#2563EB;--accent-bg:#EFF6FF;--accent2:#0D9488;--accent2-bg:#F0FDFA;--accent3:#D97706;--accent3-bg:#FFFBEB;--accent4:#DC2626;--accent4-bg:#FEF2F2;--accent5:#7C3AED;--accent5-bg:#F5F3FF;--radius:10px;--radius-sm:6px;--radius-lg:14px;--shadow:0 1px 3px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06);--shadow-lg:0 4px 12px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.08)}
-@media(prefers-color-scheme:dark){:root{--bg:#141413;--bg2:#1E1E1C;--bg3:#2A2A27;--fg:#EEEEE8;--fg2:#A3A29C;--fg3:#6B6A65;--border:#3A3A36;--accent:#60A5FA;--accent-bg:#1E293B;--accent2:#2DD4BF;--accent2-bg:#134E4A;--accent3:#FBBF24;--accent3-bg:#422006;--accent4:#F87171;--accent4-bg:#450A0A;--accent5:#A78BFA;--accent5-bg:#2E1065;--shadow:0 1px 3px rgba(0,0,0,.3);--shadow-lg:0 4px 12px rgba(0,0,0,.4)}}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
+:root{--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--bg:#FAFAF7;--bg2:#F0EFE9;--bg3:#E6E5DF;--fg:#1C1C1A;--fg2:#6B6A65;--fg3:#9E9D97;--border:#D8D7D1;--accent:#2563EB;--accent-bg:#EFF6FF;--accent2:#0D9488;--accent3:#D97706;--radius:10px;--radius-sm:6px;--shadow:0 1px 3px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06)}
+@media(prefers-color-scheme:dark){:root{--bg:#141413;--bg2:#1E1E1C;--bg3:#2A2A27;--fg:#EEEEE8;--fg2:#A3A29C;--fg3:#6B6A65;--border:#3A3A36;--accent:#60A5FA;--accent-bg:#1E293B;--accent2:#2DD4BF;--accent3:#FBBF24;--shadow:0 1px 3px rgba(0,0,0,.3)}}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
 .page{max-width:1280px;margin:0 auto;padding:0 2rem}
- 
-/* Nav (simplified) */
-.nav{padding:18px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
-.nav-brand{display:flex;align-items:center;gap:10px}
-.nav-logo{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.nav-logo svg{width:18px;height:18px}
-.nav-title{font-weight:600;font-size:16px;letter-spacing:-.3px}
-.nav-links{display:flex;gap:6px}
-.nav-link{font-size:13px;padding:6px 14px;border-radius:20px;color:var(--fg2);transition:all .2s}
-.nav-link:hover{background:var(--bg2);color:var(--fg)}
-.nav-link.active{background:var(--fg);color:var(--bg)}
- 
-/* Header */
-.archive-header{padding:48px 0 32px;border-bottom:1px solid var(--border);margin-bottom:32px}
-.archive-header h1{font-size:28px;font-weight:600;letter-spacing:-.5px;margin-bottom:6px}
-.archive-header p{color:var(--fg2);font-size:15px}
- 
-/* Calendar strip */
-.calendar-strip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px}
-.cal-day{padding:6px 12px;border-radius:var(--radius-sm);font-size:12px;font-family:var(--font-mono);background:var(--bg2);border:1px solid var(--border);cursor:pointer;transition:all .15s;color:var(--fg2)}
-.cal-day:hover{border-color:var(--accent);color:var(--fg)}
-.cal-day.active{background:var(--accent);color:white;border-color:var(--accent)}
-.cal-day .count{font-family:var(--font-body);font-size:10px;opacity:.7;margin-left:4px}
- 
-/* Filter bar */
-.filter-bar{display:flex;gap:12px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
-.filter-bar label{font-size:13px;color:var(--fg3)}
-.filter-bar select,.filter-bar input{font-family:var(--font-body);font-size:13px;padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg2);color:var(--fg);outline:none}
-.filter-bar select:focus,.filter-bar input:focus{border-color:var(--accent)}
-.filter-bar input{flex:1;min-width:200px}
- 
-/* Paper cards (reuse from index.html) */
-.paper-list{display:flex;flex-direction:column;gap:12px;margin-bottom:48px}
-.paper-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s}
-.paper-card:hover{border-color:var(--accent);box-shadow:var(--shadow)}
-.paper-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
-.paper-title{font-size:15px;font-weight:500;line-height:1.4;flex:1}
-.paper-title a{color:var(--accent);text-decoration:none}
-.paper-title a:hover{text-decoration:underline}
-.paper-score{flex-shrink:0;display:flex;align-items:center;gap:6px}
-.score-bar{width:48px;height:6px;border-radius:3px;background:var(--bg3);overflow:hidden}
-.score-fill{height:100%;border-radius:3px;transition:width .3s}
-.score-num{font-family:var(--font-mono);font-size:12px;font-weight:500;min-width:24px;text-align:right}
-.paper-meta{font-size:12px;color:var(--fg3);margin-bottom:8px}
-.paper-abstract{font-size:13px;color:var(--fg2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.paper-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
-.kw-tag{font-size:10px;padding:2px 8px;border-radius:12px;background:var(--accent-bg);color:var(--accent);font-weight:500}
-.tier-core .score-fill{background:var(--accent)}
-.tier-high .score-fill{background:var(--accent2)}
-.tier-medium .score-fill{background:var(--accent3)}
-.tier-low .score-fill{background:var(--fg3)}
- 
-/* Empty state */
-.empty-state{text-align:center;padding:60px 20px;color:var(--fg3)}
-.empty-state svg{width:48px;height:48px;margin-bottom:12px;opacity:.4}
-.empty-state p{font-size:14px}
- 
-/* Pagination */
-.pagination{display:flex;justify-content:center;gap:6px;margin-bottom:48px}
-.page-btn{padding:6px 14px;border-radius:var(--radius-sm);font-size:13px;background:var(--bg2);border:1px solid var(--border);cursor:pointer;transition:all .15s;font-family:var(--font-body);color:var(--fg2)}
-.page-btn:hover{border-color:var(--accent)}
-.page-btn.active{background:var(--accent);color:white;border-color:var(--accent)}
- 
-/* Footer */
-.site-footer{padding:32px 0;border-top:1px solid var(--border);font-size:12px;color:var(--fg3);text-align:center}
- 
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.anim{animation:fadeUp .5s ease both}
+.nav{padding:18px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}.nav-brand{display:flex;align-items:center;gap:10px}.nav-logo{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center}.nav-logo svg{width:18px;height:18px}.nav-title{font-weight:600;font-size:16px;letter-spacing:-.3px}.nav-links{display:flex;gap:6px}.nav-link{font-size:13px;padding:6px 14px;border-radius:20px;color:var(--fg2);transition:all .2s}.nav-link:hover{background:var(--bg2);color:var(--fg)}.nav-link.active{background:var(--fg);color:var(--bg)}
+.page-header{padding:28px 0 20px;border-bottom:1px solid var(--border)}
+.page-header h1{font-size:24px;font-weight:600;letter-spacing:-.5px;margin-bottom:4px}
+.page-header p{font-size:14px;color:var(--fg2)}
+.content{padding:24px 0 48px}
+
+/* Week index — timeline style */
+.week-list{display:flex;flex-direction:column;gap:0}
+.week-row{display:flex;align-items:center;gap:16px;padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.week-row:hover{background:var(--bg2)}
+.week-row.expanded{background:var(--bg2);border-color:var(--accent)}
+.wr-date{font-family:var(--font-mono);font-size:13px;color:var(--fg2);width:200px;flex-shrink:0}
+.wr-bar{flex:1;height:8px;border-radius:4px;background:var(--bg3);overflow:hidden;max-width:300px}
+.wr-bar-fill{height:100%;border-radius:4px;background:var(--accent);transition:width .3s}
+.wr-count{font-family:var(--font-mono);font-size:13px;color:var(--fg3);width:80px;text-align:right;flex-shrink:0}
+.wr-toggle{font-size:12px;color:var(--accent);font-weight:500;width:60px;text-align:right;flex-shrink:0}
+
+/* Expanded week detail */
+.week-detail{display:none;padding:0 16px 16px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.week-detail.show{display:block}
+.week-detail .loading{text-align:center;padding:20px;font-size:13px;color:var(--fg3)}
+.wd-paper{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.wd-paper:last-child{border-bottom:none}
+.wd-score{font-family:var(--font-mono);font-size:12px;font-weight:500;width:28px;text-align:center;flex-shrink:0}
+.wd-score.core{color:var(--accent)}.wd-score.high{color:var(--accent2)}.wd-score.medium{color:var(--accent3)}
+.wd-title{font-size:13px;flex:1;line-height:1.4}
+.wd-title a{color:var(--fg)}.wd-title a:hover{color:var(--accent)}
+.wd-date{font-family:var(--font-mono);font-size:11px;color:var(--fg3);flex-shrink:0}
+.wd-links{flex-shrink:0;display:flex;gap:6px}
+.wd-links a{font-size:11px;color:var(--accent);font-weight:500}.wd-links a:hover{text-decoration:underline}
+
+.empty{text-align:center;padding:60px 20px;color:var(--fg3);font-size:14px}
+.site-footer{padding:24px 0;border-top:1px solid var(--border);font-size:12px;color:var(--fg3);text-align:center}
+@media(max-width:640px){.nav-links{display:none}.wr-bar{display:none}.wr-date{width:auto}}
 </style>
 </head>
 <body>
- 
 <div class="page">
   <nav class="nav">
-    <a href="index.html" class="nav-brand">
+    <a href="../index.html" class="nav-brand">
       <div class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 9 6 12 18 15 9 17 12 21 12"/></svg></div>
       <span class="nav-title">rPPG Hub</span>
     </a>
     <div class="nav-links">
       <a href="../index.html" class="nav-link">Home</a>
-      <a href="./rppg_datasets_dashboard.html" class="nav-link">Datasets</a>
-      <a href="../index.html#dailyPapersSection" class="nav-link">Daily papers</a>
-      <a href="./paper_archive.html" class="nav-link active">Archive</a>
+      <a href="rppg_datasets_dashboard.html" class="nav-link">Datasets</a>
+      <a href="recent_papers.html" class="nav-link">Recent 30 days</a>
+      <a href="paper_archive.html" class="nav-link active">Archive</a>
     </div>
   </nav>
-</div>
- 
-<div class="page">
-  <div class="archive-header anim">
+  <header class="page-header">
     <h1>Paper archive</h1>
-    <p>Past 90 days of rPPG-relevant papers from arXiv cs.CV and cs.AI, scored by relevance.</p>
-  </div>
- 
-  <div id="calendarStrip" class="calendar-strip anim"></div>
- 
-  <div class="filter-bar anim">
-    <label>Tier:</label>
-    <select id="filterTier" onchange="applyFilters()">
-      <option value="all">All tiers</option>
-      <option value="core">Core (rPPG-specific)</option>
-      <option value="high">High relevance</option>
-      <option value="medium">Medium relevance</option>
-    </select>
-    <label>Search:</label>
-    <input type="text" id="filterSearch" placeholder="Filter by title or keyword…" oninput="applyFilters()">
-  </div>
- 
-  <div id="paperList" class="paper-list"></div>
-  <div id="pagination" class="pagination"></div>
- 
-  <footer class="site-footer">rPPG Research Hub — auto-updated daily via GitHub Actions</footer>
+    <p>All weekly collections of rPPG-relevant papers. Click a week to expand and browse papers.</p>
+  </header>
+  <main class="content" id="content"></main>
+  <footer class="site-footer">rPPG Research Hub — auto-updated weekly via GitHub Actions</footer>
 </div>
- 
 <script>
-/* ═══════════════════════════════════════════════════════
-   Archive page — loads archive_index.json, then loads
-   individual day files on demand from data/archive/
-   ═══════════════════════════════════════════════════════ */
- 
-const PAPERS_PER_PAGE = 15;
- 
-let allDates = [];
-let currentDate = null;
-let currentPapers = [];
-let filteredPapers = [];
-let currentPage = 1;
- 
-// ── Render helpers ──
-function tierColor(tier) {
-  return { core: 'var(--accent)', high: 'var(--accent2)', medium: 'var(--accent3)', low: 'var(--fg3)' }[tier] || 'var(--fg3)';
+const weekCache = {};
+
+async function loadWeekDetail(weekEnd, container) {
+  if (weekCache[weekEnd]) { renderDetail(weekCache[weekEnd], container); return; }
+  container.innerHTML = '<div class="loading">Loading papers…</div>';
+  try {
+    const r = await fetch(`../data/archive/${weekEnd}.json`);
+    if (!r.ok) throw 0;
+    const data = await r.json();
+    weekCache[weekEnd] = data;
+    renderDetail(data, container);
+  } catch (e) {
+    container.innerHTML = '<div class="loading">Failed to load papers.</div>';
+  }
 }
- 
-function renderPaperCard(p) {
-  const pct = Math.min(100, p.relevance_score);
-  const tierClass = 'tier-' + (p.relevance_tier || 'low');
-  const kws = (p.matched_keywords || []).slice(0, 5);
-  const authors = (p.authors || []).join(', ');
-  const cats = (p.categories || []).join(', ');
- 
-  return `
-    <div class="paper-card ${tierClass}">
-      <div class="paper-top">
-        <div class="paper-title"><a href="${p.url}" target="_blank">${p.title}</a></div>
-        <div class="paper-score">
-          <div class="score-bar"><div class="score-fill" style="width:${pct}%"></div></div>
-          <span class="score-num">${p.relevance_score}</span>
-        </div>
-      </div>
-      <div class="paper-meta">${authors}${cats ? ' · ' + cats : ''} · <a href="${p.pdf_url}" target="_blank" style="color:var(--accent)">PDF</a></div>
-      <div class="paper-abstract">${p.abstract || ''}</div>
-      ${kws.length ? `<div class="paper-tags">${kws.map(k => `<span class="kw-tag">${k}</span>`).join('')}</div>` : ''}
-    </div>
-  `;
-}
- 
-function renderEmpty(msg) {
-  document.getElementById('paperList').innerHTML = `
-    <div class="empty-state">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      <p>${msg}</p>
+
+function renderDetail(data, container) {
+  const papers = data.papers || [];
+  if (!papers.length) { container.innerHTML = '<div class="loading">No papers this week.</div>'; return; }
+  container.innerHTML = papers.map(p => {
+    const tier = p.relevance_tier || 'low';
+    return `<div class="wd-paper">
+      <div class="wd-score ${tier}">${p.relevance_score}</div>
+      <div class="wd-title"><a href="${p.url}" target="_blank">${p.title}</a></div>
+      <div class="wd-date">${p.date || ''}</div>
+      <div class="wd-links"><a href="${p.url}" target="_blank">abs</a><a href="${p.pdf_url}" target="_blank">pdf</a></div>
     </div>`;
-  document.getElementById('pagination').innerHTML = '';
+  }).join('');
 }
- 
-// ── Calendar ──
-function renderCalendar() {
-  const el = document.getElementById('calendarStrip');
-  el.innerHTML = allDates.map(d =>
-    `<div class="cal-day${d.date === currentDate ? ' active' : ''}" onclick="loadDate('${d.date}')">${d.date}<span class="count">(${d.paper_count})</span></div>`
-  ).join('');
-}
- 
-// ── Filters ──
-function applyFilters() {
-  const tier = document.getElementById('filterTier').value;
-  const search = document.getElementById('filterSearch').value.toLowerCase().trim();
- 
-  filteredPapers = currentPapers.filter(p => {
-    if (tier !== 'all' && p.relevance_tier !== tier) return false;
-    if (search) {
-      const haystack = (p.title + ' ' + (p.matched_keywords || []).join(' ')).toLowerCase();
-      if (!haystack.includes(search)) return false;
-    }
-    return true;
-  });
- 
-  currentPage = 1;
-  renderPapers();
-}
- 
-// ── Paper list + pagination ──
-function renderPapers() {
-  const list = document.getElementById('paperList');
-  const pag = document.getElementById('pagination');
- 
-  if (!filteredPapers.length) {
-    renderEmpty('No papers match the current filter.');
-    return;
-  }
- 
-  const totalPages = Math.ceil(filteredPapers.length / PAPERS_PER_PAGE);
-  const start = (currentPage - 1) * PAPERS_PER_PAGE;
-  const slice = filteredPapers.slice(start, start + PAPERS_PER_PAGE);
- 
-  list.innerHTML = slice.map(renderPaperCard).join('');
- 
-  if (totalPages > 1) {
-    let pagHTML = '';
-    for (let i = 1; i <= totalPages; i++) {
-      pagHTML += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goPage(${i})">${i}</button>`;
-    }
-    pag.innerHTML = pagHTML;
-  } else {
-    pag.innerHTML = '';
+
+function toggleWeek(weekEnd, rowEl) {
+  const detail = rowEl.nextElementSibling;
+  const isOpen = detail.classList.contains('show');
+
+  // Close all
+  document.querySelectorAll('.week-detail.show').forEach(d => d.classList.remove('show'));
+  document.querySelectorAll('.week-row.expanded').forEach(r => r.classList.remove('expanded'));
+
+  if (!isOpen) {
+    detail.classList.add('show');
+    rowEl.classList.add('expanded');
+    loadWeekDetail(weekEnd, detail);
   }
 }
- 
-function goPage(n) {
-  currentPage = n;
-  renderPapers();
-  window.scrollTo({ top: 200, behavior: 'smooth' });
-}
- 
-// ── Load a specific date ──
-async function loadDate(dateStr) {
-  currentDate = dateStr;
-  renderCalendar();
- 
-  try {
-    const resp = await fetch(`../data/archive/${dateStr}.json`);
-    if (!resp.ok) throw new Error('Not found');
-    const data = await resp.json();
-    currentPapers = data.papers || [];
-  } catch (e) {
-    currentPapers = [];
-  }
- 
-  // Reset filters
-  document.getElementById('filterTier').value = 'all';
-  document.getElementById('filterSearch').value = '';
-  filteredPapers = [...currentPapers];
-  currentPage = 1;
-  renderPapers();
-}
- 
-// ── Init ──
+
 async function init() {
-  try {
-    const resp = await fetch('../data/archive_index.json');
-    const data = await resp.json();
-    allDates = data.dates || [];
-  } catch (e) {
-    allDates = [];
-  }
- 
-  if (allDates.length === 0) {
-    renderCalendar();
-    renderEmpty('No archive data yet. The GitHub Action will populate this after its first run.');
-    return;
-  }
- 
-  // Default to most recent date
-  await loadDate(allDates[0].date);
+  const el = document.getElementById('content');
+  let index;
+  try { const r = await fetch('../data/archive_index.json'); if (!r.ok) throw 0; index = await r.json(); }
+  catch (e) { el.innerHTML = '<div class="empty">No archive data yet. Run the weekly GitHub Action first.</div>'; return; }
+
+  const weeks = index.weeks || [];
+  if (!weeks.length) { el.innerHTML = '<div class="empty">No archived weeks found.</div>'; return; }
+
+  const maxPapers = Math.max(...weeks.map(w => w.paper_count || 0), 1);
+
+  el.innerHTML = `<div class="week-list">${weeks.map(w => {
+    const pct = Math.round(((w.paper_count || 0) / maxPapers) * 100);
+    const label = w.week_start ? `${w.week_start} → ${w.week_end}` : w.week_end;
+    return `<div class="week-row" onclick="toggleWeek('${w.week_end}', this)">
+      <div class="wr-date">${label}</div>
+      <div class="wr-bar"><div class="wr-bar-fill" style="width:${pct}%"></div></div>
+      <div class="wr-count">${w.paper_count} papers</div>
+      <div class="wr-toggle">expand</div>
+    </div>
+    <div class="week-detail"></div>`;
+  }).join('')}</div>`;
 }
- 
 init();
 </script>
 </body>

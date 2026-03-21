@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recent papers — rPPG Hub</title>
+<link rel="icon" href="https://github.com/infraface/infraface.github.io/blob/main/asset/profile.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--bg:#FAFAF7;--bg2:#F0EFE9;--bg3:#E6E5DF;--fg:#1C1C1A;--fg2:#6B6A65;--fg3:#9E9D97;--border:#D8D7D1;--accent:#2563EB;--accent-bg:#EFF6FF;--accent2:#0D9488;--accent2-bg:#F0FDFA;--accent3:#D97706;--accent3-bg:#FFFBEB;--radius:10px;--radius-sm:6px;--shadow:0 1px 3px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06)}
+@media(prefers-color-scheme:dark){:root{--bg:#141413;--bg2:#1E1E1C;--bg3:#2A2A27;--fg:#EEEEE8;--fg2:#A3A29C;--fg3:#6B6A65;--border:#3A3A36;--accent:#60A5FA;--accent-bg:#1E293B;--accent2:#2DD4BF;--accent2-bg:#134E4A;--accent3:#FBBF24;--accent3-bg:#422006;--shadow:0 1px 3px rgba(0,0,0,.3)}}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.page{max-width:1280px;margin:0 auto;padding:0 2rem}
+.nav{padding:18px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}.nav-brand{display:flex;align-items:center;gap:10px}.nav-logo{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center}.nav-logo svg{width:18px;height:18px}.nav-title{font-weight:600;font-size:16px;letter-spacing:-.3px}.nav-links{display:flex;gap:6px}.nav-link{font-size:13px;padding:6px 14px;border-radius:20px;color:var(--fg2);transition:all .2s}.nav-link:hover{background:var(--bg2);color:var(--fg)}.nav-link.active{background:var(--fg);color:var(--bg)}
+.page-header{padding:28px 0 20px;border-bottom:1px solid var(--border)}
+.page-header h1{font-size:24px;font-weight:600;letter-spacing:-.5px;margin-bottom:4px}
+.page-header p{font-size:14px;color:var(--fg2)}
+.page-header .stats{font-family:var(--font-mono);font-size:13px;color:var(--fg3);margin-top:6px}
+.content{padding:24px 0 48px}
+/* Date group */
+.date-group{margin-bottom:32px}
+.date-heading{font-family:var(--font-mono);font-size:14px;font-weight:500;color:var(--fg2);padding:8px 0;border-bottom:1px solid var(--border);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--bg);z-index:10}
+.date-heading .count{font-family:var(--font-body);font-size:12px;color:var(--fg3);font-weight:400}
+/* Paper row — compact for listing */
+.paper-row{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:var(--radius-sm);transition:background .15s}
+.paper-row:hover{background:var(--bg2)}
+.paper-row+.paper-row{border-top:1px solid var(--border)}
+.pr-score{flex-shrink:0;width:36px;text-align:center}
+.pr-score-num{font-family:var(--font-mono);font-size:13px;font-weight:500}
+.pr-score-bar{width:36px;height:4px;border-radius:2px;background:var(--bg3);margin-top:3px;overflow:hidden}
+.pr-score-fill{height:100%;border-radius:2px}
+.pr-body{flex:1;min-width:0}
+.pr-title{font-size:14px;font-weight:500;line-height:1.4}
+.pr-title a{color:var(--accent)}.pr-title a:hover{text-decoration:underline}
+.pr-meta{font-size:12px;color:var(--fg3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr-tags{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap}
+.pr-kw{font-size:10px;padding:1px 7px;border-radius:10px;background:var(--accent-bg);color:var(--accent);font-weight:500}
+.pr-links{flex-shrink:0;display:flex;gap:8px;align-items:center;padding-top:2px}
+.pr-links a{font-size:12px;color:var(--accent);font-weight:500}
+.pr-links a:hover{text-decoration:underline}
+.tier-core .pr-score-fill{background:var(--accent)}.tier-high .pr-score-fill{background:var(--accent2)}.tier-medium .pr-score-fill{background:var(--accent3)}.tier-low .pr-score-fill{background:var(--fg3)}
+.empty{text-align:center;padding:60px 20px;color:var(--fg3);font-size:14px}
+.site-footer{padding:24px 0;border-top:1px solid var(--border);font-size:12px;color:var(--fg3);text-align:center}
+@media(max-width:640px){.nav-links{display:none}.pr-links{display:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 9 6 12 18 15 9 17 12 21 12"/></svg></div>
+      <span class="nav-title">rPPG Hub</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="rppg_datasets_dashboard.html" class="nav-link">Datasets</a>
+      <a href="recent_papers.html" class="nav-link active">Recent 30 days</a>
+      <a href="paper_archive.html" class="nav-link">Archive</a>
+    </div>
+  </nav>
+  <header class="page-header" id="hdr"></header>
+  <main class="content" id="content"></main>
+  <footer class="site-footer">rPPG Research Hub — auto-updated weekly via GitHub Actions</footer>
+</div>
+<script>
+async function init() {
+  const hdr = document.getElementById('hdr');
+  const el = document.getElementById('content');
+  let data;
+  try { const r = await fetch('../data/recent_papers.json'); if (!r.ok) throw 0; data = await r.json(); }
+  catch (e) { hdr.innerHTML = '<h1>Recent papers</h1><p>Past 30 days of rPPG-relevant papers from arXiv.</p>'; el.innerHTML = '<div class="empty">No data yet. Run the weekly GitHub Action first.</div>'; return; }
+
+  const papers = data.papers || [];
+  hdr.innerHTML = `<h1>Recent papers — past 30 days</h1><p>rPPG-relevant papers from arXiv cs.CV and cs.AI, grouped by publication date.</p><div class="stats">${papers.length} papers · ${data.weeks?.length || 0} weeks collected</div>`;
+
+  if (!papers.length) { el.innerHTML = '<div class="empty">No relevant papers in the past 30 days.</div>'; return; }
+
+  // Group by date
+  const groups = {};
+  papers.forEach(p => {
+    const d = p.date || 'unknown';
+    if (!groups[d]) groups[d] = [];
+    groups[d].push(p);
+  });
+
+  const dates = Object.keys(groups).sort().reverse();
+
+  el.innerHTML = dates.map(date => {
+    const ps = groups[date];
+    return `<div class="date-group">
+      <div class="date-heading"><span>${date}</span><span class="count">${ps.length} paper${ps.length !== 1 ? 's' : ''}</span></div>
+      ${ps.map(p => {
+        const pct = Math.min(100, p.relevance_score || 0);
+        const tier = p.relevance_tier || 'low';
+        const authors = (p.authors || []).slice(0, 3).join(', ');
+        const kws = (p.matched_keywords || []).slice(0, 3);
+        return `<div class="paper-row tier-${tier}">
+          <div class="pr-score"><div class="pr-score-num">${p.relevance_score}</div><div class="pr-score-bar"><div class="pr-score-fill" style="width:${pct}%"></div></div></div>
+          <div class="pr-body">
+            <div class="pr-title"><a href="${p.url}" target="_blank">${p.title}</a></div>
+            <div class="pr-meta">${authors}</div>
+            ${kws.length ? `<div class="pr-tags">${kws.map(k => `<span class="pr-kw">${k}</span>`).join('')}</div>` : ''}
+          </div>
+          <div class="pr-links"><a href="${p.url}" target="_blank">abs</a><a href="${p.pdf_url}" target="_blank">pdf</a></div>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+init();
+</script>
+</body>
+</html>
