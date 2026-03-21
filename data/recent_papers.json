@@ -1,9 +1,13 @@
 {
+  "updated_at": "2026-03-21T19:27:26.942218Z",
+  "window_days": 30,
+  "paper_count": 0,
   "weeks": [
     {
       "week_end": "2026-03-21",
       "week_start": "2026-03-14",
       "paper_count": 0
     }
-  ]
+  ],
+  "papers": []
 }
