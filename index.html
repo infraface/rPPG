@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rPPG Research Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--bg:#FAFAF7;--bg2:#F0EFE9;--bg3:#E6E5DF;--fg:#1C1C1A;--fg2:#6B6A65;--fg3:#9E9D97;--border:#D8D7D1;--accent:#2563EB;--accent-bg:#EFF6FF;--accent2:#0D9488;--accent2-bg:#F0FDFA;--accent3:#D97706;--accent3-bg:#FFFBEB;--accent4:#DC2626;--accent4-bg:#FEF2F2;--accent5:#7C3AED;--accent5-bg:#F5F3FF;--radius:10px;--radius-sm:6px;--radius-lg:14px;--shadow:0 1px 3px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06);--shadow-lg:0 4px 12px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.08)}
+@media(prefers-color-scheme:dark){:root{--bg:#141413;--bg2:#1E1E1C;--bg3:#2A2A27;--fg:#EEEEE8;--fg2:#A3A29C;--fg3:#6B6A65;--border:#3A3A36;--accent:#60A5FA;--accent-bg:#1E293B;--accent2:#2DD4BF;--accent2-bg:#134E4A;--accent3:#FBBF24;--accent3-bg:#422006;--accent4:#F87171;--accent4-bg:#450A0A;--accent5:#A78BFA;--accent5-bg:#2E1065;--shadow:0 1px 3px rgba(0,0,0,.3);--shadow-lg:0 4px 12px rgba(0,0,0,.4)}}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.page{max-width:1280px;margin:0 auto;padding:0 2rem}
+.nav{padding:18px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}.nav-brand{display:flex;align-items:center;gap:10px}.nav-logo{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center}.nav-logo svg{width:18px;height:18px}.nav-title{font-weight:600;font-size:16px;letter-spacing:-.3px}.nav-links{display:flex;gap:6px}.nav-link{font-size:13px;padding:6px 14px;border-radius:20px;color:var(--fg2);transition:all .2s}.nav-link:hover{background:var(--bg2);color:var(--fg)}.nav-link.active{background:var(--fg);color:var(--bg)}
+.hero{padding:80px 0 60px;text-align:center}.hero-badge{display:inline-block;font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-bg);padding:5px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:.3px}.hero h1{font-size:clamp(36px,5vw,56px);font-weight:600;letter-spacing:-1.5px;line-height:1.1;max-width:800px;margin:0 auto 16px}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{font-size:17px;color:var(--fg2);max-width:600px;margin:0 auto 32px;line-height:1.6}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:var(--radius);font-size:14px;font-weight:500;font-family:var(--font-body);cursor:pointer;border:none;transition:all .2s}.btn-primary{background:var(--fg);color:var(--bg)}.btn-primary:hover{opacity:.85;transform:translateY(-1px)}.btn-secondary{background:var(--bg2);color:var(--fg);border:1px solid var(--border)}.btn-secondary:hover{background:var(--bg3);transform:translateY(-1px)}.btn svg{width:16px;height:16px;flex-shrink:0}
+.section{padding:60px 0}.section+.section{border-top:1px solid var(--border)}.section-header{margin-bottom:32px}.section-header-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:32px}.section-label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px}.section-title{font-size:26px;font-weight:600;letter-spacing:-.5px;margin-bottom:6px}.section-desc{font-size:15px;color:var(--fg2);max-width:560px}.section-action{flex-shrink:0}
+.link-arrow{font-size:13px;color:var(--accent);font-weight:500;display:inline-flex;align-items:center;gap:4px;transition:gap .2s}.link-arrow:hover{gap:8px}.link-arrow svg{width:14px;height:14px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}.res-card{background:var(--bg2);border-radius:var(--radius-lg);padding:24px;border:1px solid var(--border);transition:all .25s;display:flex;flex-direction:column}.res-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--accent)}.res-card-icon{width:44px;height:44px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:16px}.res-card-icon svg{width:22px;height:22px}.res-card h3{font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:-.2px}.res-card p{font-size:13px;color:var(--fg2);line-height:1.55;flex:1}.res-card-footer{margin-top:16px;display:flex;align-items:center;gap:8px}.res-card-tag{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px}.res-card-arrow{margin-left:auto;width:28px;height:28px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;transition:all .25s}.res-card:hover .res-card-arrow{background:var(--accent)}.res-card:hover .res-card-arrow svg path,.res-card:hover .res-card-arrow svg line,.res-card:hover .res-card-arrow svg polyline{stroke:var(--bg)}.res-card-arrow svg{width:14px;height:14px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:40px}.stat-card{text-align:center;padding:28px 16px;background:var(--bg2);border-radius:var(--radius-lg);border:1px solid var(--border)}.stat-val{font-size:36px;font-weight:600;letter-spacing:-1.5px}.stat-label{font-size:13px;color:var(--fg2);margin-top:4px}
+.papers-date-bar{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}.papers-date{font-family:var(--font-mono);font-size:13px;background:var(--bg2);padding:5px 14px;border-radius:20px;color:var(--fg2);border:1px solid var(--border)}.papers-count{font-size:13px;color:var(--fg3)}.papers-live{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--accent2)}.papers-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:blink 2s ease infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.paper-list{display:flex;flex-direction:column;gap:12px}.paper-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s}.paper-card:hover{border-color:var(--accent);box-shadow:var(--shadow)}.paper-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}.paper-title{font-size:15px;font-weight:500;line-height:1.4;flex:1}.paper-title a{color:var(--accent)}.paper-title a:hover{text-decoration:underline}.paper-score{flex-shrink:0;display:flex;align-items:center;gap:6px}.score-bar{width:48px;height:6px;border-radius:3px;background:var(--bg3);overflow:hidden}.score-fill{height:100%;border-radius:3px;transition:width .4s ease}.score-num{font-family:var(--font-mono);font-size:12px;font-weight:500;min-width:24px;text-align:right}.paper-meta{font-size:12px;color:var(--fg3);margin-bottom:8px}.paper-abstract{font-size:13px;color:var(--fg2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.paper-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.kw-tag{font-size:10px;padding:2px 8px;border-radius:12px;background:var(--accent-bg);color:var(--accent);font-weight:500}
+.tier-core .score-fill{background:var(--accent)}.tier-high .score-fill{background:var(--accent2)}.tier-medium .score-fill{background:var(--accent3)}.tier-low .score-fill{background:var(--fg3)}
+.tier-legend{display:flex;gap:16px;margin-bottom:16px;font-size:12px;color:var(--fg3);flex-wrap:wrap}.tier-legend-item{display:flex;align-items:center;gap:5px}.tier-dot{width:8px;height:8px;border-radius:50%}
+.papers-empty{text-align:center;padding:48px 20px;color:var(--fg3)}.papers-empty p{font-size:14px}
+.site-footer{padding:32px 0;border-top:1px solid var(--border);margin-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.site-footer p{font-size:12px;color:var(--fg3)}.footer-links{display:flex;gap:16px}.footer-links a{font-size:12px;color:var(--fg3);transition:color .2s}.footer-links a:hover{color:var(--fg)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.anim{animation:fadeUp .6s ease both}.d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.2s}.d4{animation-delay:.28s}.d5{animation-delay:.36s}.d6{animation-delay:.44s}
+@media(max-width:640px){.hero{padding:48px 0 36px}.section{padding:40px 0}.nav-links{display:none}.stats-row{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+ 
+<div class="page"><nav class="nav" id="nav"></nav></div>
+<div class="page"><section class="hero anim" id="hero"></section></div>
+<div class="page">
+  <section class="section anim d1" id="statsSection"></section>
+  <section class="section anim d2" id="dailyPapersSection"></section>
+  <section class="section anim d3" id="resourcesSection"></section>
+</div>
+<div class="page"><footer class="site-footer anim d4" id="footer"></footer></div>
+ 
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ★★★ EDITABLE CONTENT — CHANGE EVERYTHING FROM HERE ★★★
+   
+   All static page content is driven by these arrays/objects.
+   Daily papers load dynamically from data/daily_papers.json
+   (generated by fetch_papers.py via GitHub Actions).
+   ═══════════════════════════════════════════════════════════════ */
+ 
+const SITE = {
+  title: "rPPG Hub",
+  tagline: "Remote Photoplethysmography",
+  heroTitle: "Remote <em>Photoplethysmography</em>",
+  heroDescription: "A curated collection of datasets, methods, and resources for camera-based physiological signal measurement.",
+  githubUrl: "https://github.com/",
+};
+ 
+const NAV_LINKS = [
+  { label: "Home", href: "index.html", active: true },
+  { label: "Datasets", href: "pages/rppg_datasets_dashboard.html" },
+  { label: "Daily papers", href: "#dailyPapersSection" },
+  { label: "Archive", href: "pages/paper_archive.html" },
+];
+ 
+// const STATS = [
+//   { value: "10+", label: "Public datasets" },
+//   { value: "3,300+", label: "Total subjects" },
+//   { value: "50+", label: "rPPG methods" },
+//   { value: "2008–2025", label: "Research span" },
+// ];
+ 
+// const RESOURCES = [
+//   { title: "Dataset dashboard", description: "Interactive comparison of 10 rPPG benchmark datasets — subjects, resolution, ground truth signals, modality timeline, and more.", href: "rppg_datasets_dashboard.html", icon: "dataset", color: "accent", tags: ["10 datasets", "Interactive"] },
+//   { title: "Paper archive", description: "90-day searchable archive of rPPG-relevant papers from arXiv cs.CV and cs.AI, with relevance scoring and keyword filtering.", href: "paper_archive.html", icon: "paper", color: "accent3", tags: ["Auto-updated", "90 days"] },
+//   { title: "Method taxonomy", description: "Comprehensive taxonomy of rPPG methods from traditional signal processing (GREEN, CHROM, POS) to deep learning (PhysNet, EfficientPhys, PhysFormer).", href: "#", icon: "method", color: "accent2", tags: ["50+ methods"] },
+//   { title: "Benchmark results", description: "Cross-dataset evaluation results with standardized metrics (MAE, RMSE, Pearson r) across UBFC-rPPG, PURE, MMPD, and more.", href: "#", icon: "benchmark", color: "accent5", tags: ["Leaderboard"] },
+//   { title: "rPPG-Toolbox", description: "Open-source end-to-end toolbox supporting six datasets, unsupervised and supervised methods, with reproducible training & evaluation pipelines.", href: "https://github.com/ubicomplab/rPPG-Toolbox", icon: "code", color: "accent4", tags: ["Open source", "PyTorch"] },
+//   { title: "Video tutorials", description: "Step-by-step tutorials on setting up rPPG experiments, preprocessing pipelines, and training neural models for heart rate estimation.", href: "#", icon: "video", color: "accent2", tags: ["Tutorial"] },
+// ];
+ 
+const FOOTER = {
+  copyright: "rPPG Research Hub — compiled for the research community",
+  links: [
+    { label: "GitHub", href: "https://github.com/" },
+    { label: "arXiv", href: "https://arxiv.org/" },
+    { label: "Contact", href: "mailto:" },
+  ],
+};
+ 
+ 
+/* ═══════════════════════════════════════════════════════════════
+   RENDERING ENGINE
+   ═══════════════════════════════════════════════════════════════ */
+ 
+const ICONS={dataset:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>',method:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"/><path d="M12 12l9-4.5"/><path d="M12 12v9"/><path d="M12 12L3 7.5"/></svg>',benchmark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>',code:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',paper:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>',arrowRight:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',pulse:'<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 9 6 12 18 15 9 17 12 21 12"/></svg>',github:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>'};
+ 
+const cv=(c)=>`var(--${c})`,cbg=(c)=>`var(--${c}-bg)`;
+ 
+// Nav
+document.getElementById('nav').innerHTML=`<a href="#" class="nav-brand"><div class="nav-logo">${ICONS.pulse}</div><span class="nav-title">${SITE.title}</span></a><div class="nav-links">${NAV_LINKS.map(l=>`<a href="${l.href}" class="nav-link${l.active?' active':''}">${l.label}</a>`).join('')}</div>`;
+ 
+// Hero
+document.getElementById('hero').innerHTML=`<div class="hero-badge">${SITE.tagline}</div><h1>${SITE.heroTitle}</h1><p>${SITE.heroDescription}</p>`;
+ 
+// Stats
+document.getElementById('statsSection').innerHTML=`<div class="stats-row">${STATS.map(s=>`<div class="stat-card"><div class="stat-val">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('')}</div>`;
+ 
+// Resources
+document.getElementById('resourcesSection').innerHTML=`<div class="section-header"><div class="section-label">Resources</div><div class="section-title">Explore the ecosystem</div><div class="section-desc">Datasets, tools, benchmarks, and learning materials for remote physiological sensing research.</div></div><div class="cards-grid">${RESOURCES.map(r=>`<a href="${r.href}" class="res-card"><div class="res-card-icon" style="background:${cbg(r.color)};color:${cv(r.color)}">${ICONS[r.icon]||ICONS.paper}</div><h3>${r.title}</h3><p>${r.description}</p><div class="res-card-footer">${r.tags.map(t=>`<span class="res-card-tag" style="background:${cbg(r.color)};color:${cv(r.color)}">${t}</span>`).join('')}<div class="res-card-arrow">${ICONS.arrow}</div></div></a>`).join('')}</div>`;
+ 
+// Footer
+document.getElementById('footer').innerHTML=`<p>${FOOTER.copyright}</p><div class="footer-links">${FOOTER.links.map(l=>`<a href="${l.href}" target="_blank">${l.label}</a>`).join('')}</div>`;
+ 
+ 
+/* ═══════════════════════════════════════════════════════════════
+   DAILY PAPERS — loaded async from data/daily_papers.json
+   
+   This file is auto-generated by fetch_papers.py via GitHub Action.
+   Relevance scoring rules (same in Python and documented here):
+   
+   Tier 1 — Core rPPG terms (15pts each, cap 60)
+     rppg, remote photoplethysmography, remote ppg,
+     video/camera-based heart rate, contactless vital sign, etc.
+   
+   Tier 2 — Related physiology (6pts each, cap 30)
+     ppg, heart rate estimation, hrv, bvp, spo2, facial video,
+     physiological signal, vital sign monitoring, etc.
+   
+   Tier 3 — Peripheral CV/ML (3pts each, cap 15)
+     video transformer, spatio-temporal, face detection,
+     domain adaptation, contrastive learning, etc.
+   
+   Score = min(100, T1+T2+T3). Papers below 12 are dropped.
+   ═══════════════════════════════════════════════════════════════ */
+ 
+function renderPaperCard(p){
+  const pct=Math.min(100,p.relevance_score||0),tier=p.relevance_tier||'low';
+  const kws=(p.matched_keywords||[]).slice(0,5),authors=(p.authors||[]).slice(0,3).join(', '),cats=(p.categories||[]).join(', ');
+  return `<div class="paper-card tier-${tier}"><div class="paper-top"><div class="paper-title"><a href="${p.url}" target="_blank">${p.title}</a></div><div class="paper-score"><div class="score-bar"><div class="score-fill" style="width:${pct}%"></div></div><span class="score-num">${p.relevance_score}</span></div></div><div class="paper-meta">${authors}${cats?' · '+cats:''} · <a href="${p.pdf_url}" target="_blank" style="color:var(--accent)">PDF</a></div><div class="paper-abstract">${p.abstract||''}</div>${kws.length?`<div class="paper-tags">${kws.map(k=>`<span class="kw-tag">${k}</span>`).join('')}</div>`:''}</div>`;
+}
+ 
+async function loadDailyPapers(){
+  const el=document.getElementById('dailyPapersSection');
+  let data;
+  try{const r=await fetch('data/daily_papers.json');if(!r.ok)throw 0;data=await r.json();}
+  catch(e){el.innerHTML=`<div class="section-header"><div class="section-label">Daily papers</div><div class="section-title">Today's rPPG-relevant papers</div><div class="section-desc">Auto-fetched from arXiv cs.CV and cs.AI, scored by relevance.</div></div><div class="papers-empty"><p>No paper data yet. Run <code style="font-family:var(--font-mono);background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px">python fetch_papers.py</code> or wait for the daily GitHub Action.</p></div>`;return;}
+ 
+  const papers=data.papers||[],dateStr=data.date||'unknown';
+  el.innerHTML=`
+    <div class="section-header-row"><div><div class="section-label">Daily papers</div><div class="section-title">Today's rPPG-relevant papers</div><div class="section-desc">Auto-fetched from arXiv cs.CV and cs.AI, scored by relevance to rPPG research.</div></div><div class="section-action"><a href="paper_archive.html" class="link-arrow">View 90-day archive ${ICONS.arrowRight}</a></div></div>
+    <div class="papers-date-bar"><span class="papers-date">${dateStr}</span><span class="papers-count">${papers.length} paper${papers.length!==1?'s':''} found</span><span class="papers-live">Auto-updated daily</span></div>
+    <div class="tier-legend"><div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent)"></div> Core rPPG (score ≥ 60)</div><div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent2)"></div> High relevance (≥ 30)</div><div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent3)"></div> Medium (≥ 12)</div></div>
+    <div class="paper-list">${papers.length?papers.map(renderPaperCard).join(''):'<div class="papers-empty"><p>No relevant papers found for today. Check back tomorrow!</p></div>'}</div>
+    ${papers.length?`<div style="text-align:center;margin-top:20px"><a href="paper_archive.html" class="btn btn-secondary">Browse full archive ${ICONS.arrowRight}</a></div>`:''}`;
+}
+ 
+loadDailyPapers();
+</script>
+</body>
+</html>

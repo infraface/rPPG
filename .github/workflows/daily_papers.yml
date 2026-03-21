@@ -1,0 +1,57 @@
+# .github/workflows/daily_papers.yml
+# ═══════════════════════════════════════════════════════
+# GitHub Action: Daily rPPG Paper Fetcher
+#
+# Runs every day at 08:00 UTC (after arXiv's daily update)
+# 1. Fetches new cs.CV and cs.AI papers from arXiv RSS
+# 2. Scores relevance to rPPG research
+# 3. Saves daily_papers.json + archive
+# 4. Commits and pushes to the repo
+# 5. GitHub Pages auto-deploys the updated site
+#
+# Manual trigger: Actions → "Daily paper update" → Run workflow
+# ═══════════════════════════════════════════════════════
+
+name: Daily paper update
+
+on:
+  schedule:
+    # arXiv updates around 00:00-02:00 UTC (Sun-Thu)
+    # We run at 08:00 UTC to ensure listings are ready
+    - cron: '0 8 * * 1-5'   # Mon-Fri at 08:00 UTC
+
+  workflow_dispatch:          # allow manual trigger
+
+permissions:
+  contents: write             # needed to push data/ changes
+
+jobs:
+  fetch-papers:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests feedparser
+
+      - name: Fetch and score papers
+        run: python fetch_papers.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          # Only commit if there are changes
+          git diff --staged --quiet || {
+            DATE=$(date -u +"%Y-%m-%d")
+            git commit -m "📄 Daily papers update: ${DATE}"
+            git push
+          }
