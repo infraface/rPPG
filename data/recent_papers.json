@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-03-23T11:11:25.182086Z",
+  "updated_at": "2026-03-24T10:37:52.536365Z",
   "window_days": 90,
-  "paper_count": 1,
+  "paper_count": 2,
   "weeks": [
+    {
+      "week_end": "2026-03-24",
+      "week_start": "2026-03-17",
+      "paper_count": 2
+    },
     {
       "week_end": "2026-03-23",
       "week_start": "2026-03-16",
@@ -42,6 +47,34 @@
         "cardiac",
         "spatio-temporal",
         "motion artifact"
+      ]
+    },
+    {
+      "id": "2603.20442",
+      "title": "Detecting Neurovascular Instability from Multimodal Physiological Signals Using Wearable-Compatible Edge AI: A Responsible Computational Framework",
+      "abstract": "We propose Melaguard, a multimodal ML framework (Transformer-lite, 1.2M parameters, 4-head self-attention) for detecting neurovascular instability (NVI) from wearable-compatible physiological signals prior to structural stroke pathology. The model fuses heart rate variability (HRV), peripheral perfusion index, SpO2, and bilateral phase coherence into a composite NVI Score, designed for edge inference (WCET <=4 ms on Cortex-M4). NVI - the pre-structural dysregulation of cerebrovascular autoregulation preceding overt stroke - remains undetectable by existing single-modality wearables. With 12.2 million incident strokes annually, continuous multimodal physiological monitoring offers a practical path to community-scale screening. Three-stage independent validation: (1) synthetic benchmark (n=10,000), AUC=0.88 [0.83-0.92]; (2) clinical cohort PhysioNet CVES (n=172; 84 stroke, 88 control) - Transformer-lite achieves AUC=0.755 [0.630-0.778], outperforming LSTM (0.643), Random Forest (0.665), SVM (0.472); HRV-SDNN discriminates stroke (p=0.011); (3) PPG pipeline PhysioNet BIDMC (n=53) -- pulse rate r=0.748 and HRV surrogate r=0.690 vs. ECG ground truth. Cross-modality validation on PPG-BP (n=219) confirms PPG morphology classifies cerebrovascular disease at AUC=0.923 [0.869-0.968]. Multimodal fusion consistently outperforms single-modality baselines. Code: https://github.com/ClevixLab/Melaguard",
+      "authors": [
+        "Truong Quynh Hoa",
+        "Hoang Dinh Cuong",
+        "Truong Xuan Khanh"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-03-20",
+      "url": "https://arxiv.org/abs/2603.20442",
+      "pdf_url": "https://arxiv.org/pdf/2603.20442",
+      "relevance_score": 33,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "ppg",
+        "heart rate variability",
+        "hrv",
+        "pulse rate",
+        "spo2",
+        "physiological signal",
+        "wearable"
       ]
     }
   ]
