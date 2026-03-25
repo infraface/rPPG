@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-03-24T10:37:52.536365Z",
+  "updated_at": "2026-03-25T10:35:30.421115Z",
   "window_days": 90,
-  "paper_count": 2,
+  "paper_count": 4,
   "weeks": [
+    {
+      "week_end": "2026-03-25",
+      "week_start": "2026-03-18",
+      "paper_count": 4
+    },
     {
       "week_end": "2026-03-24",
       "week_start": "2026-03-17",
@@ -20,6 +25,36 @@
     }
   ],
   "papers": [
+    {
+      "id": "2603.22826",
+      "title": "MVRD-Bench: Multi-View Learning and Benchmarking for Dynamic Remote Photoplethysmography under Occlusion",
+      "abstract": "Remote photoplethysmography (rPPG) is a non-contact technique that estimates physiological signals by analyzing subtle skin color changes in facial videos. Existing rPPG methods often encounter performance degradation under facial motion and occlusion scenarios due to their reliance on static and single-view facial videos. Thus, this work focuses on tackling the motion-induced occlusion problem for rPPG measurement in unconstrained multi-view facial videos. Specifically, we introduce a Multi-View rPPG Dataset (MVRD), a high-quality benchmark dataset featuring synchronized facial videos from three viewpoints under stationary, speaking, and head movement scenarios to better match real-world conditions. We also propose MVRD-rPPG, a unified multi-view rPPG learning framework that fuses complementary visual cues to maintain robust facial skin coverage, especially under motion conditions. Our method integrates an Adaptive Temporal Optical Compensation (ATOC) module for motion artifact suppression, a Rhythm-Visual Dual-Stream Network to disentangle rhythmic and appearance-related features, and a Multi-View Correlation-Aware Attention (MVCA) for adaptive view-wise signal aggregation. Furthermore, we introduce a Correlation Frequency Adversarial (CFA) learning strategy, which jointly enforces temporal accuracy, spectral consistency, and perceptual realism in the predicted signals. Extensive experiments and ablation studies on the MVRD dataset demonstrate the superiority of our approach. In the MVRD movement scenario, MVRD-rPPG achieves an MAE of 0.90 and a Pearson correlation coefficient (R) of 0.99. The source code and dataset will be made available.",
+      "authors": [
+        "Zuxian He",
+        "Xu Cheng",
+        "Zhaodong Sun",
+        "Haoyu Chen",
+        "Jingang Shi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-03-24",
+      "url": "https://arxiv.org/abs/2603.22826",
+      "pdf_url": "https://arxiv.org/pdf/2603.22826",
+      "relevance_score": 63,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video",
+        "skin color change",
+        "physiological signal",
+        "motion artifact"
+      ]
+    },
     {
       "id": "2603.19752",
       "title": "PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Measurement",
@@ -75,6 +110,30 @@
         "spo2",
         "physiological signal",
         "wearable"
+      ]
+    },
+    {
+      "id": "2603.22313",
+      "title": "A Multi-Modal CNN-LSTM Framework with Multi-Head Attention and Focal Loss for Real-Time Elderly Fall Detection",
+      "abstract": "The increasing global aging population has intensified the demand for reliable health monitoring systems, particularly those capable of detecting critical events such as falls among elderly individuals. Traditional fall detection approaches relying on single-modality acceleration data suffer from high false alarm rates, while conventional machine learning methods require extensive hand-crafted feature engineering. This paper proposes a novel multi-modal deep learning framework, MultiModalFallDetector, designed for real-time elderly fall detection using wearable sensors. Our approach integrates multiple innovations: a multi-scale CNN-based feature extractor capturing motion dynamics at varying temporal resolutions; fusion of tri-axial accelerometer, gyroscope, and four-channel physiological signals; incorporation of a multi-head self-attention mechanism for dynamic temporal weighting; adoption of Focal Loss to mitigate severe class imbalance; introduction of an auxiliary activity classification task for regularization; and implementation of transfer learning from UCI HAR to SisFall dataset. Extensive experiments on the SisFall dataset, which includes real-world simulated fall trials from elderly participants (aged 60-85), demonstrate that our framework achieves an F1-score of 98. 7, Recall of 98. 9, and AUC-ROC of 99. 4, significantly outperforming baseline methods including traditional machine learning and standard deep learning approaches. The model maintains sub- 50ms inference latency on edge devices, confirming its suitability for real-time deployment in geriatric care settings.",
+      "authors": [
+        "Lijie Zhou",
+        "Luran Wang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-03-20",
+      "url": "https://arxiv.org/abs/2603.22313",
+      "pdf_url": "https://arxiv.org/pdf/2603.22313",
+      "relevance_score": 15,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "physiological signal",
+        "health monitoring",
+        "wearable",
+        "transfer learning"
       ]
     }
   ]
