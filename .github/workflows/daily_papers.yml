@@ -18,7 +18,7 @@ on:
   schedule:
     # arXiv updates around 00:00-02:00 UTC (Sun-Thu)
     # We run at 08:00 UTC to ensure listings are ready
-    - cron: '0 8 * * 1-5'   # Mon-Fri at 08:00 UTC
+    - cron: '0 8 * * 5'   # Mon-Fri at 08:00 UTC
 
   workflow_dispatch:          # allow manual trigger
 

@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}
 .score-bar{width:48px;height:6px;border-radius:3px;background:var(--bg3);overflow:hidden}.score-fill{height:100%;border-radius:3px;transition:width .4s ease}
 .score-num{font-family:var(--font-mono);font-size:12px;font-weight:500;min-width:24px;text-align:right}
 .paper-meta{font-size:12px;color:var(--fg3);margin-bottom:6px}
-.paper-abstract{font-size:13px;color:var(--fg2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.paper-abstract{font-size:13px;color:var(--fg2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .paper-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 .kw-tag{font-size:10px;padding:2px 8px;border-radius:12px;background:var(--accent-bg);color:var(--accent);font-weight:500}
 .tier-core .score-fill{background:var(--accent)}.tier-high .score-fill{background:var(--accent2)}.tier-medium .score-fill{background:var(--accent3)}.tier-low .score-fill{background:var(--fg3)}
@@ -102,7 +102,8 @@ document.getElementById('footer').innerHTML = `
 function renderCard(p) {
   const pct = Math.min(100, p.relevance_score || 0), tier = p.relevance_tier || 'low';
   const kws = (p.matched_keywords || []).slice(0, 5);
-  const authors = (p.authors || []).slice(0, 3).join(', ');
+  const allAuthors = p.authors || [];
+  const authors = allAuthors.length > 10 ? allAuthors.slice(0, 10).join(', ') + ', et al.' : allAuthors.join(', ');
   const cats = (p.categories || []).join(', ');
   const date = p.date ? `<span style="font-family:var(--font-mono)">${p.date}</span> · ` : '';
   return `<div class="paper-card tier-${tier}">
@@ -137,7 +138,7 @@ async function loadPapers() {
       <div class="tier-legend-item"><div class="tier-dot" style="background:var(--accent3)"></div> Medium (≥12)</div>
     </div>
     <div class="paper-list">${papers.length ? papers.map(renderCard).join('') : '<div class="papers-empty"><p>No relevant papers this week. Check back next Friday!</p></div>'}</div>
-    ${papers.length ? `<div style="text-align:center;margin-top:20px"><a href="pages/recent_papers.html" class="btn">Browse recent 90 days ${IC.arrowR}</a></div>` : ''}`;
+    `;
 }
 loadPapers();
 </script>

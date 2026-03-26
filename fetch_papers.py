@@ -69,7 +69,7 @@ TIER1_CAP, TIER2_CAP, TIER3_CAP = 60, 30, 15
 RELEVANCE_THRESHOLD = 12
 MAX_PAPERS_PER_WEEK = 50
 RECENT_WINDOW_DAYS = 90
-ARCHIVE_RETENTION_DAYS = 180
+ARCHIVE_RETENTION_DAYS = 1095
 
 ARXIV_API_URL = "http://export.arxiv.org/api/query"
 CATEGORIES = ["cs.CV", "cs.AI"]
@@ -157,7 +157,7 @@ def fetch_papers_range(start_date, end_date):
                     "id": arxiv_id,
                     "title": title,
                     "abstract": abstract,
-                    "authors": authors[:5],
+                    "authors": authors[:20],
                     "categories": categories,
                     "date": pub_date,
                     "url": f"https://arxiv.org/abs/{arxiv_id}",
