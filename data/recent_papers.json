@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-03-27T08:36:32.304735Z",
+  "updated_at": "2026-04-03T08:38:15.848778Z",
   "window_days": 90,
-  "paper_count": 4,
+  "paper_count": 9,
   "weeks": [
+    {
+      "week_end": "2026-04-03",
+      "week_start": "2026-03-27",
+      "paper_count": 5
+    },
     {
       "week_end": "2026-03-27",
       "week_start": "2026-03-20",
@@ -10,6 +15,146 @@
     }
   ],
   "papers": [
+    {
+      "id": "2604.01675",
+      "title": "HOT: Harmonic-Constrained Optimal Transport for Remote Photoplethysmography Domain Adaptation",
+      "abstract": "Remote photoplethysmography (rPPG) enables non-contact physiological measurement from facial videos; however, its practical deployment is often hindered by substantial performance degradation under domain shift. While recent deep learning-based rPPG methods have achieved strong performance on individual datasets, they frequently overfit to appearance-related factors, such as illumination, camera characteristics, and color response, that vary significantly across domains. To address this limitation, we introduce frequency domain adaptation (FDA) as a principled strategy for modeling appearance variation in rPPG. By transferring low-frequency spectral components that encode domain-dependent appearance characteristics, FDA encourages rPPG models to learn invariance to appearance variations while retaining cardiac-induced signals. To further support physiologically consistent alignment under such appearance variation, we propose Harmonic-Constrained Optimal Transport (HOT), which leverages the harmonic property of cardiac signals to guide alignment between original and FDA-transferred representations. Extensive cross-dataset experiments demonstrate that the proposed FDA and HOT framework effectively enhances the robustness and generalization of rPPG models across diverse datasets.",
+      "authors": [
+        "Ba-Thinh Nguyen",
+        "Thi-Duyen Ngo",
+        "Thanh-Trung Huynh",
+        "Thanh-Ha Le",
+        "Huy-Hieu Pham"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-02",
+      "url": "https://arxiv.org/abs/2604.01675",
+      "pdf_url": "https://arxiv.org/pdf/2604.01675",
+      "relevance_score": 57,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video",
+        "cardiac",
+        "domain adaptation"
+      ]
+    },
+    {
+      "id": "2604.01679",
+      "title": "BTS-rPPG: Orthogonal Butterfly Temporal Shifting for Remote Photoplethysmography",
+      "abstract": "Remote photoplethysmography (rPPG) enables contactless physiological sensing from facial videos by analyzing subtle appearance variations induced by blood circulation. However, modeling the temporal dynamics of these signals remains challenging, as many deep learning methods rely on temporal shifting or convolutional operators that aggregate information primarily from neighboring frames, resulting in predominantly local temporal modeling and limited temporal receptive fields. To address this limitation, we propose BTS-rPPG, a temporal modeling framework based on Orthogonal Butterfly Temporal Shifting (BTS). Inspired by the butterfly communication pattern in the Fast Fourier Transform (FFT), BTS establishes structured frame interactions via an XOR-based butterfly pairing schedule, progressively expanding the temporal receptive field and enabling efficient propagation of information across distant frames. Furthermore, we introduce an orthogonal feature transfer mechanism (OFT) that filters the source feature with respect to the target context before temporal shifting, retaining only the orthogonal component for cross-frame transmission. This reduces redundant feature propagation and encourages complementary temporal interaction. Extensive experiments on multiple benchmark datasets demonstrate that BTS-rPPG improves long-range temporal modeling of physiological dynamics and consistently outperforms existing temporal modeling strategies for rPPG estimation.",
+      "authors": [
+        "Ba-Thinh Nguyen",
+        "Thi-Duyen Ngo",
+        "Thanh-Trung Huynh",
+        "Thanh-Ha Le",
+        "Huy-Hieu Pham"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-02",
+      "url": "https://arxiv.org/abs/2604.01679",
+      "pdf_url": "https://arxiv.org/pdf/2604.01679",
+      "relevance_score": 48,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video"
+      ]
+    },
+    {
+      "id": "2604.00534",
+      "title": "FreqPhys: Repurposing Implicit Physiological Frequency Prior for Robust Remote Photoplethysmography",
+      "abstract": "Remote photoplethysmography (rPPG) enables contactless physiological monitoring by capturing subtle skin-color variations from facial videos. However, most existing methods predominantly rely on time-domain modeling, making them vulnerable to motion artifacts and illumination fluctuations, where weak physiological clues are easily overwhelmed by noise. To address these challenges, we propose FreqPhys, a frequency-guided rPPG framework that explicitly leverages physiological frequency priors for robust signal recovery. Specifically, FreqPhys first applies a Physiological Bandpass Filtering module to suppress out-of-band interference, and then performs Physiological Spectrum Modulation together with adaptive spectral selection to emphasize pulse-related frequency components while suppress residual in-band noise. A Cross-domain Representation Learning module further fuses these spectral priors with deep time-domain features to capture informative spatial--temporal dependencies. Finally, a frequency-aware conditional diffusion process progressively reconstructs high-fidelity rPPG signals. Extensive experiments on six benchmarks demonstrate that FreqPhys yields significant improvements over state-of-the-art approaches, particularly under challenging motion conditions. It highlights the importance of explicitly modeling physiological frequency priors. The source code will be released.",
+      "authors": [
+        "Wei Qian",
+        "Dan Guo",
+        "Jinxing Zhou",
+        "Bochao Zou",
+        "Zitong Yu",
+        "Meng Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-01",
+      "url": "https://arxiv.org/abs/2604.00534",
+      "pdf_url": "https://arxiv.org/pdf/2604.00534",
+      "relevance_score": 51,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video",
+        "motion artifact"
+      ]
+    },
+    {
+      "id": "2603.29295",
+      "title": "GazeCLIP: Gaze-Guided CLIP with Adaptive-Enhanced Fine-Grained Language Prompt for Deepfake Attribution and Detection",
+      "abstract": "Current deepfake attribution or deepfake detection works tend to exhibit poor generalization to novel generative methods due to the limited exploration in visual modalities alone. They tend to assess the attribution or detection performance of models on unseen advanced generators, coarsely, and fail to consider the synergy of the two tasks. To this end, we propose a novel gaze-guided CLIP with adaptive-enhanced fine-grained language prompts for fine-grained deepfake attribution and detection (DFAD). Specifically, we conduct a novel and fine-grained benchmark to evaluate the DFAD performance of networks on novel generators like diffusion and flow models. Additionally, we introduce a gaze-aware model based on CLIP, which is devised to enhance the generalization to unseen face forgery attacks. Built upon the novel observation that there are significant distribution differences between pristine and forged gaze vectors, and the preservation of the target gaze in facial images generated by GAN and diffusion varies significantly, we design a visual perception encoder to employ the inherent gaze differences to mine global forgery embeddings across appearance and gaze domains. We propose a gaze-aware image encoder (GIE) that fuses forgery gaze prompts extracted via a gaze encoder with common forged image embeddings to capture general attribution patterns, allowing features to be transformed into a more stable and common DFAD feature space. We build a language refinement encoder (LRE) to generate dynamically enhanced language embeddings via an adaptive-enhanced word selector for precise vision-language matching. Extensive experiments on our benchmark show that our model outperforms the state-of-the-art by 6.56% ACC and 5.32% AUC in average performance under the attribution and detection settings, respectively. Codes will be available on GitHub.",
+      "authors": [
+        "Yaning Zhang",
+        "Linlin Shen",
+        "Zitong Yu",
+        "Chunjie Ma",
+        "Zan Gao"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-03-31",
+      "url": "https://arxiv.org/abs/2603.29295",
+      "pdf_url": "https://arxiv.org/pdf/2603.29295",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "deepfake detection",
+        "face forgery"
+      ]
+    },
+    {
+      "id": "2603.26836",
+      "title": "Reliability-Aware Weighted Multi-Scale Spatio-Temporal Maps for Heart Rate Monitoring",
+      "abstract": "Remote photoplethysmography (rPPG) allows for the contactless estimation of physiological signals from facial videos by analyzing subtle skin color changes. However, rPPG signals are extremely susceptible to illumination changes, motion, shadows, and specular reflections, resulting in low-quality signals in unconstrained environments. To overcome these issues, we present a Reliability-Aware Weighted Multi-Scale Spatio-Temporal (WMST) map that models pixel reliability through the suppression of environmental noises. These noises are modeled using different weighting strategies to focus on more physiologically valid areas. Leveraging the WMST map, we develop an SSL contrastive learning approach based on Swin-Unet, where positive pairs are generated from conventional rPPG signals and temporally expanded WMST maps. Moreover, we introduce a new High-High-High (HHH) wavelet map as a negative example that maintains motion and structural details while filtering out physiological information. Here, our aim is to estimate heart rate (HR), and the experiments on public rPPG benchmarks show that our approach enhances motion and illumination robustness with lower HR estimation error and higher Pearson correlation than existing Self-Supervised Learning (SSL) based rPPG methods.",
+      "authors": [
+        "Arpan Bairagi",
+        "Rakesh Dey",
+        "Siladittya Manna",
+        "Umapada Pal"
+      ],
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "date": "2026-03-27",
+      "url": "https://arxiv.org/abs/2603.26836",
+      "pdf_url": "https://arxiv.org/pdf/2603.26836",
+      "relevance_score": 66,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video",
+        "skin color change",
+        "physiological signal",
+        "spatio-temporal",
+        "contrastive learning"
+      ]
+    },
     {
       "id": "2603.22826",
       "title": "MVRD-Bench: Multi-View Learning and Benchmarking for Dynamic Remote Photoplethysmography under Occlusion",
