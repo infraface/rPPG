@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-04-03T08:38:15.848778Z",
+  "updated_at": "2026-04-10T08:57:51.240369Z",
   "window_days": 90,
-  "paper_count": 9,
+  "paper_count": 12,
   "weeks": [
+    {
+      "week_end": "2026-04-10",
+      "week_start": "2026-04-03",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-04-03",
       "week_start": "2026-03-27",
@@ -15,6 +20,103 @@
     }
   ],
   "papers": [
+    {
+      "id": "2604.06985",
+      "title": "Frailty Estimation in Elderly Oncology Patients Using Multimodal Wearable Data and Multi-Instance Learning",
+      "abstract": "Frailty and functional decline strongly influence treatment tolerance and outcomes in older patients with cancer, yet assessment is typically limited to infrequent clinic visits. We propose a multimodal wearable framework to estimate frailty-related functional change between visits in elderly breast cancer patients enrolled in the multicenter CARDIOCARE study. Free-living smartwatch physical activity and sleep features are combined with ECG-derived heart rate variability (HRV) features from a chest strap and organized into patient-horizon bags aligned to month 3 (M3) and month 6 (M6) follow-ups. Our innovation is an attention-based multiple instance learning (MIL) formulation that fuses irregular, multimodal wearable instances under real-world missingness and weak supervision. An attention-based MIL model with modality-specific multilayer perceptron (MLP) encoders with embedding dimension 128 aggregates variable-length and partially missing longitudinal instances to predict discretized change-from-baseline classes (worsened, stable, improved) for FACIT-F and handgrip strength. Under subject-independent leave-one-subject-out (LOSO) evaluation, the full multimodal model achieved balanced accuracy/F1 of 0.68 +/- 0.08/0.67 +/- 0.09 at M3 and 0.70 +/- 0.10/0.69 +/- 0.08 at M6 for handgrip, and 0.59 +/- 0.04/0.58 +/- 0.06 at M3 and 0.64 +/- 0.05/0.63 +/- 0.07 at M6 for FACIT-F. Ablation results indicated that smartwatch activity and sleep provide the strongest predictive information for frailty-related functional changes, while HRV contributes complementary information when fused with smartwatch streams.",
+      "authors": [
+        "Ioannis Kyprakis",
+        "Vasileios Skaramagkas",
+        "Georgia Karanasiou",
+        "Lampros Lakkas",
+        "Andri Papakonstantinou",
+        "Domen Ribnikar",
+        "Kalliopi Keramida",
+        "Dorothea Tsekoura",
+        "Ketti Mazzocco",
+        "Anastasia Constantinidou",
+        "Konstantinos Marias",
+        "Dimitrios I. Fotiadis",
+        "Manolis Tsiknakis"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-04-08",
+      "url": "https://arxiv.org/abs/2604.06985",
+      "pdf_url": "https://arxiv.org/pdf/2604.06985",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate variability",
+        "hrv",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2604.05748",
+      "title": "SVC 2026: the Second Multimodal Deception Detection Challenge and the First Domain Generalized Remote Physiological Measurement Challenge",
+      "abstract": "Subtle visual signals, although difficult to perceive with the naked eye, contain important information that can reveal hidden patterns in visual data. These signals play a key role in many applications, including biometric security, multimedia forensics, medical diagnosis, industrial inspection, and affective computing. With the rapid development of computer vision and representation learning techniques, detecting and interpreting such subtle signals has become an emerging research direction. However, existing studies often focus on specific tasks or modalities, and models still face challenges in robustness, representation ability, and generalization when handling subtle and weak signals in real-world environments. To promote research in this area, we organize the Subtle visual Challenge, which aims to learn robust representations for subtle visual signals. The challenge includes two tasks: cross-domain multimodal deception detection and remote photoplethysmography (rPPG) estimation. We hope that this challenge will encourage the development of more robust and generalizable models for subtle visual understanding, and further advance research in computer vision and multimodal learning. A total of 22 teams submitted their final results to this workshop competition, and the corresponding baseline models have been released on the \\href{https://sites.google.com/view/svc-cvpr26}{MMDD2026 platform}\\footnote{https://sites.google.com/view/svc-cvpr26}",
+      "authors": [
+        "Dongliang Zhu",
+        "Zhiyi Niu",
+        "Bo Zhao",
+        "Jiajian Huang",
+        "Shuo Ye",
+        "Xun Lin",
+        "Hui Ma",
+        "Taorui Wang",
+        "Jiayu Zhang",
+        "Chunmei Zhu",
+        "Junzhe Cao",
+        "Yingjie Ma",
+        "Rencheng Song",
+        "Albert Clapés",
+        "Sergio Escalera",
+        "Dan Guo",
+        "Zitong Yu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-07",
+      "url": "https://arxiv.org/abs/2604.05748",
+      "pdf_url": "https://arxiv.org/pdf/2604.05748",
+      "relevance_score": 57,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "remote physiological measurement",
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2604.04086",
+      "title": "LAA-X: Unified Localized Artifact Attention for Quality-Agnostic and Generalizable Face Forgery Detection",
+      "abstract": "In this paper, we propose Localized Artifact Attention X (LAA-X), a novel deepfake detection framework that is both robust to high-quality forgeries and capable of generalizing to unseen manipulations. Existing approaches typically rely on binary classifiers coupled with implicit attention mechanisms, which often fail to generalize beyond known manipulations. In contrast, LAA-X introduces an explicit attention strategy based on a multi-task learning framework combined with blending-based data synthesis. Auxiliary tasks are designed to guide the model toward localized, artifact-prone (i.e., vulnerable) regions. The proposed framework is compatible with both CNN and transformer backbones, resulting in two different versions, namely, LAA-Net and LAA-Former, respectively. Despite being trained only on real and pseudo-fake samples, LAA-X competes with state-of-the-art methods across multiple benchmarks. Code and pre-trained weights for LAA-Net\\footnote{https://github.com/10Ring/LAA-Net} and LAA-Former\\footnote{https://github.com/10Ring/LAA-Former} are publicly available.",
+      "authors": [
+        "Dat Nguyen",
+        "Enjie Ghorbel",
+        "Anis Kacem",
+        "Marcella Astrid",
+        "Djamila Aouada"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-05",
+      "url": "https://arxiv.org/abs/2604.04086",
+      "pdf_url": "https://arxiv.org/pdf/2604.04086",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "deepfake detection",
+        "face forgery"
+      ]
+    },
     {
       "id": "2604.01675",
       "title": "HOT: Harmonic-Constrained Optimal Transport for Remote Photoplethysmography Domain Adaptation",
