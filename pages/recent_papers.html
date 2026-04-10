@@ -63,6 +63,25 @@
   <footer class="site-footer">rPPG Research Hub — auto-updated weekly via GitHub Actions</footer>
 </div>
 <script>
+function truncateAuthors() {
+  document.querySelectorAll('.pr-meta').forEach(meta => {
+    const authors = JSON.parse(meta.dataset.authors || '[]');
+    if (!authors.length) return;
+
+    // Start with all authors
+    meta.textContent = authors.join(', ');
+
+    // If overflowing, drop authors one by one until fits, then add "et al."
+    if (meta.scrollWidth > meta.clientWidth) {
+      let n = authors.length;
+      while (n > 1 && meta.scrollWidth > meta.clientWidth) {
+        n--;
+        meta.textContent = authors.slice(0, n).join(', ') + ', et al.';
+      }
+    }
+  });
+}
+
 async function init() {
   const hdr = document.getElementById('hdr');
   const el = document.getElementById('content');
@@ -92,13 +111,14 @@ async function init() {
       ${ps.map(p => {
         const pct = Math.min(100, p.relevance_score || 0);
         const tier = p.relevance_tier || 'low';
-        const authors = (p.authors || []).slice(0, 3).join(', ');
+        const allAuthors = p.authors || [];
+        const authorsJson = JSON.stringify(allAuthors).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
         const kws = (p.matched_keywords || []).slice(0, 3);
         return `<div class="paper-row tier-${tier}">
           <div class="pr-score"><div class="pr-score-num">${p.relevance_score}</div><div class="pr-score-bar"><div class="pr-score-fill" style="width:${pct}%"></div></div></div>
           <div class="pr-body">
             <div class="pr-title"><a href="${p.url}" target="_blank">${p.title}</a></div>
-            <div class="pr-meta">${authors}</div>
+            <div class="pr-meta" data-authors="${authorsJson}">${allAuthors.join(', ')}</div>
             ${kws.length ? `<div class="pr-tags">${kws.map(k => `<span class="pr-kw">${k}</span>`).join('')}</div>` : ''}
           </div>
           <div class="pr-links"><a href="${p.url}" target="_blank">abs</a><a href="${p.pdf_url}" target="_blank">pdf</a></div>
@@ -106,7 +126,15 @@ async function init() {
       }).join('')}
     </div>`;
   }).join('');
+
+  requestAnimationFrame(truncateAuthors);
 }
+
+window.addEventListener('resize', () => {
+  clearTimeout(window._resizeTimer);
+  window._resizeTimer = setTimeout(truncateAuthors, 150);
+});
+
 init();
 </script>
 </body>
