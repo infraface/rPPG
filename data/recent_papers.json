@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-04-10T08:57:51.240369Z",
+  "updated_at": "2026-04-17T09:06:32.461381Z",
   "window_days": 90,
-  "paper_count": 12,
+  "paper_count": 17,
   "weeks": [
+    {
+      "week_end": "2026-04-17",
+      "week_start": "2026-04-10",
+      "paper_count": 5
+    },
     {
       "week_end": "2026-04-10",
       "week_start": "2026-04-03",
@@ -20,6 +25,144 @@
     }
   ],
   "papers": [
+    {
+      "id": "2604.14738",
+      "title": "Personalized and Context-Aware Transformer Models for Predicting Post-Intervention Physiological Responses from Wearable Sensor Data",
+      "abstract": "Consumer wearables enable continuous measurement of physiological data related to stress and recovery, but turning these streams into actionable, personalized stress-management recommendations remains a challenge. In practice, users often do not know how a given intervention, defined as an activity intended to reduce stress, will affect heart rate (HR), heart rate variability (HRV), or inter-beat intervals (BBI) over the next 15 to 120 minutes. We present a framework that predicts post-intervention trajectories and the direction of change for these physiological indicators across time windows. Our methodology combines a Transformer model for multi-horizon trajectories of percent change relative to a pre-intervention baseline, direction-of-change calls (positive, negative, or neutral) at each horizon, and an empirical study using wearable sensor data overlaid with user-tagged events and interventions. This proof of concept shows that personalized post-intervention prediction is feasible. We encourage future integration into stress-management tools for personalized intervention recommendations tailored to each person's day following further validation in larger studies and, where applicable, appropriate regulatory review.",
+      "authors": [
+        "Esther Brown",
+        "Victoria Dean",
+        "Finale Doshi-Velez"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-04-16",
+      "url": "https://arxiv.org/abs/2604.14738",
+      "pdf_url": "https://arxiv.org/pdf/2604.14738",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate variability",
+        "hrv",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2604.11395",
+      "title": "Video-based Heart Rate Estimation with Angle-guided ROI Optimization and Graph Signal Denoising",
+      "abstract": "Remote photoplethysmography (rPPG) enables non-contact heart rate measurement from facial videos, but its performance is significantly degraded by facial motions such as speaking and head shaking. To address this issue, we propose two plug-and-play modules. The Angle-guided ROI Adaptive Optimization module quantifies ROI-Camera angles to refine motion-affected signals and capture global motion, while the Multi-region Joint Graph Signal Denoising module jointly models intra- and inter-regional ROI signals using graph signal processing to suppress motion artifacts. The modules are compatible with reflection model-based rPPG methods and validated on three public datasets. Results show that jointly use markedly reduces MAE, with an average decrease of 20.38\\% over the baseline, while ablation studies confirm the effectiveness of each module. The work demonstrates the potential of angle-guided optimization and graph-based denoising to enhance rPPG performance in motion scenarios.",
+      "authors": [
+        "Gan Pei",
+        "Junhao Ning",
+        "Boqiu Shen",
+        "Yan Zhu",
+        "Menghan Hu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11395",
+      "pdf_url": "https://arxiv.org/pdf/2604.11395",
+      "relevance_score": 90,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "video-based heart rate",
+        "non-contact heart rate",
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "facial video",
+        "signal processing",
+        "motion artifact"
+      ]
+    },
+    {
+      "id": "2604.11156",
+      "title": "rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training",
+      "abstract": "Unsupervised remote photoplethysmography (rPPG) promises to leverage unlabeled video data, but its potential is hindered by a critical challenge: training on low-quality \"in-the-wild\" videos severely degrades model performance. An essential step missing here is to assess the suitability of the videos for rPPG model learning before using them for the task. Existing video quality assessment (VQA) methods are mainly designed for human perception and not directly applicable to the above purpose. In this work, we propose rPPG-VQA, a novel framework for assessing video suitability for rPPG. We integrate signal-level and scene-level analyses and design a dual-branch assessment architecture. The signal-level branch evaluates the physiological signal quality of the videos via robust signal-to-noise ratio (SNR) estimation with a multi-method consensus mechanism, and the scene-level branch uses a multimodal large language model (MLLM) to identify interferences like motion and unstable lighting. Furthermore, we propose a two-stage adaptive sampling (TAS) strategy that utilizes the quality score to curate optimal training datasets. Experiments show that by training on large-scale, \"in-the-wild\" videos filtered by our framework, we can develop unsupervised rPPG models that achieve a substantial improvement in accuracy on standard benchmarks. Our code is available at https://github.com/Tianyang-Dai/rPPG-VQA.",
+      "authors": [
+        "Tianyang Dai",
+        "Ming Chang",
+        "Yan Chen",
+        "Yang Hu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11156",
+      "pdf_url": "https://arxiv.org/pdf/2604.11156",
+      "relevance_score": 48,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "physiological signal"
+      ]
+    },
+    {
+      "id": "2604.10777",
+      "title": "Uncertainty-quantified Pulse Signal Recovery from Facial Video using Regularized Stochastic Interpolants",
+      "abstract": "Imaging Photoplethysmography (iPPG), an optical procedure which recovers a human's blood volume pulse (BVP) waveform using pixel readout from a camera, is an exciting research field with many researchers performing clinical studies of iPPG algorithms. While current algorithms to solve the iPPG task have shown outstanding performance on benchmark datasets, no state-of-the art algorithms, to the best of our knowledge, performs test-time sampling of solution space, precluding an uncertainty analysis that is critical for clinical applications. We address this deficiency though a new paradigm named Regularized Interpolants with Stochasticity for iPPG (RIS-iPPG). Modeling iPPG recovery as an inverse problem, we build probability paths that evolve the camera pixel distribution to the ground-truth signal distribution by predicting the instantaneous flow and score vectors of a time-dependent stochastic process; and at test-time, we sample the posterior distribution of the correct BVP waveform given the camera pixel intensity measurements by solving a stochastic differential equation. Given that physiological changes are slowly varying, we show that iPPG recovery can be improved through regularization that maximizes the correlation between the residual flow vector predictions of two adjacent time windows. Experimental results on three datasets show that RIS-iPPG provides superior reconstruction quality and uncertainty estimates of the reconstruction, a critical tool for the widespread adoption of iPPG algorithms in clinical and consumer settings.",
+      "authors": [
+        "Vineet R. Shenoy",
+        "Cheng Peng",
+        "Rama Chellappa",
+        "Yu Sun"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-12",
+      "url": "https://arxiv.org/abs/2604.10777",
+      "pdf_url": "https://arxiv.org/pdf/2604.10777",
+      "relevance_score": 30,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "blood volume pulse",
+        "bvp",
+        "facial video"
+      ]
+    },
+    {
+      "id": "2604.08990",
+      "title": "ActFER: Agentic Facial Expression Recognition via Active Tool-Augmented Visual Reasoning",
+      "abstract": "Recent advances in Multimodal Large Language Models (MLLMs) have created new opportunities for facial expression recognition (FER), moving it beyond pure label prediction toward reasoning-based affect understanding. However, existing MLLM-based FER methods still follow a passive paradigm: they rely on externally prepared facial inputs and perform single-pass reasoning over fixed visual evidence, without the capability for active facial perception. To address this limitation, we propose ActFER, an agentic framework that reformulates FER as active visual evidence acquisition followed by multimodal reasoning. Specifically, ActFER dynamically invokes tools for face detection and alignment, selectively zooms into informative local regions, and reasons over facial Action Units (AUs) and emotions through a visual Chain-of-Thought. To realize such behavior, we further develop Utility-Calibrated GRPO (UC-GRPO), a reinforcement learning algorithm tailored to agentic FER. UC-GRPO uses AU-grounded multi-level verifiable rewards to densify supervision, query-conditional contrastive utility estimation to enable sample-aware dynamic credit assignment for local inspection, and emotion-aware EMA calibration to reduce noisy utility estimates while capturing emotion-wise inspection tendencies. This algorithm enables ActFER to learn both when local inspection is beneficial and how to reason over the acquired evidence. Comprehensive experiments show that ActFER trained with UC-GRPO consistently outperforms passive MLLM-based FER baselines and substantially improves AU prediction accuracy.",
+      "authors": [
+        "Shifeng Liu",
+        "Zhengye Zhang",
+        "Sirui Zhao",
+        "Xinglong Mao",
+        "Zhehan Kan",
+        "Zhixiang Wei",
+        "Shiwei Wu",
+        "Chaoyou Fu",
+        "Tong Xu",
+        "Enhong Chen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-10",
+      "url": "https://arxiv.org/abs/2604.08990",
+      "pdf_url": "https://arxiv.org/pdf/2604.08990",
+      "relevance_score": 12,
+      "relevance_tier": "low",
+      "matched_keywords": [
+        "face detection",
+        "action unit",
+        "facial action",
+        "facial expression"
+      ]
+    },
     {
       "id": "2604.06985",
       "title": "Frailty Estimation in Elderly Oncology Patients Using Multimodal Wearable Data and Multi-Instance Learning",
