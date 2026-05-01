@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-04-24T09:20:41.496368Z",
+  "updated_at": "2026-05-01T09:23:32.524333Z",
   "window_days": 90,
-  "paper_count": 18,
+  "paper_count": 21,
   "weeks": [
+    {
+      "week_end": "2026-05-01",
+      "week_start": "2026-04-24",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-04-24",
       "week_start": "2026-04-17",
@@ -30,6 +35,91 @@
     }
   ],
   "papers": [
+    {
+      "id": "2604.25680",
+      "title": "Exploring Remote Photoplethysmography for Neonatal Pain Detection from Facial Videos",
+      "abstract": "Unaddressed pain in neonates can lead to adverse effects, including delayed development and slower weight gain, emphasising the need for more objective and reliable pain assessment methods. Hence, automated methods using behavioural and physiological pain indicators have been developed to aid healthcare professionals in the Neonatal ICU. Traditional contact-based methods for physiological parameter estimation are unsuitable for long-term monitoring and increase the risk of spreading diseases like COVID-19. We introduce a novel approach using remote photoplethysmography (rPPG) to estimate pulse signals in a non-contact manner and employ them for neonatal pain detection. The temporal signals acquired from regions-of-interest (ROIs) affected by skin deformations may exhibit lower quality and provide erroneous rPPG signals. Therefore, we incorporated a quality parameter to select the temporal signals obtained from ROIs that are least affected by skin deformations. Further, we employed signal-to-noise ratio as a fitness parameter to extract the rPPG signal corresponding to the clip that is least affected by noise. Experimental findings demonstrate that the rPPG signals provide useful information for neonatal pain detection, and signals extracted from the blue colour channel outperform those extracted from other colour channels. We also show that combining rPPG and audio features provides better results than individual modalities.",
+      "authors": [
+        "Ashutosh Dhamaniya",
+        "Anup Kumar Gupta",
+        "Trishna Saikia",
+        "Puneet Gupta"
+      ],
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "date": "2026-04-28",
+      "url": "https://arxiv.org/abs/2604.25680",
+      "pdf_url": "https://arxiv.org/pdf/2604.25680",
+      "relevance_score": 48,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video"
+      ]
+    },
+    {
+      "id": "2604.25799",
+      "title": "At the Edge of the Heart: ULP FPGA-Based CNN for On-Device Cardiac Feature Extraction in Smart Health Sensors for Astronauts",
+      "abstract": "The convergence of accelerating human spaceflight ambitions and critical terrestrial health monitoring demands is driving unprecedented requirements for reliable, real-time feature extraction on extremely resource-constrained wearable health sensors. We present an ultra-low-power (ULP) Field-Programmable Gate Array (FPGA) based solution for real-time Seismocardiography (SCG) feature classification using Convolutional Neural Networks (CNNs). Our approach combines quantization-aware training with a systolic-array accelerator to enable efficient integer-only inference on the Lattice iCE40UP5K FPGA, which offers an ideal platform for battery-powered deployments -- particularly in space environments -- thanks to its power efficiency and radiation resilience. The implementation achieves a validation accuracy of 98% while consuming only 8.55 mW, completing inference in 95.5 ms with minimal hardware resources (2,861 LUTs and 7 DSP blocks). These results demonstrate that fully on-device SCG-based cardiac feature extraction is feasible on resource-constrained hardware, enabling energy-efficient, autonomous health monitoring for astronauts in long-duration space missions.",
+      "authors": [
+        "Kazi Mohammad Abidur Rahman",
+        "Davis Rakhshan",
+        "Philipp Lütke",
+        "Laura Harms",
+        "Ulf Kulau"
+      ],
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ],
+      "date": "2026-04-28",
+      "url": "https://arxiv.org/abs/2604.25799",
+      "pdf_url": "https://arxiv.org/pdf/2604.25799",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "cardiac",
+        "health monitoring",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2604.22739",
+      "title": "Inter-Stance: A Dyadic Multimodal Corpus for Conversational Stance Analysis",
+      "abstract": "Social interactions dominate our perceptions of the world and shape our daily behavior by attaching social meaning to acts as simple and spontaneous as gestures, facial expressions, voice, and speech. People mimic and otherwise respond to each other's postures, facial expressions, mannerisms, and other verbal and nonverbal behavior, and form appraisals or evaluations in the process. Yet, no publicly-available dataset includes multimodal recordings and self-report measures of multiple persons in social interaction. Dyadic recordings and annotation are lacking. We present a new data corpus of multimodal dyadic interaction (45 dyads, 90 persons) that includes synchronized multi-modality behavior (2D face video, 3D face geometry, thermal spectrum dynamics, voice and speech behavior, physiology (PPG, EDA, heart-rate, blood pressure, and respiration), and self-reported affect of all participants in a communicative interaction scenario. Two types of dyads are included: persons with shared past history and strangers. Annotations include social signals, agreement, disagreement, and neutral stance. With a potent emotion induction, these multimodal data will enable novel modeling of multimodal interpersonal behavior. We present extensive experiments to evaluate multimodal dyadic communication of dyads with and without interpersonal history, and their affect. This new database will make multimodal modeling of social interaction never possible before. The dataset includes 20TB of multimodal data to share with the research community.",
+      "authors": [
+        "Xiang Zhang",
+        "Xiaotian Li",
+        "Taoyue Wang",
+        "Nan Bi",
+        "Xin Zhou",
+        "Cody Zhou",
+        "Zoie Wang",
+        "Andrew Yang",
+        "Yuming Su",
+        "Jeff Cohn",
+        "Qiang Ji",
+        "Lijun Yin"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-04-24",
+      "url": "https://arxiv.org/abs/2604.22739",
+      "pdf_url": "https://arxiv.org/pdf/2604.22739",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "ppg",
+        "face video",
+        "facial expression"
+      ]
+    },
     {
       "id": "2604.17307",
       "title": "Generalizable Face Forgery Detection via Separable Prompt Learning",
