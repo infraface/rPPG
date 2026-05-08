@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-05-01T09:23:32.524333Z",
+  "updated_at": "2026-05-08T09:02:07.381980Z",
   "window_days": 90,
   "paper_count": 21,
   "weeks": [
+    {
+      "week_end": "2026-05-08",
+      "week_start": "2026-05-01",
+      "paper_count": 0
+    },
     {
       "week_end": "2026-05-01",
       "week_start": "2026-04-24",
