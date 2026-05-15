@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-05-08T09:02:07.381980Z",
+  "updated_at": "2026-05-15T10:10:47.636916Z",
   "window_days": 90,
-  "paper_count": 21,
+  "paper_count": 25,
   "weeks": [
+    {
+      "week_end": "2026-05-15",
+      "week_start": "2026-05-08",
+      "paper_count": 4
+    },
     {
       "week_end": "2026-05-08",
       "week_start": "2026-05-01",
@@ -40,6 +45,121 @@
     }
   ],
   "papers": [
+    {
+      "id": "2605.13248",
+      "title": "Compact Latent Manifold Translation: A Parameter-Efficient Foundation Model for Cross-Modal and Cross-Frequency Physiological Signal Synthesis",
+      "abstract": "The analysis of physiological time series, such as electrocardiograms (ECG) and photoplethysmograms (PPG), is persistently hindered by modality and frequency gaps stemming from heterogeneous recording devices. Existing foundation models typically rely on continuous latent spaces, which frequently suffer from severe modality entanglement, lack high-fidelity cross-frequency generative capacity, and impose high computational costs that prohibit edge-device deployment. In this paper, we propose Compact Latent Manifold Translation (CLMT), a highly parameter-efficient (0.09B) unified framework that bridges these gaps through a novel two-stage discrete translation paradigm. First, we introduce a Universal Tokenizer utilizing Hierarchical Residual Vector Quantization (RVQ) to decouple heterogeneous signals into isolated, well-structured discrete latent manifolds, effectively preventing inter-modality interference. Second, a Context-Prompted Latent Translator maps these discrete tokens across modalities by integrating static physiological priors, reframing complex signal synthesis as a pure latent sequence translation task. Extensive evaluations demonstrate that our 0.09B model significantly outperforms massive baselines. In cross-modal PPG-to-ECG synthesis, it resolves temporal phase drift and dramatically improves the clinical R-peak detection F1-score from 0.37 (baseline) to 0.83. Furthermore, in extreme cross-frequency super-resolution (25Hz to 100Hz), it successfully recovers high-frequency diagnostic landmarks, achieving an unprecedented Pearson correlation of 0.9956. By learning a universal discrete language for biological signals with a fraction of the computational footprint, our approach sets a new trajectory for edge-deployable, multi-modal medical foundation models.",
+      "authors": [
+        "Bo Cui",
+        "Xiaowen Song",
+        "Yaowen Zhang",
+        "Shunzhe Zhang",
+        "B. J. F. van Beijnum",
+        "Monique Tabak",
+        "Ying Wang"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "date": "2026-05-13",
+      "url": "https://arxiv.org/abs/2605.13248",
+      "pdf_url": "https://arxiv.org/pdf/2605.13248",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "ppg",
+        "physiological signal"
+      ]
+    },
+    {
+      "id": "2605.10871",
+      "title": "Attractor-Vascular Coupling Theory: Formal Grounding and Empirical Validation for AAMI-Standard Cuffless Blood Pressure Estimation from Smartphone Photoplethysmography",
+      "abstract": "This work proposes Attractor-Vascular Coupling Theory (AVCT), a mathematical framework showing that cardiac attractor geometry encodes blood pressure (BP) information sufficient for AAMI-standard estimation, and validates the theory through a calibrated cuffless BP model using photoplethysmography (PPG). AVCT is grounded in Cardiac Stability Theory and operationalized using Takens delay embedding and attractor morphology extraction. Two theorems, one proposition, and one corollary formally justify the use of PPG attractor features for BP estimation and predict the feature-importance hierarchy. A LightGBM model trained on pulse transit time (PTT) and Cardiac Stability Index (CSI) attractor features under single-point calibration was evaluated using strict leave-one-subject-out cross-validation (LOSO-CV) on 46 subjects from BIDMC ICU (n = 9) and VitalDB surgical data (n = 37), comprising 29,684 windows. The model achieved systolic BP (SBP) mean absolute error (MAE) of 2.05 mmHg and diastolic BP (DBP) MAE of 1.67 mmHg, with correlations r = 0.990 and r = 0.991, satisfying the AAMI/IEEE SP10 requirement of MAE below 5 mmHg. Median per-subject MAE was 1.87/1.54 mmHg, and 70%/76% of subjects individually satisfied AAMI criteria. A PPG-only ablation using nine smartphone attractor features matched the ECG+PPG model within 0.05 mmHg, demonstrating that clinical-grade BP tracking is achievable using only a smartphone camera while surpassing prior generalized LOSO-CV results using fewer sensors. All four AVCT predictions were quantitatively confirmed, with 91.5% error reduction from uncalibrated to calibrated estimation (epsilon_cal = 0.915). Unlike post-hoc explainable AI methods, AVCT predicts features satisfying the architectural faithfulness criterion of the Explainable-AI Trustworthiness (EAT) framework and grounding BP estimation in nonlinear dynamical systems theory.",
+      "authors": [
+        "Timothy Oladunni",
+        "Farouk Ganiyu Adewumi"
+      ],
+      "categories": [
+        "physics.med-ph",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-05-11",
+      "url": "https://arxiv.org/abs/2605.10871",
+      "pdf_url": "https://arxiv.org/pdf/2605.10871",
+      "relevance_score": 18,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "cardiac"
+      ]
+    },
+    {
+      "id": "2605.09579",
+      "title": "Biosignal Fingerprinting: A Cross-Modal PPG-ECG Foundation Model",
+      "abstract": "Cardiovascular disease remains the leading cause of global mortality, yet scalable cardiac monitoring is hindered by the gap between diagnostic-rich ECG and ubiquitous wearable PPG. Bridging this gap requires representations that are compact, transferable across modalities and devices, and deployable without task-specific retraining. Here we introduce biosignal fingerprints: compact latent representations of cardiovascular state derived from a cross-modal foundation model, the Multi-modal Masked Autoencoder (M2AE), trained on over 3.4 million paired ECG and PPG signals. M2AE integrates modality-specific encoders with a shared bottleneck and dual decoders, jointly optimized using reconstruction and cross-modal contrastive objectives, yielding generalizable fingerprints that retain intra- and inter-modality features. Like a biometric fingerprint, these representations uniquely encode an individual's cardiovascular state in a modality-agnostic, privacy-preserving form reusable across clinical tasks without exposing raw waveform data or requiring model retraining. Across 7 downstream tasks, spanning cross-modal reconstruction, cardiovascular disease classification, hypertension detection, mortality prediction, and demographic inference, biosignal fingerprints achieve competitive or superior performance compared to leading domain-specialist foundation models in frozen settings, including an AUROC of 0.974 for five-class CVD classification and 0.877 for hypertension detection, with a maximum improvement of 27.7% in AUROC across 5 classification tasks. Critically, strong performance is maintained with only a single modality, enabling deployment in resource-constrained, single-sensor environments typical of real-world wearable monitoring, with direct implications for continuous cardiovascular monitoring across clinical and consumer health settings.",
+      "authors": [
+        "Zhangdaihong Liu",
+        "Chang Liu",
+        "Fenglin Liu",
+        "Yixuan Chen",
+        "Yang Yang",
+        "David A. Clifton",
+        "Xiao Gu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-05-10",
+      "url": "https://arxiv.org/abs/2605.09579",
+      "pdf_url": "https://arxiv.org/pdf/2605.09579",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "ppg",
+        "cardiac",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2605.12541",
+      "title": "PG-LRF: Physiology-Guided Latent Rectified Flow for Electro-Hemodynamic PPG-to-ECG Generation",
+      "abstract": "Electrocardiography (ECG) is the clinical standard for cardiac assessment but requires dedicated hardware that does not scale to daily-life monitoring. Photoplethysmography (PPG) is ubiquitous in wearables but lacks ECG-specific diagnostic morphology and is corrupted by motion and sensor noise. PPG-to-ECG generation aims to bridge this gap by recovering electrical morphology and timing from peripheral pulse signals. However, existing methods largely rely on statistical alignment and data-driven generation. They fail to explicitly structure the latent space around physiology-aware electro-hemodynamic factors and lack constraints from forward physiological dynamics. To address these challenges, we propose PG-LRF, a physiology-guided latent rectified flow framework. PG-LRF introduces an electro-hemodynamic simulator that co-models ECG and PPG through shared cardiac phase dynamics. Guided by this simulator, a Physiology-Aware AutoEncoder learns a structured electro-hemodynamic latent space. Then we integrate this simulator guidance into a PPG-conditioned latent rectified flow, enforcing ECG-side morphology consistency and ECG-to-PPG forward hemodynamic consistency during generative transport. Experiments on the large-scale MC-MED dataset demonstrate that PG-LRF significantly improves PPG-to-ECG generation and downstream cardiovascular disease classification, proving its ability to generate ECGs that are both signal-faithful and physiologically plausible under the ECG-to-PPG hemodynamic pathway",
+      "authors": [
+        "Xiaoda Wang",
+        "Minxiao Wang",
+        "Kaiqiao Han",
+        "Defu Cao",
+        "Ching Chang",
+        "Yidan Shi",
+        "Runze Yan",
+        "Xiao Luo",
+        "Yan Liu",
+        "Xiao Hu",
+        "Yizhou Sun",
+        "Wei Wang",
+        "Carl Yang"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-05-09",
+      "url": "https://arxiv.org/abs/2605.12541",
+      "pdf_url": "https://arxiv.org/pdf/2605.12541",
+      "relevance_score": 21,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "cardiac",
+        "wearable"
+      ]
+    },
     {
       "id": "2604.25680",
       "title": "Exploring Remote Photoplethysmography for Neonatal Pain Detection from Facial Videos",
