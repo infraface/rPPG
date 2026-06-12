@@ -1,6 +1,11 @@
 {
   "weeks": [
     {
+      "week_end": "2026-06-12",
+      "week_start": "2026-06-05",
+      "paper_count": 3
+    },
+    {
       "week_end": "2026-06-05",
       "week_start": "2026-05-29",
       "paper_count": 4

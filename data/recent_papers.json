@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-06-05T11:01:25.938789Z",
+  "updated_at": "2026-06-12T11:32:07.657320Z",
   "window_days": 90,
-  "paper_count": 29,
+  "paper_count": 32,
   "weeks": [
+    {
+      "week_end": "2026-06-12",
+      "week_start": "2026-06-05",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-06-05",
       "week_start": "2026-05-29",
@@ -60,6 +65,84 @@
     }
   ],
   "papers": [
+    {
+      "id": "2606.12378",
+      "title": "Illumination-Robust Camera-Based Heart-Rate Estimation for Physiological Sensing in Robots",
+      "abstract": "Physiological awareness is important for service, social, and assistive robots that interact with humans in everyday environments. Remote photoplethysmography (rPPG) enables non-contact heart-rate (HR) estimation from an RGB camera, making it a promising sensing modality for robot-mounted vision systems. However, illumination variation remains a major barrier to robust deployment. This paper presents an end-to-end spatial-temporal transformer framework for remote HR estimation on a new dataset with varied illumination. Our estimator integrates PRNet-based 3D face alignment, clip-level illumination augmentation, the Residual Temporal Standardization Module, and controlled hybrid temporal-frequency supervision. The training objective combines a Soft-Shifted Pearson waveform loss with a spectral Kullback-Leibler divergence loss, where a tuned weight ($\\mathbfβ$) controls the contribution of frequency-domain heart-rate guidance. Experiments on a static all-level mix protocol covering three illumination levels show that $\\mathbfβ=5$ provides the strongest result among the tested beta settings, achieving a best-run HR mean absolute error (MAE) of 0.79 bpm and an HR correlation of 0.982. Compared with the PhysFormer baseline evaluated on our dataset, our estimator reduces HR MAE by 93.6 %, while increasing HR correlation from 0.088 to 0.982, making it usable when illumination varies.",
+      "authors": [
+        "Zhi Wei Xu",
+        "Torbjörn E. M. Nordling"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "date": "2026-06-10",
+      "url": "https://arxiv.org/abs/2606.12378",
+      "pdf_url": "https://arxiv.org/pdf/2606.12378",
+      "relevance_score": 42,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2606.07365",
+      "title": "A robust PPG foundation model using multimodal physiological supervision",
+      "abstract": "Photoplethysmography (PPG), a non-invasive measure of changes in blood volume, is widely used in both wearable devices and clinical settings. Recent PPG foundation models either use open-source ICU datasets with pretraining paradigms that require curated data and thus complicate generalization to field-like data, or use closed-source field-like PPG data. In contrast, we propose a PPG foundation model that does not require high-quality or field-like pretraining data, and instead leverages accompanying electrocardiogram and respiratory signals in ICU datasets to select contrastive samples during pretraining. Our approach allows the model to retain and learn from noisy PPG segments, improving robustness at inference. Our model, pretrained on 3x fewer subjects than existing state-of-the-art approaches, achieves performance improvements on 14 out of 15 diverse downstream tasks, including field-like daily activity and heart rate prediction. Our results demonstrate that multimodal supervision can integrate complementary physiological information to improve the robustness of PPG foundation models and enhance their generalization to consumer-grade data.",
+      "authors": [
+        "Eloy Geenjaar",
+        "Vince Calhoun",
+        "Scott Daly",
+        "Gouthaman KV",
+        "Lie Lu",
+        "Trisha Mittal",
+        "Daniel P. Darcy"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-06-05",
+      "url": "https://arxiv.org/abs/2606.07365",
+      "pdf_url": "https://arxiv.org/pdf/2606.07365",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2606.07692",
+      "title": "BCG-FM: A Foundation Model for Ambient Cardiac Health Sensing",
+      "abstract": "Foundation models for wearable biosignals have matched or exceeded supervised specialists across a range of clinical tasks, yet all rely on modalities that require deliberate user action--wearing a device or visiting a sleep lab. We introduce BCG-FM, the first foundation model for ambient mechanical biosignals. A piezoelectric sensor embedded in the bed surface records ballistocardiography (BCG) each night without user effort; we pretrain BCG-FM with participant-level contrastive learning and using a total of 2.75 million hours of nightly recordings from 145,985 individuals, the largest raw-waveform biosignal pretraining corpus to date. Frozen BCG-FM embeddings achieve 3.26-year MAE on biological-age estimation (the lowest reported for any ambient, contactless modality) and yield clinically relevant discrimination across 15 self-reported health conditions and three independent external cohorts. Pretrained representations from only 500 labeled participants outperform a fully supervised baseline trained on 3,372, and representation quality scales log-linearly with contrastive batch size. These results establish ambient, longitudinal mechanical biosignals as a viable modality for health foundation models.",
+      "authors": [
+        "Magnus Ruud Kjaer",
+        "Haejun Han",
+        "Ashish Neupane",
+        "David Q. Sun"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "date": "2026-06-05",
+      "url": "https://arxiv.org/abs/2606.07692",
+      "pdf_url": "https://arxiv.org/pdf/2606.07692",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "cardiac",
+        "wearable",
+        "contrastive learning"
+      ]
+    },
     {
       "id": "2606.03050",
       "title": "FCUS-rPPG: A Fast-Converging Unsupervised Framework for Remote Photoplethysmography via Gradient Oscillation Suppression",
