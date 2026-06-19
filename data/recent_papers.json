@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-06-12T11:32:07.657320Z",
+  "updated_at": "2026-06-19T11:56:49.329801Z",
   "window_days": 90,
-  "paper_count": 32,
+  "paper_count": 35,
   "weeks": [
+    {
+      "week_end": "2026-06-19",
+      "week_start": "2026-06-12",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-06-12",
       "week_start": "2026-06-05",
@@ -65,6 +70,92 @@
     }
   ],
   "papers": [
+    {
+      "id": "2606.19888",
+      "title": "SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models",
+      "abstract": "Modeling long-sequence medical time series data, such as electrocardiograms (ECG), poses significant challenges due to high sampling rates, multichannel signal complexity, inherent noise, and limited labeled data. While recent self-supervised learning (SSL) methods, based on various encoder architectures such as convolutional neural networks, have been proposed to learn representations from unlabeled data, they often fall short in capturing long-range dependencies and noise-invariant features. Structured state space models (S4) excel at long-sequence modeling, but existing S4 architectures fail to capture the unique characteristics of multichannel physiological waveforms. In this work, we propose SL-S4Wave, a self-supervised learning framework that combines contrastive learning with a tailored encoder built on structured state space models. The encoder incorporates multi-layer global convolution using multiscale subkernels, enabling the capture of both fine-grained local patterns and long-range temporal dependencies in noisy, high-resolution multichannel waveforms. Extensive experiments on real-world datasets demonstrate that SL-S4Wave (1) consistently outperforms state-of-the-art supervised and self-supervised baselines in a challenging arrhythmia detection task, (2) achieves high performance with significantly fewer labeled examples, showcasing strong label efficiency, and (3) maintains robust performance on long waveform segments, highlighting its capacity to model complex temporal dynamics in long sequences that most existing approaches fail to efficiently model, and (4) transfers effectively to unseen arrhythmia types, underscoring its robust cross-domain generalization. We additionally evaluate SL-S4Wave on multiple EEG tasks, achieving superior performance over strong baselines, demonstrating generalizability of our approach beyond cardiac waveforms.",
+      "authors": [
+        "Feng Wu",
+        "Harsh Deep",
+        "Eric Lehman",
+        "Sanyam Kapoor",
+        "Guoshuai Zhao",
+        "Rahul Krishnan",
+        "Gari Clifford",
+        "Li-wei H Lehman"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-06-18",
+      "url": "https://arxiv.org/abs/2606.19888",
+      "pdf_url": "https://arxiv.org/pdf/2606.19888",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "cardiac",
+        "domain generalization",
+        "contrastive learning"
+      ]
+    },
+    {
+      "id": "2606.15597",
+      "title": "Fusion-E2Pulse: A Multimodal Event-RGB Fusion Network for Non-contact Pulse Wave Reconstruction",
+      "abstract": "Non-contact pulse wave reconstruction hinges on the precise recovery of waveform morphology, including the dicrotic notch. Conventional Red-Green-Blue (RGB)-based methods, which extract physiological signals from recorded facial videos, are constrained by the integral imaging mechanism of standard cameras, where the exposure process induces a smoothing effect that attenuates subtle vascular pulsation details. Conversely, neuromorphic event cameras, while offering exceptional sensitivity to intensity fluctuations, are inherently susceptible to noise and artifacts induced by minor motion. To exploit the synergy between frame-based integration and event-based differential sensing, we propose a novel multimodal network named Fusion-E2Pulse. This framework utilizes filtered RGB signals as structural priors to suppress motion artifacts, while leveraging the high-sensitivity of event streams to recover fine-grained morphological details. Experimental results demonstrate that Fusion-E2Pulse achieves state-of-the-art performance, effectively balancing noise suppression and morphological fidelity, achieving a mean absolute error of 0.78 bpm for heart rate estimation, a waveform correlation of 0.89, and a systolic phase duration error of 16.74 ms, validating its efficacy in reconstructing fine-grained pathological features.",
+      "authors": [
+        "Qian Feng",
+        "Hao Guo",
+        "Yan Niu",
+        "Zhenhuan Xu",
+        "Yidi Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-06-14",
+      "url": "https://arxiv.org/abs/2606.15597",
+      "pdf_url": "https://arxiv.org/pdf/2606.15597",
+      "relevance_score": 21,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate estimation",
+        "facial video",
+        "physiological signal",
+        "motion artifact"
+      ]
+    },
+    {
+      "id": "2606.15284",
+      "title": "CAP: Towards PPG Universal Representation Learning with Patient-level Supervision",
+      "abstract": "Photoplethysmography (PPG) plays a central role in wearable health monitoring and clinical decision support. Yet existing approaches to universal PPG representation learning largely focus on signal-level objectives and often overlook patient-level health context, which limits generalization to complex clinical tasks and heterogeneous cohorts. To address this gap, we construct a large-scale paired PPG-EHR multimodal dataset by distilling fragmented medical histories and clinical records into cohesive, patient-level electronic health records (EHR). Building on this resource, we propose Clinical Anchored Pretraining for PPG (CAP). During pretraining, CAP performs cross-modal contrastive alignment that anchors PPG representations to patient-level clinical semantics, guiding the encoder beyond waveform fitting toward modeling consistency in a patient's overall physiological state. During downstream adaptation, the pretrained PPG encoder provides clinically grounded representations that strengthen inductive bias and improve robustness and transferability. Experiments demonstrate that CAP consistently outperforms strong baselines on four diverse downstream tasks. CAP achieves a particularly large gain on respiratory rate prediction (up to +87.6% relative improvement over the state-of-the-art baseline) and delivers an average relative +26.7% across all tasks. We further enhance the interpretability of our approach through comprehensive analyses, including ablations and multiple complementary visualizations of the learned representations. The code for our experiments is available at: https://github.com/gody123gody/CAP .",
+      "authors": [
+        "Chenyang He",
+        "Xinyi Shao",
+        "Shun Huang",
+        "Bosong Huang",
+        "Daoqiang Zhang",
+        "Ming Jing",
+        "Cheng Ding"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-06-13",
+      "url": "https://arxiv.org/abs/2606.15284",
+      "pdf_url": "https://arxiv.org/pdf/2606.15284",
+      "relevance_score": 24,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "respiratory rate",
+        "health monitoring",
+        "wearable"
+      ]
+    },
     {
       "id": "2606.12378",
       "title": "Illumination-Robust Camera-Based Heart-Rate Estimation for Physiological Sensing in Robots",
