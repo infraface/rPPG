@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-06-19T11:56:49.329801Z",
+  "updated_at": "2026-06-26T10:40:37.255687Z",
   "window_days": 90,
-  "paper_count": 35,
+  "paper_count": 39,
   "weeks": [
+    {
+      "week_end": "2026-06-26",
+      "week_start": "2026-06-19",
+      "paper_count": 8
+    },
     {
       "week_end": "2026-06-19",
       "week_start": "2026-06-12",
@@ -62,14 +67,235 @@
       "week_end": "2026-04-03",
       "week_start": "2026-03-27",
       "paper_count": 5
-    },
-    {
-      "week_end": "2026-03-27",
-      "week_start": "2026-03-20",
-      "paper_count": 4
     }
   ],
   "papers": [
+    {
+      "id": "2606.26816",
+      "title": "Computational Analysis of Heart Rate Variability in Healthy Adults",
+      "abstract": "Heart Rate Variability (HRV) analysis is a key indicator of cardiac physiological state and aids in disease diagnosis. However, research on HRV parameters in healthy individuals remains limited, and no gold standard exists. This study evaluates HRV indices in 40 healthy adults (20 men, 20 women, aged 30-50) to improve HRV's clinical utility. Using computational methods for signal processing and data analysis, time, frequency, and nonlinear indices were analyzed to address five questions: (1) normality, (2) stability, (3) correlation, (4) reproducibility, and (5) consistency. Key findings: (1) Time-domain and nonlinear indices, particularly global and LF (low frequency), follow normal distributions, with gender differences noted. (2) Most indices are stable except HF (high frequency)-related ones. (3) High correlations in HF-related indices suggest redundancy, indicating only one is necessary in studies. (4) Comparisons with the Fantasia database revealed less than 10% error for most indices, except SD2 and SDNN in women (greater than 15%). (5) Time-domain and nonlinear indices show low inter-study variability, while frequency-domain indices exhibit high variability, limiting cross-study comparisons. The selected indices-ApEn and IRRR (global variability), HRVi and SD2 (LF), and MADRR or rMSSD (HF)-are best suited for accurately representing HRV components and enhancing its clinical and research relevance.",
+      "authors": [
+        "María J. Lado",
+        "Arturo J. Méndez",
+        "Leandro Rodriguez-Liñares",
+        "Baltasar García Pérez-Schofield",
+        "Pedro Cuesta-Morales",
+        "Brais Iglesias-Otero",
+        "Xose A. Vila"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-06-25",
+      "url": "https://arxiv.org/abs/2606.26816",
+      "pdf_url": "https://arxiv.org/pdf/2606.26816",
+      "relevance_score": 21,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate variability",
+        "hrv",
+        "cardiac",
+        "signal processing"
+      ]
+    },
+    {
+      "id": "2606.24336",
+      "title": "TIGER: Taming Identity, Geometry, and Generative Priors for High-Quality Face Video Restoration",
+      "abstract": "Face Video Restoration (FVR) aims to recover high-fidelity facial videos from degraded input while preserving identity and semantic consistency across frames. Existing methods often struggle to simultaneously address three key challenges: identity shift, viewpoint-entangled guidance, and perceptual realism. To tackle these issues, we propose TIGER, a structured tri-prior fusion framework that Tames Identity, Geometry, and gEnerative pRiors for high-quality FVR. Specifically, an Identity Prior is first established by injecting subject-discriminative embeddings into the latent space, effectively anchoring the subject's identity against severe degradations. Then, to provide temporally consistent structural guidance for dynamic videos, TIGER constructs a Geometry Prior by lifting 2D reference cues into a disentangled 3D parameter space, creating a geometric anchor through cross-source parameter fusion. Moreover, to achieve maximum efficiency without compromising realism, we harness the video generation model's Generative Prior through a one-step rectified flow. We further design a progressive three-stage training optimization strategy that refines structural fidelity, textural reconstruction, and distribution-level realism to ensure robust optimization. We also construct a large-scale FVR dataset to facilitate robust training and standardized evaluation. Extensive experiments demonstrate that TIGER achieves state-of-the-art performance in both identity fidelity and temporal stability, delivering a high-quality, efficient and identity-consistent FVR. Project page: https://yzhoulv.github.io/Tiger/.",
+      "authors": [
+        "Yang Zhou",
+        "Wenxue Li",
+        "Peng Zhang",
+        "Yifei Chen",
+        "Fei Wang",
+        "Daiguo Zhou"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-06-23",
+      "url": "https://arxiv.org/abs/2606.24336",
+      "pdf_url": "https://arxiv.org/pdf/2606.24336",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "facial video",
+        "face video"
+      ]
+    },
+    {
+      "id": "2606.23186",
+      "title": "StreamPPG: Low-Latency rPPG Estimation via Consistent Privileged Learning",
+      "abstract": "Remote photoplethysmography (rPPG) estimates the blood volume pulse (BVP) signal from facial videos, enabling contact-free health monitoring. Conventional clip-wise approaches, which use video clips as input, require capturing over one hundred frames before inference, thus introducing several seconds of delay and hindering real-time use. Meanwhile, frame-wise approaches struggle to capture long-range temporal and periodic features of physiological rhythms, and therefore lead to reduced estimation accuracy. To overcome these issues, we propose StreamPPG, a unified architecture that enables low-latency frame-wise physiological signal estimation while achieving competitive accuracy compared with clip-wise approaches. StreamPPG is trained under a consistent privileged learning (CPL) strategy, which leverages ground-truth rPPG signals as privileged information to enhance the model's representation capability. Extensive experiments demonstrate that StreamPPG achieves state-of-the-art accuracy across multiple datasets while maintaining real-time throughput on edge devices.",
+      "authors": [
+        "Yiming Li",
+        "Yihan Yang",
+        "Yuguang Chu",
+        "Yuanhui Hu",
+        "Si-Yuan Cao",
+        "Xiaohan Zhang",
+        "Xiaokai Bai",
+        "Zhe Wu",
+        "Hui-Liang Shen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-06-22",
+      "url": "https://arxiv.org/abs/2606.23186",
+      "pdf_url": "https://arxiv.org/pdf/2606.23186",
+      "relevance_score": 63,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "blood volume pulse",
+        "bvp",
+        "facial video",
+        "physiological signal",
+        "health monitoring"
+      ]
+    },
+    {
+      "id": "2606.23226",
+      "title": "PhysFlow: Frequency Decoupled with Dual-Field Rectified Flow for Remote Photoplethysmography",
+      "abstract": "Remote Photoplethysmography (rPPG) enables contactless pulse estimation from facial videos, serving as a vital tool for health monitoring. However, current deep learning methods often struggle under complex disturbances, particularly varying illumination, facial expressions, and unconstrained head movements. In such scenarios, subtle physiological signals are easily dominated by external interference, making the recovered rPPG waveform unstable and unreliable. One important reason is that most existing methods directly model the rPPG signal in a unified manner, where different signal components are coupled during reconstruction. This makes it difficult to preserve weak pulse-related variations when strong disturbance-induced changes are present. To address this challenge, we propose PhysFlow, a frequency-decoupled dual-field rectified flow framework tailored for robust rPPG estimation. Specifically, the ground-truth rPPG signal is decomposed into trend and amplitude components, which are used as separate supervisory targets. Based on the extracted facial features, PhysFlow learns two component-specific conditional velocity fields to model the two components separately. This design reduces mutual interference between different components and improves the robustness of rPPG reconstruction under complex disturbances. Moreover, the rectified flow formulation enables efficient waveform reconstruction with only a few ordinary differential equation (ODE) integration steps. Extensive experiments on multiple benchmark datasets demonstrate that PhysFlow outperforms state-of-the-art methods in both heart-rate estimation and rPPG waveform reconstruction across diverse challenging scenarios.",
+      "authors": [
+        "Zixu Li",
+        "jianjun Qian",
+        "Hang Shao",
+        "Lei Luo",
+        "Jian Yang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-06-22",
+      "url": "https://arxiv.org/abs/2606.23226",
+      "pdf_url": "https://arxiv.org/pdf/2606.23226",
+      "relevance_score": 60,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video",
+        "physiological signal",
+        "facial expression",
+        "health monitoring"
+      ]
+    },
+    {
+      "id": "2606.22039",
+      "title": "Attractor Domain Theory: A Mathematical Framework for Cardiovascular Attractor Analysis with Wearable Photoplethysmography (PPG) Validation",
+      "abstract": "The cardiovascular system evolves along a bounded trajectory in physiological state space that converges to a compact geometric object: the cardiac attractor. A wearable photoplethysmograph (PPG) or electrocardiograph (ECG) observes a one-dimensional projection of this attractor; by Takens' embedding theorem, delay coordinates reconstruct its full geometry. Three decades of nonlinear cardiac dynamics have extracted Lyapunov exponents, recurrence statistics, and sample entropy from reconstructed attractors, yet no principled account exists of which attractor properties capture which cardiovascular quantities, or why, leaving feature selection as a search problem and negative results uninterpretable. We introduce Attractor Domain Theory (ADT), which proves that the reconstructed attractor's information partitions into three mutually non-redundant domains: the Geometry Domain G (delay embedding; native capability: artifact rejection), the Ergodic Domain S (asymptotic statistical invariants; native capability: stability estimation), and the Variational Domain V (finite-time Lyapunov exponent field; native capability: hemodynamic inference). We prove a Domain Sufficiency Theorem (the Parseval analog for attractor information) and establish that three domains are necessary and sufficient. Geometry Domain validation via the SCSI framework across 176,742 PPG segments from four datasets yields AUC = 0.757 [0.686-0.828] and NPV = 0.966 after correcting three systematic evaluation artifacts (+0.179 net inflation). Ablation confirms C_NL as the dominant Geometry Domain component (Delta AUC = -0.413) and intra-domain redundancy across five components.",
+      "authors": [
+        "Timothy Oladunni",
+        "Farouk Ganiyu Adewumi"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-06-20",
+      "url": "https://arxiv.org/abs/2606.22039",
+      "pdf_url": "https://arxiv.org/pdf/2606.22039",
+      "relevance_score": 21,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "cardiac",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2606.21973",
+      "title": "SPOTR: Spatio-temporal Pooling One-Token Reconstruction for Universal Physiological Signal Self-supervised Learning",
+      "abstract": "Physiological signals such as EEG, ECG, and PPG are widely used in clinical monitoring. Recent self-supervised learning (SSL) methods offer an attractive way to leverage unlabeled recordings, yet they still fall short in practice. In particular, current SSL methods struggle across heterogeneous datasets, often distorting clinically meaningful structures or learning shortcuts from temporal and cross-channel redundancy. Consequently, existing SSL methods often deliver limited performance under linear probing, a lightweight adaptation setting that better matches real-world medical scenarios. Moreover, most Transformer-based SSL models encode a flattened spatiotemporal token sequence, incurring high computation and memory cost, and are typically developed within a single modality. To address these limitations, we present SPOTR (Spatio-temporal Pooling One-Token Reconstruction), a compress-reconstruct pretraining framework that introduces a single-token global bottleneck for physiological signals. SPOTR compresses each waveform into a single-token representation and reconstructs the signal conditioned only on this representation. Meanwhile, SPOTR introduces an efficient spatio-temporal compaction module to reduce computation and memory cost. Pretrained on 20 datasets spanning EEG, iEEG, ECG, and PPG, SPOTR consistently outperforms the strongest baseline under linear probing, improving average AUC by 18.49%, 21.71%, 17.86%, and 4.64%, respectively. Compared with a representative general-purpose time-series foundation model, SPOTR achieves around 78% lower latency and 52% lower peak GPU memory on average. The code can be found at https://github.com/5GYYYYY/SPOTR.",
+      "authors": [
+        "Yiyu Gui",
+        "Mingzhi Chen",
+        "Yuesheng Zhu",
+        "Guibo Luo",
+        "Yuchao Yang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-06-20",
+      "url": "https://arxiv.org/abs/2606.21973",
+      "pdf_url": "https://arxiv.org/pdf/2606.21973",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "ppg",
+        "physiological signal",
+        "spatio-temporal"
+      ]
+    },
+    {
+      "id": "2606.21115",
+      "title": "MS-rPPG: Multi-spectral State Space Model for Remote Photoplethysmography in Driver Monitoring Systems",
+      "abstract": "Remote photoplethysmography (rPPG) is a camera-based technique for measuring physiological signals, particularly cardiac activity. From the remotely measured signals, heart rate can be estimated, which is crucial for health monitoring. In this study, we investigate a driver health monitoring system based on remote heart rate estimation. However, driving environments represent uncontrolled settings where videos are subject to varying illumination conditions and frequent head movements. We introduce MS-rPPG, a multi-spectral framework that combines RGB with near-infrared (NIR) face video to alleviate rPPG estimation under challenging driving conditions. To combine the complementary features from two spectral videos, we propose a cross-spectral linear modulation (CSLM) strategy based on frequency-domain analysis. Moreover, we introduce MS-Mamba, a novel state space model designed to effectively model long-range temporal dependencies while jointly capturing cross-channel interactions between multi-spectral features. We collected a real-world dataset called MS-Drive, which was recorded from 50 participants while driving the vehicle. The proposed method was evaluated on the MR-NIRP Car dataset and MS-Drive datasets. The experimental results indicate that MS-rPPG shows better robustness and heart rate estimation accuracy than previous methods, highlighting its promise for driver health monitoring. The codes are available at github.com/ziiho08/MS-rPPG.",
+      "authors": [
+        "Jiho Choi",
+        "Sang Jun Lee"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "date": "2026-06-19",
+      "url": "https://arxiv.org/abs/2606.21115",
+      "pdf_url": "https://arxiv.org/pdf/2606.21115",
+      "relevance_score": 63,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "face video",
+        "physiological signal",
+        "cardiac",
+        "health monitoring"
+      ]
+    },
+    {
+      "id": "2606.21511",
+      "title": "A Skin-Tone-Aware Dual-Representation Remote Photoplethysmography Framework for Contactless Respiratory Rate Estimation",
+      "abstract": "Respiratory rate is a vital indicator of pulmonary and cardiovascular health, yet conventional methods for estimating respiratory rate are often intrusive due to their contact-based nature. Remote photoplethysmography offers a promising non-contact alternative and has been widely used for heart rate estimation; however, its potential for respiratory rate estimation remains underexplored. Existing methods typically adapt green and chrominance-based projections originally designed for heart rate estimation, which only partially capture respiratory dynamics. Most prior work focuses on the Eulerian representation with fixed or empirically selected RGB projections. To address these gaps, we propose a skin-tone-aware dynamic RGB signal projection that captures respiratory information. To mitigate the sensitivity of the Lagrangian representation to non-respiratory motion, we introduce a denoising network for motion-based remote photoplethysmography signals. We further design a phase-independent contrastive loss that enables Eulerian and Lagrangian representations to collaboratively learn respiratory rate information. We also introduce RR-rPPG, a respiratory-rate facial video dataset with Indian demographic representation. We evaluate the method on RR-rPPG and the publicly available COHFACE dataset, where it consistently outperforms comparison methods and achieves up to a 42.1% reduction in mean absolute error across the evaluated settings. The proposed framework demonstrates the effectiveness of jointly leveraging skin-tone-aware Eulerian and denoised Lagrangian representations for contactless respiratory rate estimation from facial videos. In addition, RR-rPPG contributes a diverse benchmark resource for future research in remote respiratory monitoring. The code and dataset will be made publicly available upon paper acceptance.",
+      "authors": [
+        "Trishna Saikia",
+        "Anup Kumar Gupta",
+        "Puneet Gupta",
+        "Pasi Liljeberg"
+      ],
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "date": "2026-06-19",
+      "url": "https://arxiv.org/abs/2606.21511",
+      "pdf_url": "https://arxiv.org/pdf/2606.21511",
+      "relevance_score": 60,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "respiratory rate",
+        "facial video"
+      ]
+    },
     {
       "id": "2606.19888",
       "title": "SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models",
@@ -926,122 +1152,6 @@
         "physiological signal",
         "spatio-temporal",
         "contrastive learning"
-      ]
-    },
-    {
-      "id": "2603.22826",
-      "title": "MVRD-Bench: Multi-View Learning and Benchmarking for Dynamic Remote Photoplethysmography under Occlusion",
-      "abstract": "Remote photoplethysmography (rPPG) is a non-contact technique that estimates physiological signals by analyzing subtle skin color changes in facial videos. Existing rPPG methods often encounter performance degradation under facial motion and occlusion scenarios due to their reliance on static and single-view facial videos. Thus, this work focuses on tackling the motion-induced occlusion problem for rPPG measurement in unconstrained multi-view facial videos. Specifically, we introduce a Multi-View rPPG Dataset (MVRD), a high-quality benchmark dataset featuring synchronized facial videos from three viewpoints under stationary, speaking, and head movement scenarios to better match real-world conditions. We also propose MVRD-rPPG, a unified multi-view rPPG learning framework that fuses complementary visual cues to maintain robust facial skin coverage, especially under motion conditions. Our method integrates an Adaptive Temporal Optical Compensation (ATOC) module for motion artifact suppression, a Rhythm-Visual Dual-Stream Network to disentangle rhythmic and appearance-related features, and a Multi-View Correlation-Aware Attention (MVCA) for adaptive view-wise signal aggregation. Furthermore, we introduce a Correlation Frequency Adversarial (CFA) learning strategy, which jointly enforces temporal accuracy, spectral consistency, and perceptual realism in the predicted signals. Extensive experiments and ablation studies on the MVRD dataset demonstrate the superiority of our approach. In the MVRD movement scenario, MVRD-rPPG achieves an MAE of 0.90 and a Pearson correlation coefficient (R) of 0.99. The source code and dataset will be made available.",
-      "authors": [
-        "Zuxian He",
-        "Xu Cheng",
-        "Zhaodong Sun",
-        "Haoyu Chen",
-        "Jingang Shi",
-        "Xiaobai Li",
-        "Guoying Zhao"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-03-24",
-      "url": "https://arxiv.org/abs/2603.22826",
-      "pdf_url": "https://arxiv.org/pdf/2603.22826",
-      "relevance_score": 63,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "photoplethysmography",
-        "ppg",
-        "facial video",
-        "skin color change",
-        "physiological signal",
-        "motion artifact"
-      ]
-    },
-    {
-      "id": "2603.19752",
-      "title": "PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Measurement",
-      "abstract": "Remote photoplethysmography (rPPG) enables contactless measurement of heart rate and other vital signs by analyzing subtle color variations in facial skin induced by cardiac pulsation. Current rPPG methods are mainly based on either end-to-end modeling from raw videos or intermediate spatial-temporal map (STMap) representations. The former preserves complete spatiotemporal information and can capture subtle heartbeat-related signals, but it also introduces substantial noise from motion artifacts and illumination variations. The latter stacks the temporal color changes of multiple facial regions of interest into compact two-dimensional representations, significantly reducing data volume and computational complexity, although some high-frequency details may be lost. To effectively integrate the mutual strengths, we propose PhysNeXt, a dual-input deep learning framework that jointly exploits video frames and STMap representations. By incorporating a spatio-temporal difference modeling unit, a cross-modal interaction module, and a structured attention-based decoder, PhysNeXt collaboratively enhances the robustness of pulse signal extraction. Experimental results demonstrate that PhysNeXt achieves more stable and fine-grained rPPG signal recovery under challenging conditions, validating the effectiveness of joint modeling of video and STMap representations. The codes will be released.",
-      "authors": [
-        "Junzhe Cao",
-        "Bo Zhao",
-        "Zhiyi Niu",
-        "Dan Guo",
-        "Yue Sun",
-        "Haochen Liang",
-        "Yong Xu",
-        "Zitong YU"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-03-20",
-      "url": "https://arxiv.org/abs/2603.19752",
-      "pdf_url": "https://arxiv.org/pdf/2603.19752",
-      "relevance_score": 54,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "photoplethysmography",
-        "ppg",
-        "cardiac",
-        "spatio-temporal",
-        "motion artifact"
-      ]
-    },
-    {
-      "id": "2603.20442",
-      "title": "Detecting Neurovascular Instability from Multimodal Physiological Signals Using Wearable-Compatible Edge AI: A Responsible Computational Framework",
-      "abstract": "We propose Melaguard, a multimodal ML framework (Transformer-lite, 1.2M parameters, 4-head self-attention) for detecting neurovascular instability (NVI) from wearable-compatible physiological signals prior to structural stroke pathology. The model fuses heart rate variability (HRV), peripheral perfusion index, SpO2, and bilateral phase coherence into a composite NVI Score, designed for edge inference (WCET <=4 ms on Cortex-M4). NVI - the pre-structural dysregulation of cerebrovascular autoregulation preceding overt stroke - remains undetectable by existing single-modality wearables. With 12.2 million incident strokes annually, continuous multimodal physiological monitoring offers a practical path to community-scale screening. Three-stage independent validation: (1) synthetic benchmark (n=10,000), AUC=0.88 [0.83-0.92]; (2) clinical cohort PhysioNet CVES (n=172; 84 stroke, 88 control) - Transformer-lite achieves AUC=0.755 [0.630-0.778], outperforming LSTM (0.643), Random Forest (0.665), SVM (0.472); HRV-SDNN discriminates stroke (p=0.011); (3) PPG pipeline PhysioNet BIDMC (n=53) -- pulse rate r=0.748 and HRV surrogate r=0.690 vs. ECG ground truth. Cross-modality validation on PPG-BP (n=219) confirms PPG morphology classifies cerebrovascular disease at AUC=0.923 [0.869-0.968]. Multimodal fusion consistently outperforms single-modality baselines. Code: https://github.com/ClevixLab/Melaguard",
-      "authors": [
-        "Truong Quynh Hoa",
-        "Hoang Dinh Cuong",
-        "Truong Xuan Khanh"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "date": "2026-03-20",
-      "url": "https://arxiv.org/abs/2603.20442",
-      "pdf_url": "https://arxiv.org/pdf/2603.20442",
-      "relevance_score": 33,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "ppg",
-        "heart rate variability",
-        "hrv",
-        "pulse rate",
-        "spo2",
-        "physiological signal",
-        "wearable"
-      ]
-    },
-    {
-      "id": "2603.22313",
-      "title": "A Multi-Modal CNN-LSTM Framework with Multi-Head Attention and Focal Loss for Real-Time Elderly Fall Detection",
-      "abstract": "The increasing global aging population has intensified the demand for reliable health monitoring systems, particularly those capable of detecting critical events such as falls among elderly individuals. Traditional fall detection approaches relying on single-modality acceleration data suffer from high false alarm rates, while conventional machine learning methods require extensive hand-crafted feature engineering. This paper proposes a novel multi-modal deep learning framework, MultiModalFallDetector, designed for real-time elderly fall detection using wearable sensors. Our approach integrates multiple innovations: a multi-scale CNN-based feature extractor capturing motion dynamics at varying temporal resolutions; fusion of tri-axial accelerometer, gyroscope, and four-channel physiological signals; incorporation of a multi-head self-attention mechanism for dynamic temporal weighting; adoption of Focal Loss to mitigate severe class imbalance; introduction of an auxiliary activity classification task for regularization; and implementation of transfer learning from UCI HAR to SisFall dataset. Extensive experiments on the SisFall dataset, which includes real-world simulated fall trials from elderly participants (aged 60-85), demonstrate that our framework achieves an F1-score of 98. 7, Recall of 98. 9, and AUC-ROC of 99. 4, significantly outperforming baseline methods including traditional machine learning and standard deep learning approaches. The model maintains sub- 50ms inference latency on edge devices, confirming its suitability for real-time deployment in geriatric care settings.",
-      "authors": [
-        "Lijie Zhou",
-        "Luran Wang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "date": "2026-03-20",
-      "url": "https://arxiv.org/abs/2603.22313",
-      "pdf_url": "https://arxiv.org/pdf/2603.22313",
-      "relevance_score": 15,
-      "relevance_tier": "medium",
-      "matched_keywords": [
-        "physiological signal",
-        "health monitoring",
-        "wearable",
-        "transfer learning"
       ]
     }
   ]
