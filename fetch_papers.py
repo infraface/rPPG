@@ -71,8 +71,16 @@ MAX_PAPERS_PER_WEEK = 50
 RECENT_WINDOW_DAYS = 90
 ARCHIVE_RETENTION_DAYS = 1095
 
-ARXIV_API_URL = "http://export.arxiv.org/api/query"
+ARXIV_API_URL = "https://export.arxiv.org/api/query"
 CATEGORIES = ["cs.CV", "cs.AI"]
+USER_AGENT = "rPPG-Research-Hub/1.0 (https://github.com/infraface/rPPG)"
+MAX_RETRIES = 4
+
+# Keywords are pushed into the arXiv query itself so each week returns tens
+# of candidates instead of every cs.CV/cs.AI submission. "all:" covers title,
+# abstract, authors and comments.
+SEARCH_KEYWORDS = TIER1_KEYWORDS + TIER2_KEYWORDS
+KEYWORD_QUERY = " OR ".join(f'all:"{k}"' for k in SEARCH_KEYWORDS)
 
 # ═══════════════════════════════════════════════════════
 # Scoring
@@ -116,7 +124,10 @@ def fetch_papers_range(start_date, end_date):
     papers = []
 
     for cat in CATEGORIES:
-        query = f"cat:{cat} AND submittedDate:[{start_str} TO {end_str}]"
+        query = (
+            f"cat:{cat} AND ({KEYWORD_QUERY}) "
+            f"AND submittedDate:[{start_str} TO {end_str}]"
+        )
         offset = 0
         batch_size = 200
 
@@ -129,12 +140,29 @@ def fetch_papers_range(start_date, end_date):
                 "sortOrder": "descending",
             }
             print(f"  API: {cat} offset={offset}")
-            try:
-                resp = requests.get(ARXIV_API_URL, params=params, timeout=30)
-                feed = feedparser.parse(resp.text)
-            except Exception as e:
-                print(f"  ⚠ Failed: {e}")
-                break
+
+            feed = None
+            for attempt in range(MAX_RETRIES):
+                try:
+                    resp = requests.get(
+                        ARXIV_API_URL,
+                        params=params,
+                        headers={"User-Agent": USER_AGENT},
+                        timeout=60,
+                    )
+                    resp.raise_for_status()
+                    feed = feedparser.parse(resp.text)
+                    break
+                except Exception as e:
+                    print(f"  ⚠ Attempt {attempt + 1}/{MAX_RETRIES} failed: {e}")
+                    time.sleep(5 * (attempt + 1))
+
+            if feed is None:
+                raise RuntimeError(
+                    f"arXiv API failed for {cat} at offset={offset} after "
+                    f"{MAX_RETRIES} attempts — aborting so the week is not "
+                    f"silently saved as empty"
+                )
 
             if not feed.entries:
                 break
@@ -164,7 +192,10 @@ def fetch_papers_range(start_date, end_date):
                     "pdf_url": f"https://arxiv.org/pdf/{arxiv_id}",
                 })
 
-            if new_count == 0 or len(feed.entries) < batch_size:
+            # Do NOT break on new_count == 0: cs.CV and cs.AI overlap, so a
+            # full page of already-seen IDs is normal and does not mean the
+            # category is exhausted.
+            if len(feed.entries) < batch_size:
                 break
             offset += batch_size
             time.sleep(3)
@@ -219,6 +250,11 @@ def save_archive(weekly_output, week_end):
     archive_dir.mkdir(parents=True, exist_ok=True)
 
     archive_path = archive_dir / f"{week_end.strftime('%Y-%m-%d')}.json"
+
+    if not weekly_output.get("papers") and archive_path.exists():
+        print(f"  ⚠ Refusing to overwrite {archive_path} with 0 papers")
+        return
+
     with open(archive_path, "w", encoding="utf-8") as f:
         json.dump(weekly_output, f, ensure_ascii=False, indent=2)
     print(f"  ✓ Archive: → {archive_path}")
@@ -337,6 +373,9 @@ def main():
 
     raw = fetch_papers_range(start, end)
     scored = score_and_filter(raw)
+
+    if not scored:
+        print("  ⚠ Zero relevant papers this week — verify the arXiv query")
 
     weekly = save_weekly(scored, start, end)
     save_archive(weekly, end)
