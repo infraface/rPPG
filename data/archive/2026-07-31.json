@@ -1,9 +1,119 @@
 {
-  "week_start": "2026-07-24",
+  "week_start": "2026-07-03",
   "week_end": "2026-07-31",
-  "updated_at": "2026-07-31T11:09:05.724361Z",
-  "paper_count": 2,
+  "updated_at": "2026-07-31T11:21:42.925349Z",
+  "paper_count": 6,
   "papers": [
+    {
+      "id": "2607.21776",
+      "title": "Physiological Signals as a Forensic Modality for Talking-Face Deepfake Detection",
+      "abstract": "Talking-face (TF) deepfake generation synthesizes photore- alistic facial video from a static source image and an au- dio signal, producing forgeries that current image-based detectors consistently fail to identify. Unlike face-swap ma- nipulation, TF synthesis has no underlying real video from which to inherit physiological characteristics, making re- mote photoplethysmography (rPPG) a uniquely motivated detection modality for this forgery category. We propose a detection framework that extracts per-video rPPG wave- forms via RhythmFormer and trains a suite of lightweight classifiers to distinguish real from synthesized physiologi- cal signals. Evaluated on the TF subset of Celeb-DF++ un- der a strict subject-independent protocol, where test identi- ties are completely separated from training identities, our 1D ResNet achieves an AUC of 0.806 and EER of 27.8%, placing it within 2.4 points of the best published general- purpose detector (Effort, ICML 2025) while operating ex- clusively on the physiological channel. We document a con- trolled reproduction study of DeepFakesON-Phys, the rep- resentative prior rPPG detector, demonstrating degrada- tion from AUC 0.999 on legacy face-swap data to 0.622 on the TF subset of Celeb-DF++. We further show that detec- tion difficulty is strongly method-dependent: AUC ranges from 0.985 (Real3DPortrait) to 0.690 (IP-LAP) across the seven TF generators, with the ranking remaining perfectly stable across all evaluation protocols. This spread reflects an interpretable physiological property of each generator rather than evaluation noise, and constitutes the primary theoretical contribution of the work.",
+      "authors": [
+        "Othmane Harraq",
+        "Tamer Aldwairi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR",
+        "cs.CV",
+        "cs.MM"
+      ],
+      "date": "2026-07-23",
+      "url": "https://arxiv.org/abs/2607.21776",
+      "pdf_url": "https://arxiv.org/pdf/2607.21776",
+      "relevance_score": 45,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "photoplethysmography",
+        "ppg",
+        "facial video",
+        "physiological signal",
+        "deepfake detection"
+      ]
+    },
+    {
+      "id": "2607.15995",
+      "title": "CanonicalPhys: Pose-Robust Remote Photoplethysmography via Canonical-Space Priors",
+      "abstract": "Deep remote photoplethysmography (rPPG) attains sub-bpm heart-rate error on frontal, stationary faces yet degrades sharply under head pose: on MMPD, the state-of-the-art FactorizePhys backbone's MAE grows $1.60\\times$ from frontal ($|\\text{yaw}|{<}15^\\circ$) to large-yaw ($|\\text{yaw}|{\\geq}45^\\circ$) frames. We argue that pose is a \\emph{coordinate-structural} nuisance rather than a data-augmentation problem: in image coordinates the same pixel maps to different anatomy at different poses, blocking three priors otherwise natural for rPPG, namely the dichromatic reflection model, pulse-phase invariance across skin regions, and the POS/CHROM chromaticity projection, each of which presumes a stable anatomy-to-pixel mapping. We introduce \\textbf{CanonicalPhys}, which prepends a differentiable four-point homography that fixes four facial anchors at canonical positions; in this canonical frame the three priors become expressible as a per-pixel Lambertian weight, a cross-ROI temporal consistency loss, and knowledge distillation from windowed POS, none of which adds trainable parameters over the backbone. At an identical parameter count, CanonicalPhys reduces MMPD's frontal-to-large-yaw MAE degradation from $1.60\\times$ to $1.33\\times$ and flattens the mild-yaw bin from $1.32\\times$ to $1.07\\times$ (across CanonicalPhys variants), with matched cross-dataset MAE reductions of up to $32\\%$ on pose-rich targets. Code: https://github.com/infraface/CanonicalPhys",
+      "authors": [
+        "Hui Wei",
+        "Seyedata Jodeiri Seyedian",
+        "Xiaobai Li",
+        "Guoying Zhao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "date": "2026-07-17",
+      "url": "https://arxiv.org/abs/2607.15995",
+      "pdf_url": "https://arxiv.org/pdf/2607.15995",
+      "relevance_score": 42,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2607.07996",
+      "title": "SpO$_2$ Predictor-Guided Stage-Wise Time-Frequency Reconstruction of Low-Quality Dual-Wavelength PPG for Oxygen Saturation Estimation",
+      "abstract": "Continuous oxygen saturation (SpO$_2$) estimation from wearable photoplethysmography (PPG) is important for long-term health monitoring, but low-quality red and infrared PPG segments can distort waveform morphology and degrade SpO$_2$ prediction accuracy. Existing PPG denoising and reconstruction methods usually optimize waveform fidelity or heart rate characteristics, while time-domain waveform loss on PPG signals alone insufficiently preserves frequency structure and SpO$_2$-relevant information. This paper proposes a SpO$_2$ predictor-guided stage-wise time-frequency reconstruction framework for low-quality dual-wavelength PPG signals. The proposed method first selects high-quality PPG segments to pretrain a SpO$_2$ predictor. A masked reconstruction model is then trained to recover randomly masked PPG regions using a joint reconstruction objective that combines time-domain waveform loss with frequency-domain loss computed from the short-time Fourier transform (STFT). To make the reconstruction task physiologically relevant, the pretrained SpO$_2$ predictor is incorporated as an additional constraint, encouraging the reconstructed PPG to preserve SpO$_2$ information rather than only minimizing waveform reconstruction error. The SpO$_2$ predictor and PPG reconstructor model are optimized through four training stages. Experiments on the public OpenOximetry Repository and a private wearable PPG dataset show that the proposed approach achieves the lowest subject-level MAE, with 2.882\\% on the public dataset and 2.359\\% on the private dataset.",
+      "authors": [
+        "Zequan Liang",
+        "Elahe Hosseini",
+        "Ning Miao",
+        "Mahdi Pirayesh Shirazi Nejad",
+        "Wei Shao",
+        "Ehsan Kourkchi",
+        "Setareh Rafatirad",
+        "Houman Homayoun"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-07-09",
+      "url": "https://arxiv.org/abs/2607.07996",
+      "pdf_url": "https://arxiv.org/pdf/2607.07996",
+      "relevance_score": 18,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "health monitoring",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2607.19726",
+      "title": "An Exploratory Analysis of Pain Localization via Explainable Computational Modeling",
+      "abstract": "Automatic pain localization, which involves identifying the anatomical origin of pain from peripheral physiological signals without patient self-report, is a clinically critical but largely unaddressed problem, particularly for non-verbal patients. This paper presents a systematic comparison of classical feature engineering and deep sequence learning for subject-independent three-class pain localization using the AI4Pain 2026 Challenge dataset, which comprises four synchronously recorded wearable modalities: electrodermal activity, blood volume pulse, respiration, and peripheral oxygen saturation recorded from 65 participants under controlled TENS-induced pain. A 115-dimensional hand-crafted feature set spanning time-domain, frequency-domain, modality-specific, and cross-modal descriptors is benchmarked against end-to-end deep architectures. Extremely Randomized Trees achieves the highest macro-F1 of 0.539, outperforming the best deep model by 7.4 percentage points, with EDA spectral features emerging as the dominant discriminators. A consistent 26-point gap between pain detection (F1\\,=\\,0.815) and localization (F1\\,=\\,0.552) across all models points to a fundamental ceiling imposed by the anatomical diffuseness of peripheral autonomic pathways at 10-second resolution.",
+      "authors": [
+        "Ioannis Kyprakis",
+        "Stefanos Gkikas",
+        "Eric Nichols",
+        "Yu Fang",
+        "Manolis Tsiknakis"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-07-22",
+      "url": "https://arxiv.org/abs/2607.19726",
+      "pdf_url": "https://arxiv.org/pdf/2607.19726",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "blood volume pulse",
+        "physiological signal",
+        "wearable"
+      ]
+    },
     {
       "id": "2607.23406",
       "title": "Blood Pressure Estimation from PPG: A Comparative Study of Direct and ECG-Mediated Deep Learning Pipelines",

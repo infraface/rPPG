@@ -1,9 +1,68 @@
 {
   "week_start": "2026-06-12",
   "week_end": "2026-06-19",
-  "updated_at": "2026-06-19T11:56:49.327376Z",
-  "paper_count": 3,
+  "updated_at": "2026-07-31T11:21:29.000900Z",
+  "paper_count": 5,
   "papers": [
+    {
+      "id": "2606.21115",
+      "title": "MS-rPPG: Multi-spectral State Space Model for Remote Photoplethysmography in Driver Monitoring Systems",
+      "abstract": "Remote photoplethysmography (rPPG) is a camera-based technique for measuring physiological signals, particularly cardiac activity. From the remotely measured signals, heart rate can be estimated, which is crucial for health monitoring. In this study, we investigate a driver health monitoring system based on remote heart rate estimation. However, driving environments represent uncontrolled settings where videos are subject to varying illumination conditions and frequent head movements. We introduce MS-rPPG, a multi-spectral framework that combines RGB with near-infrared (NIR) face video to alleviate rPPG estimation under challenging driving conditions. To combine the complementary features from two spectral videos, we propose a cross-spectral linear modulation (CSLM) strategy based on frequency-domain analysis. Moreover, we introduce MS-Mamba, a novel state space model designed to effectively model long-range temporal dependencies while jointly capturing cross-channel interactions between multi-spectral features. We collected a real-world dataset called MS-Drive, which was recorded from 50 participants while driving the vehicle. The proposed method was evaluated on the MR-NIRP Car dataset and MS-Drive datasets. The experimental results indicate that MS-rPPG shows better robustness and heart rate estimation accuracy than previous methods, highlighting its promise for driver health monitoring. The codes are available at github.com/ziiho08/MS-rPPG.",
+      "authors": [
+        "Jiho Choi",
+        "Sang Jun Lee"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "date": "2026-06-19",
+      "url": "https://arxiv.org/abs/2606.21115",
+      "pdf_url": "https://arxiv.org/pdf/2606.21115",
+      "relevance_score": 63,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "face video",
+        "physiological signal",
+        "cardiac",
+        "health monitoring"
+      ]
+    },
+    {
+      "id": "2606.21511",
+      "title": "A Skin-Tone-Aware Dual-Representation Remote Photoplethysmography Framework for Contactless Respiratory Rate Estimation",
+      "abstract": "Respiratory rate is a vital indicator of pulmonary and cardiovascular health, yet conventional methods for estimating respiratory rate are often intrusive due to their contact-based nature. Remote photoplethysmography offers a promising non-contact alternative and has been widely used for heart rate estimation; however, its potential for respiratory rate estimation remains underexplored. Existing methods typically adapt green and chrominance-based projections originally designed for heart rate estimation, which only partially capture respiratory dynamics. Most prior work focuses on the Eulerian representation with fixed or empirically selected RGB projections. To address these gaps, we propose a skin-tone-aware dynamic RGB signal projection that captures respiratory information. To mitigate the sensitivity of the Lagrangian representation to non-respiratory motion, we introduce a denoising network for motion-based remote photoplethysmography signals. We further design a phase-independent contrastive loss that enables Eulerian and Lagrangian representations to collaboratively learn respiratory rate information. We also introduce RR-rPPG, a respiratory-rate facial video dataset with Indian demographic representation. We evaluate the method on RR-rPPG and the publicly available COHFACE dataset, where it consistently outperforms comparison methods and achieves up to a 42.1% reduction in mean absolute error across the evaluated settings. The proposed framework demonstrates the effectiveness of jointly leveraging skin-tone-aware Eulerian and denoised Lagrangian representations for contactless respiratory rate estimation from facial videos. In addition, RR-rPPG contributes a diverse benchmark resource for future research in remote respiratory monitoring. The code and dataset will be made publicly available upon paper acceptance.",
+      "authors": [
+        "Trishna Saikia",
+        "Anup Kumar Gupta",
+        "Puneet Gupta",
+        "Pasi Liljeberg"
+      ],
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "date": "2026-06-19",
+      "url": "https://arxiv.org/abs/2606.21511",
+      "pdf_url": "https://arxiv.org/pdf/2606.21511",
+      "relevance_score": 60,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "respiratory rate",
+        "facial video"
+      ]
+    },
     {
       "id": "2606.15284",
       "title": "CAP: Towards PPG Universal Representation Learning with Patient-level Supervision",
