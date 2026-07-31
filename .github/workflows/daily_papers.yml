@@ -45,7 +45,10 @@ jobs:
         run: pip install requests feedparser
 
       - name: Fetch and score papers
-        run: python fetch_papers.py
+        # run: python fetch_papers.py
+        run: python fetch_papers.py --start 2026-06-12 --end 2026-06-19   # sanity check
+      - name: recover
+        run: python fetch_papers.py --start 2026-07-03 --end 2026-07-31   # recover the gap
 
       - name: Commit and push
         run: |
