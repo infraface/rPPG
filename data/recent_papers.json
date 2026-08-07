@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-07-31T11:21:42.927806Z",
+  "updated_at": "2026-08-07T08:42:13.283073Z",
   "window_days": 90,
-  "paper_count": 28,
+  "paper_count": 30,
   "weeks": [
+    {
+      "week_end": "2026-08-07",
+      "week_start": "2026-07-31",
+      "paper_count": 2
+    },
     {
       "week_end": "2026-07-31",
       "week_start": "2026-07-03",
@@ -62,14 +67,60 @@
       "week_end": "2026-05-15",
       "week_start": "2026-05-08",
       "paper_count": 4
-    },
-    {
-      "week_end": "2026-05-08",
-      "week_start": "2026-05-01",
-      "paper_count": 0
     }
   ],
   "papers": [
+    {
+      "id": "2608.03597",
+      "title": "FOUND-AF: Benchmarking ECG Foundation Models for Atrial Fibrillation Detection",
+      "abstract": "Atrial fibrillation (AF) is the most common sustained cardiac arrhythmia and is associated with increased risks of stroke, heart failure, and mortality. Recent ECG foundation models offer transferable representations for automated AF detection. However, their relative effectiveness remains unclear because existing studies use different datasets, preprocessing procedures, classifiers, and validation protocols. This study presents FOUND-AF, a unified, leakage-controlled, and deployment-oriented benchmarking framework that evaluates the quality of pretrained ECG representations under identical experimental conditions. Nine publicly available foundation models from five families, including HuBERT-ECG, CLEF, ST-MEM, ECG-JEPA, and ECGFounder, were evaluated across four heterogeneous ECG datasets, namely AFDB, CinC2017, CPSC2021, and LTAFDB. All models were used as frozen feature extractors with standardized preprocessing, model-native resampling, a fixed XGBoost classifier, and recording-level grouped cross-validation. The evaluation included classification metrics, receiver operating characteristic analysis, paired recording-level bootstrap comparisons with Holm correction, embedding-space visualization, and computational efficiency profiling. The ECGFounder model consistently achieved the strongest overall performance across datasets while offering a favorable trade-off between accuracy, model size, inference time, and memory usage. FOUND-AF therefore provides a reproducible framework for selecting ECG foundation models and demonstrates that compact, clinically pretrained encoders can support robust and computationally efficient AF detection across heterogeneous acquisition settings.",
+      "authors": [
+        "Amirhossein Taleshinosrati",
+        "Yangyang Wang",
+        "Atitaya Phoemsuk",
+        "Vahid Abolghasemi",
+        "Naser Hossein Motlagh",
+        "Sadasivan Puthusserypady",
+        "Daniel Teichmann",
+        "Abdolrahman Peimankar"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-08-04",
+      "url": "https://arxiv.org/abs/2608.03597",
+      "pdf_url": "https://arxiv.org/pdf/2608.03597",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "atrial fibrillation detection",
+        "cardiac"
+      ]
+    },
+    {
+      "id": "2608.01661",
+      "title": "FairForensics: Seeing Expressions and Parsing Demographics via Vision-Language Modeling for Generalizable Fair Deepfake Detection",
+      "abstract": "The challenge of fair deepfake detection (FDD) has attracted increasing attention. Existing fairness-enhanced detectors often suffer from suboptimal generalization to unseen manipulations and fairness across demographic groups. They are typically developed and evaluated on demographically imbalanced distributions, resulting in biased predictions toward minority groups. In this paper, we construct a novel demographically balanced FDD benchmark to train and evaluate the fairness of detectors under both balanced and imbalanced population scenarios. Additionally, we introduce a novel expression and demographic perceptual vision-language model, termed FairForensics, for generalizable fair deepfake detection. FairForensics conducts face forgery generalization enhancement and demographic-aware fairness regularization. During face forgery generalization enhancement, built upon the novel observation of significant distribution differences between pristine and forged expression vectors, we design an expression encoder to capture high-level expression-guided forgery patterns, and an expression-perceptual visual encoder that integrates global appearance and expression forgery features while mitigating identity bias using an identity-aware patch perturbation module. Under demographic-aware fairness regularization, we propose a demographic-guided language encoder to extract population-aware global language embeddings, which boosts the decoupling of forgery features from demographic information via vision-language alignment. We devise a population-aware prototype fairness objective to enforce both inter-class separability and intra-class alignment across demographic subgroups. Extensive experiments on our balanced demographic benchmark show that our method achieves the state-of-the-art in terms of generalization and fairness.",
+      "authors": [
+        "Yaning Zhang",
+        "Jiao Wu",
+        "Zan Gao",
+        "Linlin Shen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-08-03",
+      "url": "https://arxiv.org/abs/2608.01661",
+      "pdf_url": "https://arxiv.org/pdf/2608.01661",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "deepfake detection",
+        "face forgery"
+      ]
+    },
     {
       "id": "2607.23406",
       "title": "Blood Pressure Estimation from PPG: A Comparative Study of Direct and ECG-Mediated Deep Learning Pipelines",
