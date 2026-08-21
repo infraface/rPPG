@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-08-14T08:52:57.067499Z",
+  "updated_at": "2026-08-21T08:21:56.334804Z",
   "window_days": 90,
-  "paper_count": 28,
+  "paper_count": 31,
   "weeks": [
+    {
+      "week_end": "2026-08-21",
+      "week_start": "2026-08-14",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-08-14",
       "week_start": "2026-08-07",
@@ -62,14 +67,90 @@
       "week_end": "2026-05-29",
       "week_start": "2026-05-22",
       "paper_count": 0
-    },
-    {
-      "week_end": "2026-05-22",
-      "week_start": "2026-05-15",
-      "paper_count": 0
     }
   ],
   "papers": [
+    {
+      "id": "2608.18711",
+      "title": "EgoHRV: Continuous Heart Rate Variability Estimation from Egocentric Systems for Autonomic Response and Skill Assessment",
+      "abstract": "Egocentric vision systems capture human behavior from visible cues, but overlook physiological indicators of autonomic states such as stress, engagement, and attention. Heart rate variability (HRV) is a widely used noninvasive marker of autonomic regulation under stress. HRV reflects small timing differences between successive heartbeats and has so far been out of reach for egocentric platforms, where motion and noise in gaze video mask exactly this fine-grained timing. We propose EgoHRV, a method that estimates HRV as well as heart rate (HR) from the gaze cameras that are already integrated into egocentric headsets. Our pipeline combines a 3D backbone with a novel low--high decomposition module that extracts the blood volume pulse (BVP) signal from gaze video. Our cross-domain pretraining aligns the frequency-domain representations of contact-based and camera-derived signals. This alignment gives EgoHRV the temporal precision to recover HRV from the subtle fluctuations in gaze video. EgoHRV achieves state-of-the-art accuracy for HR and HRV estimation from egocentric video, and its uncertainty-aware design improves downstream behavioral modeling. Integrating our HRV estimates and confidence measures into EgoExo4D's proficiency estimator raises accuracy by 17.8%. Beyond skill, continuous HRV estimation also opens egocentric systems to stress- and arousal-aware estimation tasks. Code: https://github.com/eth-siplab/EgoHRV",
+      "authors": [
+        "Berken Utku Demirel",
+        "Christian Holz"
+      ],
+      "categories": [
+        "cs.CV",
+        "eess.SP"
+      ],
+      "date": "2026-08-19",
+      "url": "https://arxiv.org/abs/2608.18711",
+      "pdf_url": "https://arxiv.org/pdf/2608.18711",
+      "relevance_score": 24,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate variability",
+        "hrv",
+        "blood volume pulse",
+        "bvp"
+      ]
+    },
+    {
+      "id": "2608.18639",
+      "title": "Change Point--Aware Evaluation and Re-Calibration of PPG-Based Blood Pressure Estimation",
+      "abstract": "Non-invasive continuous blood pressure (BP) monitoring using photoplethysmography (PPG) is a promising alternative to cuff-based measurements. However, existing PPG-based BP estimation studies predominantly rely on aggregated performance metrics (e.g., mean absolute error) computed over entire evaluation intervals, which can obscure model failures during rapid BP fluctuations and limit clinical relevance. In this work, we propose a fluctuation-aware evaluation framework for PPG-based BP estimation based on time-series change point detection. Instead of heuristic BP thresholding (e.g., $Δ\\mathrm{BP} > 10\\mathrm{mmHg}$), we identify BP change points by capturing abrupt distributional shifts in BP trajectories and evaluate estimation performance specifically during these fluctuation periods. Our analysis shows that several state-of-the-art models exhibit substantial performance degradation around BP change points, and that periodic test-time calibration is insufficient to handle such dynamic BP variations. To address this limitation, we introduce a targeted re-calibration framework triggered by detected BP change points, improving robustness without modifying model architectures. To the best of our knowledge, this is the first systematic evaluation of PPG-based BP estimation from a BP change point perspective, highlighting the importance of fluctuation-aware evaluation and calibration for real-world continuous BP monitoring.",
+      "authors": [
+        "Yunwon Tae",
+        "Minje Park",
+        "Gyunho Rho",
+        "Dongjoon Yoo",
+        "Sunghoon Joo"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-08-19",
+      "url": "https://arxiv.org/abs/2608.18639",
+      "pdf_url": "https://arxiv.org/pdf/2608.18639",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2608.15831",
+      "title": "CardiacMamba: Fair and Robust RGB-RF Fusion for Remote Heart Rate Estimation via State Space Modeling",
+      "abstract": "Remote photoplethysmography (rPPG) enables non-contact heart rate (HR) monitoring from facial videos, but RGB-only methods are vulnerable to illumination changes, motion artifacts, and skin-tone-dependent optical reflectance. We propose CardiacMamba, a fair and robust RGB-RF fusion framework that integrates optical facial cues and radio-frequency cardiac motion cues through state space modeling. CardiacMamba introduces a Temporal Difference Mamba Module (TDMM) to enhance subtle RF temporal variations, a bidirectional SSM-based interaction mechanism to align heterogeneous RGB-RF dynamics, and a Channel-wise Fast Fourier Transform (CFFT) module for channel-domain spectral refinement. On the EquiPleth dataset, CardiacMamba achieves state-of-the-art performance with 0.96 bpm MAE, 3.06 bpm RMSE, and 0.97 Pearson correlation, while reducing the observed light-dark skin-tone MAE gap to 0.26 bpm and maintaining robustness under RGB degradation and RF-missing conditions",
+      "authors": [
+        "Bo Zhao",
+        "Zheng Wu",
+        "Yiping Xie",
+        "Zitong YU"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "date": "2026-08-16",
+      "url": "https://arxiv.org/abs/2608.15831",
+      "pdf_url": "https://arxiv.org/pdf/2608.15831",
+      "relevance_score": 78,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "non-contact heart rate",
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "facial video",
+        "cardiac",
+        "motion artifact"
+      ]
+    },
     {
       "id": "2608.13064",
       "title": "Learning Unified Video and Image Representation for Video Face Forgery Detection",
