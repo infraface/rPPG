@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-08-21T08:21:56.334804Z",
+  "updated_at": "2026-08-28T19:37:44.670273Z",
   "window_days": 90,
-  "paper_count": 31,
+  "paper_count": 33,
   "weeks": [
+    {
+      "week_end": "2026-08-28",
+      "week_start": "2026-08-21",
+      "paper_count": 2
+    },
     {
       "week_end": "2026-08-21",
       "week_start": "2026-08-14",
@@ -62,14 +67,63 @@
       "week_end": "2026-06-05",
       "week_start": "2026-05-29",
       "paper_count": 4
-    },
-    {
-      "week_end": "2026-05-29",
-      "week_start": "2026-05-22",
-      "paper_count": 0
     }
   ],
   "papers": [
+    {
+      "id": "2608.27392",
+      "title": "Property-Specific Recoverability from Contact PPG to Camera rPPG under Heterogeneous Observation Conditions",
+      "abstract": "Camera-derived remote photoplethysmography (rPPG) is commonly validated through endpoint accuracy, but endpoint performance does not establish whether other physiological properties of source contact photoplethysmography (PPG) remain preserved recording by recording. We evaluated property-specific PPG-to-rPPG recoverability on 655 recordings from the Multi-Domain Mobile Video Physiology Dataset using CHROM as a fixed camera-rPPG observation pathway. The pathway reproduced the published CHROM correlation regime, with heart-rate MAE of 15.26 bpm and Pearson correlation of 0.0801. Matched-versus-shuffled validation revealed modest recording-specific autocorrelation correspondence, while spectral and recurrence-rate measures showed little matched discrimination. Maximal Lyapunov exponents showed essentially no recording-specific PPG-to-rPPG correspondence, with correlation of 0.0231 and permutation p-value of 0.5584, despite population-level overlap. Endpoint discrepancy exhibited Fitzpatrick-associated heterogeneity after adjustment for lighting and motion, including a Fitzpatrick VI versus III contrast of 9.32 bpm, while dynamical discrepancy showed no corresponding gradient. Aggregate RGB signal-to-noise ratio did not materially account for the endpoint contrast. In subject-held-out analysis, adding motion and lighting consistently reduced MAE across linear, ridge, and random-forest learners relative to rPPG-HR-only calibration, with reductions up to 13.32 percent. These findings show that recoverability is property-specific: physiological properties differ in recording-specific preservation and dependence on observation conditions, and population-level plausibility does not establish preservation of individual recordings.",
+      "authors": [
+        "Timothy Oladunni",
+        "Farouk Ganiyu-Adewumi"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "date": "2026-08-27",
+      "url": "https://arxiv.org/abs/2608.27392",
+      "pdf_url": "https://arxiv.org/pdf/2608.27392",
+      "relevance_score": 42,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2608.24436",
+      "title": "Evaluating Deep Multivariate Imputation Models on Wearable Device Data",
+      "abstract": "Wearable device data enables continuous health monitoring, but suffers from structured missingness: features sharing a physical sensor drop out together. Deep imputation methods such as BRITS and SAITS have seen limited evaluation on multimodal physiological data under realistic missingness, and existing benchmarks use random-point holdout protocols that incorrectly assume missingness is independent across features and time. Using data from a person with epilepsy recorded on a Garmin smartwatch, we develop an evaluation protocol that mines contiguous missing-run templates from training data, stratifies them by per-feature gap-length quantiles, and injects them as block masks with preserved co-missingness structure. A matched training protocol exposing models to the same missingness distribution reduces BRITS's severe-gap MAE by 43%, demonstrating the potential benefit of the proposed evaluation and training protocol within this single-participant dataset. We further extend BRITS with time-of-day encoding and a circadian harmonic channel. No single model dominates: linear interpolation is optimal for slow-moving features over short gaps; extended BRITS achieves lower MAE on dynamic cardiac features in moderate and severe gaps; and SAITS better preserves the ground-truth distribution by Jensen-Shannon distance despite higher MAE. Ultimately, model rankings strongly depend on evaluation designs. By exposing how traditional evaluation methods obscure true model capabilities, our transferable protocol establishes critical steps towards developing better imputation strategies for future multi-sensor wearable datasets.",
+      "authors": [
+        "Skye Goodman",
+        "Roussel Desmond Nzoyem",
+        "Leandro Junges",
+        "Peter Kissack",
+        "Yasser Qureshi",
+        "Amberly Brigden",
+        "Jeff Clark",
+        "Nawid Keshtmand"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.QM"
+      ],
+      "date": "2026-08-25",
+      "url": "https://arxiv.org/abs/2608.24436",
+      "pdf_url": "https://arxiv.org/pdf/2608.24436",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "cardiac",
+        "health monitoring",
+        "wearable"
+      ]
+    },
     {
       "id": "2608.18711",
       "title": "EgoHRV: Continuous Heart Rate Variability Estimation from Egocentric Systems for Autonomic Response and Skill Assessment",
