@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-08-28T19:37:44.670273Z",
+  "updated_at": "2026-09-04T12:16:57.621004Z",
   "window_days": 90,
-  "paper_count": 33,
+  "paper_count": 32,
   "weeks": [
+    {
+      "week_end": "2026-09-04",
+      "week_start": "2026-08-28",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-08-28",
       "week_start": "2026-08-21",
@@ -62,14 +67,90 @@
       "week_end": "2026-06-12",
       "week_start": "2026-06-05",
       "paper_count": 3
-    },
-    {
-      "week_end": "2026-06-05",
-      "week_start": "2026-05-29",
-      "paper_count": 4
     }
   ],
   "papers": [
+    {
+      "id": "2609.03663",
+      "title": "Cross-Dataset Transfer and Reliability of Explainable Artificial Intelligence for RhythmFormer Remote Photoplethysmography",
+      "abstract": "Background. Remote photoplethysmography estimates the cardiovascular pulse from facial video, and its explanations have rested on inspecting heatmaps rather than on quantitative evidence about where a model reads it. We quantified the explanations and asked whether such explanations transfer between datasets and track model performance. Method. We trained eight condition-specific RhythmFormer models on NCKU-rPPG, recorded under three illumination levels, speaking, rotation, and cycling, estimated one heart rate per 5.12-second clip, and set them beside a UBFC-rPPG reproduction. Raw attention, rollout, attention flow, and Beyond Intuition were assessed by skin coverage and the Salience-guided Faithfulness Coefficient (SaCo). Results. Beyond Intuition ranked highest on both datasets, at median coverage 0.789 and SaCo 0.837 on Static level 3 against 0.826 and 0.917 on UBFC-rPPG; lower ranks differed. Within one participant of one condition, neither measure was related to a clip's heart-rate error, waveform correlation, or signal-to-noise ratio on either dataset: 186 of the 252 coefficients fell below $|ρ|=0.10$ and 28 reached $p<0.05$ against the 13 expected by chance. Across the eight scenarios only Beyond Intuition's coverage followed the three performance measures, at $ρ=-0.43$, $+0.57$, and $+0.43$, while the attention-only methods' SaCo ran opposite to each. It failed at 40 lux alone, its median coverage falling to 0.180 and its median SaCo to $-0.178$, whereas motion degraded the estimates far more without such a drop. Conclusions. Skin coverage and SaCo carry information complementary to the performance measures rather than a proxy for them: attributing to the skin does not guarantee an accurate estimate. What an attribution reveals about a condition is where the model looks rather than how faithfully its map is ordered.",
+      "authors": [
+        "Louis Chen",
+        "Torbjörn E. M. Nordling"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "date": "2026-09-03",
+      "url": "https://arxiv.org/abs/2609.03663",
+      "pdf_url": "https://arxiv.org/pdf/2609.03663",
+      "relevance_score": 48,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "facial video"
+      ]
+    },
+    {
+      "id": "2608.31013",
+      "title": "TSPFN: A Temporal Tabular Foundation Model for Physiological Time Series Classification",
+      "abstract": "Designing models that generalize effectively in low- to medium-data regimes remains a primary challenge in medical machine learning, particularly for physiological time-series classification. While tabular foundation models such as TabPFN offer an attractive alternative to conventional fine-tuning through in-context learning, they are not designed to capture the temporal dependencies inherent to physiological signals. ~In this paper, we introduce TSPFN, a foundation model that redesigns TabPFN's architecture for time series data. TSPFN integrates structured temporal representations and positional embeddings to capture intra-sample temporal and channel dependencies. To fully leverage its spatio-temporal design, the model is pretrained on 140,000 real-world physiological time series across multiple medical domains. This yields a unified, generalizable framework capable of learning the specificities of medical time series. Experiments across diverse physiological benchmarks demonstrate that TSPFN consistently outperforms standard tabular baselines and TabPFN, and achieves superior cross-domain generalization compared to specialized deep time-series models. All our experiments, ablation studies, and pre-processing scheme are publicly available at https://github.com/Jeremstym/TSPFN",
+      "authors": [
+        "Jérémie Stym-Popper",
+        "Clément Rambour",
+        "Federica Granese",
+        "Nicolas Thome",
+        "Olivier Bernard"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "date": "2026-08-31",
+      "url": "https://arxiv.org/abs/2608.31013",
+      "pdf_url": "https://arxiv.org/pdf/2608.31013",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "physiological signal",
+        "spatio-temporal",
+        "domain generalization"
+      ]
+    },
+    {
+      "id": "2608.29663",
+      "title": "PhysVR: Vision-Language Model Guided Interference-aware Temporal Feature Refinement for Remote Physiological Measurement",
+      "abstract": "Remote photoplethysmography (rPPG) enables contactless physiological measurement from facial videos, yet its subtle pulse-related variations are easily affected by illumination variation, head motion, facial blur, and region-of-interest instability. Existing methods mainly suppress interference during feature learning, while whether the learned temporal features remain affected by interference and how to further suppress such interference before rPPG estimation are rarely examined. To address this limitation, we propose PhysVR, a vision-language model guided interference-aware temporal feature refinement framework for rPPG estimation. Specifically, a physiological backbone produces global temporal features and a coarse rPPG prediction, from which signal-derived physiological reliability evidence is constructed from local temporal characteristics. In parallel, a frozen vision-language model processes sampled facial frames under an interference-oriented prompt, and an evidence head extracts visual interference evidence from the VLM output. Temporal cross-attention integrates the physiological and visual evidence with the global temporal features to construct interference-aware temporal context. Guided by this context, a shared temporal correction unit performs general refinement, while four interference-specific experts selectively suppress different interference through adaptive routing. The refined temporal features are then used for final rPPG estimation. Extensive experiments on five public benchmarks demonstrate that PhysVR consistently outperforms representative methods under both intra-dataset and cross-dataset evaluation protocols.",
+      "authors": [
+        "Zixu Li",
+        "Jianjun Qian",
+        "Hang Shao",
+        "Daoheng Li",
+        "Lei Luo",
+        "Jian Yang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-08-30",
+      "url": "https://arxiv.org/abs/2608.29663",
+      "pdf_url": "https://arxiv.org/pdf/2608.29663",
+      "relevance_score": 63,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "remote physiological measurement",
+        "photoplethysmography",
+        "ppg",
+        "facial video"
+      ]
+    },
     {
       "id": "2608.27392",
       "title": "Property-Specific Recoverability from Contact PPG to Camera rPPG under Heterogeneous Observation Conditions",
@@ -857,104 +938,6 @@
         "cardiac",
         "wearable",
         "contrastive learning"
-      ]
-    },
-    {
-      "id": "2606.03050",
-      "title": "FCUS-rPPG: A Fast-Converging Unsupervised Framework for Remote Photoplethysmography via Gradient Oscillation Suppression",
-      "abstract": "Remote photoplethysmography (rPPG) enables non-contact extraction of blood volume pulse (BVP) signals using consumer-grade cameras. Recent unsupervised rPPG methods learn BVP representations without requiring ground-truth physiological annotations, yet their optimization is often hindered by noisy and unstable gradients, resulting in slow convergence and limited cross-domain generalization. In this paper, we propose FCUS-rPPG, a fast-converging unsupervised rPPG framework with strong generalization capability. Motivated by the observation that BVP representations exhibit both multi-spectral covariation and low-dimensional manifold structure, we design a spectrally shared backbone that facilitates BVP feature disentanglement while improving optimization efficiency. To jointly enhance convergence stability and generalization performance, we further develop a unified optimization framework operating at the gradient, loss-landscape, and feature-representation levels. Specifically, a post-verification masking mechanism filters out misleading gradients according to the weak-amplitude physiological prior of BVP signals; a perturbation-based loss landscape smoothing strategy steers optimization toward more generalizable flat minima; and a noise-aware null-space regularization constrains feature updates to the orthogonal complement of the noise subspace, thereby mitigating noise-induced representation drift. Extensive experiments on five datasets demonstrate that FCUS-rPPG requires only one training epoch, whereas existing methods typically require tens to hundreds of epochs. Notably, FCUS-rPPG consistently achieves state-of-the-art (SOTA) performance in cross-dataset evaluations. This study provides an efficient and robust solution to the real-world deployment of unsupervised rPPG. The source code will be publicly available at https://github.com/JiaJieLee/FCUS-rPPG.",
-      "authors": [
-        "Jiajie Li",
-        "Yu Liu",
-        "Rencheng Song",
-        "Xun Chen",
-        "Juan Cheng"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-06-02",
-      "url": "https://arxiv.org/abs/2606.03050",
-      "pdf_url": "https://arxiv.org/pdf/2606.03050",
-      "relevance_score": 57,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "photoplethysmography",
-        "ppg",
-        "blood volume pulse",
-        "bvp",
-        "domain generalization"
-      ]
-    },
-    {
-      "id": "2606.04198",
-      "title": "Spatial Artifact Coherence Determines Codec Robustness in Patch-Based rPPG",
-      "abstract": "Remote photoplethysmography (rPPG) achieves low heart-rate error on uncompressed benchmarks yet is deployed over compressed video channels in telehealth, neonatal ICU, and driver fatigue applications. No prior work identifies the physical quantity determining when spatial decomposition outperforms global-projection methods under codec compression. We propose Spatial Artifact Coherence (SAC), defined as the ratio of off-diagonal to diagonal energy in the 4x4 inter-patch Green-channel covariance matrix (bandpass 0.75-2.5 Hz), and the PatchPCA algorithm family (four codec-aware rPPG algorithms). We evaluate 280 subjects across three public datasets, 11 codec degradation variants (MPEG-4, H.265, H.264, JPEG, chroma subsampling), and 13 algorithms via Wilcoxon tests (BH-FDR, q < 0.05, 904 tests). SAC explains 93.8% of between-variant variance in PCA advantage (r = +0.969), with zero overlap between codec families: non-MPEG-4 variants cluster at SAC 0.10-0.18 with 84-90% PCA win rates, while MPEG-4 variants cluster at SAC 0.48-0.59 with 61% win rate and a 5.8x reduction in mean improvement. Within subjects, 78% confirm the expected pattern (p < 10^-22, dz = 0.73). Within-variant subject-level SAC correlation is r = +0.099, confirming SAC classifies codec families rather than predicting individual outcomes. MPEG-4's effect is structural (macroblock DCT geometry, not noise amplitude), governed by source codec state, not resolution. P-Hybrid is identified as the most deployment-robust algorithm. Two necessary operating conditions for PatchPCA advantage are established: SAC < 0.30 and low-to-moderate motion, directly ruling out raw-to-MPEG-4 transcoding pipelines. SAC provides a physically grounded metric for codec-aware rPPG algorithm selection in clinical remote monitoring systems.",
-      "authors": [
-        "Achraf Ben Ahmed"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-06-02",
-      "url": "https://arxiv.org/abs/2606.04198",
-      "pdf_url": "https://arxiv.org/pdf/2606.04198",
-      "relevance_score": 42,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "photoplethysmography",
-        "ppg"
-      ]
-    },
-    {
-      "id": "2606.03802",
-      "title": "Template Collapse and Information-Theoretic Limits in Camera rPPG Pulse Morphology Restoration",
-      "abstract": "Objective: Consumer face camera remote photoplethysmography (rPPG) enables passive cardiovascular monitoring, but whether single-cycle waveform morphology encoding arterial stiffness biomarkers is recoverable from this measurement has not been characterised. Methods: We evaluated 16 architectures spanning six families on 153 subjects across three datasets, introducing cross-subject Pearson r to distinguish subject-specific recovery from template collapse. Results: No architecture recovered subject-specific morphology (cross-subject r range 0.773--0.9999; ground-truth ceiling 0.601). Supervised Contrastive (SupCon) converged to log N = 4.844, constituting the strongest available empirical evidence that no discriminative morphological structure is extractable from single-cycle rPPG by the encoder families tested. The VAE decoder restores population-level harmonic content absent from the rPPG input (H2/H1: 0.310 output vs. 0.275 input), generalising zero-shot to UBFC (r = +0.708); a directional hallucination gap (p = 0.150) suggests partial signal reading. Anti-collapse objectives fail when input carries no discriminative structure. Significance: Consumer cameras cannot encode individual arterial morphology; cross-subject r is a necessary collapse diagnostic for waveform reconstruction benchmarks.",
-      "authors": [
-        "Achraf Ben Ahmed"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-06-02",
-      "url": "https://arxiv.org/abs/2606.03802",
-      "pdf_url": "https://arxiv.org/pdf/2606.03802",
-      "relevance_score": 42,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "photoplethysmography",
-        "ppg"
-      ]
-    },
-    {
-      "id": "2606.00170",
-      "title": "UF-AMA: A unified framework for cross-domain emotion recognition via adaptive multimodal alignment",
-      "abstract": "In recent years, emotion recognition based on physiological signals such as electroencephalogram (EEG) has gained considerable attention, as internal physiological data offer greater objectivity and reliability compared to external behavioral data like facial expressions. However, due to distribution shifts caused by individual and contextual differences, along with variations in sample quality across modalities, constructing a cross-domain multimodal emotion recognition model with high generalization and robustness remains a key challenge. In this study, we propose a Unified Framework with Adaptive Multimodal Alignment (UF-AMA) to address cross-subject and cross-session emotion recognition using multimodal physiological signals. First, we construct a cross-modal feature fusion network comprising Transformer encoders and multi-head cross-attention modules, enabling the deep integration of EEG signals and eye-tracking data. Subsequently, we introduce a confidence-aware screening mechanism that dynamically assesses the predictive reliability of each modality branch on target domain samples, partitions samples into different quality subsets, and accordingly applies global consistency alignment and cross-modal distillation. Finally, we propose a multi-level domain adaptation framework that jointly optimizes the marginal and conditional distributions of both local modality-specific and global fusion features, thereby reducing cross-domain distribution shifts at multiple granularities. Extensive experiments on the SEED and SEED-IV datasets demonstrate that UF-AMA achieves state-of-the-art (SOTA) performance in both cross-subject and cross-session tasks. The source code is available at: https://github.com/BetterCoderLab/UF-AMA.",
-      "authors": [
-        "Zheng Wang",
-        "Shuo Wang",
-        "Junhong Wang"
-      ],
-      "categories": [
-        "cs.HC",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "date": "2026-05-29",
-      "url": "https://arxiv.org/abs/2606.00170",
-      "pdf_url": "https://arxiv.org/pdf/2606.00170",
-      "relevance_score": 12,
-      "relevance_tier": "medium",
-      "matched_keywords": [
-        "physiological signal",
-        "facial expression",
-        "domain adaptation"
       ]
     }
   ]
