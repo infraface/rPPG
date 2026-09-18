@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-09-11T12:21:59.363548Z",
+  "updated_at": "2026-09-18T12:23:16.587187Z",
   "window_days": 90,
-  "paper_count": 29,
+  "paper_count": 28,
   "weeks": [
+    {
+      "week_end": "2026-09-18",
+      "week_start": "2026-09-11",
+      "paper_count": 2
+    },
     {
       "week_end": "2026-09-11",
       "week_start": "2026-09-04",
@@ -62,14 +67,68 @@
       "week_end": "2026-06-26",
       "week_start": "2026-06-19",
       "paper_count": 8
-    },
-    {
-      "week_end": "2026-06-19",
-      "week_start": "2026-06-12",
-      "paper_count": 5
     }
   ],
   "papers": [
+    {
+      "id": "2609.19719",
+      "title": "SeetaPsych v1.0: An Open-source Computer Vision Toolkit for Behavior-based Psychological Measurement",
+      "abstract": "Automated visual analysis opens new avenues for behavior--based psychological measurement. Nevertheless, existing technological modules are typically scattered across task specific systems with heterogeneous interfaces and disparate deployment requirements. In this work, we present SeetaPsych v1.0, an open source, unified and extensible computer vision toolkit designed to extract psychologically relevant signals from facial images and/or face based videos. The current release encompasses four major core modules aiming at behavior--based physiological perception: unified face based emotion analysis (simultaneous facial expression recognition, facial action unit detection, and valence--arousal estimation), camera based heart rate estimation, screen point--of--gaze estimation, and scene gaze following. A suite of auxiliary preprocessing modules for human centric visual analysis is also included, comprising face detection, facial landmark detection, and head detection. These functionalities are encapsulated within a modular Pipeline/Runner architecture that automatically resolves attribute dependencies, constructs computation graphs, and support intermediate result sharing among modules. SeetaPsych provides standardized Python APIs to facilitate reproducible, large scale analyses, alongside an interactive WebUI for rapid, code--free method evaluation. Overall, SeetaPsych offers an integrated and accessible visual measurement platform for research in psychology, behavioral science, human computer interaction, and related fields.",
+      "authors": [
+        "Jiabei Zeng",
+        "Chiqin Li",
+        "Kaizhou Li",
+        "Fei Chang",
+        "Yong Li",
+        "Yuanhao Zhao",
+        "Dan Han",
+        "Wenqiang Yang",
+        "Xilin Chen",
+        "Shiguang Shan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.19719",
+      "pdf_url": "https://arxiv.org/pdf/2609.19719",
+      "relevance_score": 18,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "heart rate estimation",
+        "face detection",
+        "action unit",
+        "facial action",
+        "facial expression"
+      ]
+    },
+    {
+      "id": "2609.12668",
+      "title": "Beyond Ambiguous Visual Cues: Studying Physiological Disruptions and Cross-Modal Inconsistencies in Deepfake Videos",
+      "abstract": "Recent deepfake detection studies increasingly suggest remote photoplethysmography (rPPG) signals as an authenticity cue. However, existing benchmarks lack physiological ground truth, and current detectors underexplore the cross-level relationship between facial features and physiological dynamics, often relying on late fusion or rPPG features alone. In this paper, we construct high-fidelity deepfake manipulations on established real rPPG datasets (COHFACE and UBFC-rPPG) to investigate how forgeries disrupt natural physiological signals and facial behavior at the same time. Building on this analysis, we propose a bidirectional co-attention fusion detector that jointly models rPPG and facial behavior tokens. This mechanism explicitly captures the cross-level dependencies between pulse dynamics and facial motion to learn a robust, joint authenticity representation. Extensive experiments using a subject-disjoint 5-fold evaluation demonstrate the superiority of our approach. Achieving a 92.80\\% AUC on constructed datasets using face swapping and 96.78\\% AUC on motion transfer, our model outperforms both the rPPG-only single modality baseline and the best feature-level fusion methods. Furthermore, transfer-learning result of the fusion detector on Celeb-DF-v2 while keeping both feature extractors fixed achieves 91.20\\% accuracy and 86.08\\% AUC, which suggests applicability under target-domain adaptation.",
+      "authors": [
+        "Chenxi Yang",
+        "Yassine Ouzar",
+        "Larbi Boubchir"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-09-11",
+      "url": "https://arxiv.org/abs/2609.12668",
+      "pdf_url": "https://arxiv.org/pdf/2609.12668",
+      "relevance_score": 57,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "physiological signal",
+        "deepfake detection",
+        "domain adaptation"
+      ]
+    },
     {
       "id": "2609.03663",
       "title": "Cross-Dataset Transfer and Reliability of Explainable Artificial Intelligence for RhythmFormer Remote Photoplethysmography",
@@ -774,92 +833,6 @@
         "heart rate estimation",
         "respiratory rate",
         "facial video"
-      ]
-    },
-    {
-      "id": "2606.19888",
-      "title": "SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models",
-      "abstract": "Modeling long-sequence medical time series data, such as electrocardiograms (ECG), poses significant challenges due to high sampling rates, multichannel signal complexity, inherent noise, and limited labeled data. While recent self-supervised learning (SSL) methods, based on various encoder architectures such as convolutional neural networks, have been proposed to learn representations from unlabeled data, they often fall short in capturing long-range dependencies and noise-invariant features. Structured state space models (S4) excel at long-sequence modeling, but existing S4 architectures fail to capture the unique characteristics of multichannel physiological waveforms. In this work, we propose SL-S4Wave, a self-supervised learning framework that combines contrastive learning with a tailored encoder built on structured state space models. The encoder incorporates multi-layer global convolution using multiscale subkernels, enabling the capture of both fine-grained local patterns and long-range temporal dependencies in noisy, high-resolution multichannel waveforms. Extensive experiments on real-world datasets demonstrate that SL-S4Wave (1) consistently outperforms state-of-the-art supervised and self-supervised baselines in a challenging arrhythmia detection task, (2) achieves high performance with significantly fewer labeled examples, showcasing strong label efficiency, and (3) maintains robust performance on long waveform segments, highlighting its capacity to model complex temporal dynamics in long sequences that most existing approaches fail to efficiently model, and (4) transfers effectively to unseen arrhythmia types, underscoring its robust cross-domain generalization. We additionally evaluate SL-S4Wave on multiple EEG tasks, achieving superior performance over strong baselines, demonstrating generalizability of our approach beyond cardiac waveforms.",
-      "authors": [
-        "Feng Wu",
-        "Harsh Deep",
-        "Eric Lehman",
-        "Sanyam Kapoor",
-        "Guoshuai Zhao",
-        "Rahul Krishnan",
-        "Gari Clifford",
-        "Li-wei H Lehman"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "date": "2026-06-18",
-      "url": "https://arxiv.org/abs/2606.19888",
-      "pdf_url": "https://arxiv.org/pdf/2606.19888",
-      "relevance_score": 12,
-      "relevance_tier": "medium",
-      "matched_keywords": [
-        "cardiac",
-        "domain generalization",
-        "contrastive learning"
-      ]
-    },
-    {
-      "id": "2606.15597",
-      "title": "Fusion-E2Pulse: A Multimodal Event-RGB Fusion Network for Non-contact Pulse Wave Reconstruction",
-      "abstract": "Non-contact pulse wave reconstruction hinges on the precise recovery of waveform morphology, including the dicrotic notch. Conventional Red-Green-Blue (RGB)-based methods, which extract physiological signals from recorded facial videos, are constrained by the integral imaging mechanism of standard cameras, where the exposure process induces a smoothing effect that attenuates subtle vascular pulsation details. Conversely, neuromorphic event cameras, while offering exceptional sensitivity to intensity fluctuations, are inherently susceptible to noise and artifacts induced by minor motion. To exploit the synergy between frame-based integration and event-based differential sensing, we propose a novel multimodal network named Fusion-E2Pulse. This framework utilizes filtered RGB signals as structural priors to suppress motion artifacts, while leveraging the high-sensitivity of event streams to recover fine-grained morphological details. Experimental results demonstrate that Fusion-E2Pulse achieves state-of-the-art performance, effectively balancing noise suppression and morphological fidelity, achieving a mean absolute error of 0.78 bpm for heart rate estimation, a waveform correlation of 0.89, and a systolic phase duration error of 16.74 ms, validating its efficacy in reconstructing fine-grained pathological features.",
-      "authors": [
-        "Qian Feng",
-        "Hao Guo",
-        "Yan Niu",
-        "Zhenhuan Xu",
-        "Yidi Li"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-06-14",
-      "url": "https://arxiv.org/abs/2606.15597",
-      "pdf_url": "https://arxiv.org/pdf/2606.15597",
-      "relevance_score": 21,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "heart rate estimation",
-        "facial video",
-        "physiological signal",
-        "motion artifact"
-      ]
-    },
-    {
-      "id": "2606.15284",
-      "title": "CAP: Towards PPG Universal Representation Learning with Patient-level Supervision",
-      "abstract": "Photoplethysmography (PPG) plays a central role in wearable health monitoring and clinical decision support. Yet existing approaches to universal PPG representation learning largely focus on signal-level objectives and often overlook patient-level health context, which limits generalization to complex clinical tasks and heterogeneous cohorts. To address this gap, we construct a large-scale paired PPG-EHR multimodal dataset by distilling fragmented medical histories and clinical records into cohesive, patient-level electronic health records (EHR). Building on this resource, we propose Clinical Anchored Pretraining for PPG (CAP). During pretraining, CAP performs cross-modal contrastive alignment that anchors PPG representations to patient-level clinical semantics, guiding the encoder beyond waveform fitting toward modeling consistency in a patient's overall physiological state. During downstream adaptation, the pretrained PPG encoder provides clinically grounded representations that strengthen inductive bias and improve robustness and transferability. Experiments demonstrate that CAP consistently outperforms strong baselines on four diverse downstream tasks. CAP achieves a particularly large gain on respiratory rate prediction (up to +87.6% relative improvement over the state-of-the-art baseline) and delivers an average relative +26.7% across all tasks. We further enhance the interpretability of our approach through comprehensive analyses, including ablations and multiple complementary visualizations of the learned representations. The code for our experiments is available at: https://github.com/gody123gody/CAP .",
-      "authors": [
-        "Chenyang He",
-        "Xinyi Shao",
-        "Shun Huang",
-        "Bosong Huang",
-        "Daoqiang Zhang",
-        "Ming Jing",
-        "Cheng Ding"
-      ],
-      "categories": [
-        "eess.SP",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "date": "2026-06-13",
-      "url": "https://arxiv.org/abs/2606.15284",
-      "pdf_url": "https://arxiv.org/pdf/2606.15284",
-      "relevance_score": 24,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "photoplethysmography",
-        "ppg",
-        "respiratory rate",
-        "health monitoring",
-        "wearable"
       ]
     }
   ]
