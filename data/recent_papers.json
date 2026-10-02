@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-09-25T13:02:21.484132Z",
+  "updated_at": "2026-10-02T14:10:43.340252Z",
   "window_days": 90,
-  "paper_count": 22,
+  "paper_count": 26,
   "weeks": [
+    {
+      "week_end": "2026-10-02",
+      "week_start": "2026-09-25",
+      "paper_count": 4
+    },
     {
       "week_end": "2026-09-25",
       "week_start": "2026-09-18",
@@ -62,14 +67,122 @@
       "week_end": "2026-07-10",
       "week_start": "2026-07-03",
       "paper_count": 1
-    },
-    {
-      "week_end": "2026-07-03",
-      "week_start": "2026-06-26",
-      "paper_count": 0
     }
   ],
   "papers": [
+    {
+      "id": "2609.38913",
+      "title": "FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement",
+      "abstract": "Remote photoplethysmography (rPPG) enables non-contact physiological measurement but remains vulnerable to domain shifts from illumination, motion, and sensors. We propose \\textbf{FLOW (Feature-Level Optimal Warping)}, an \\emph{optimal transport--driven} framework for domain-generalized rPPG. FLOW integrates a \\textbf{Temporal Refinement Module (TRM)} to stabilize temporal dynamics and a \\textbf{Prototype-based Cross-Temporal Optimal Transport (PCOT)} module to achieve domain-invariant alignment via learnable prototypes.Beyond feature alignment, FLOW employs soft cross-temporal correspondence modeling that aligns temporal features in a flexible manner, allowing the model to respect and preserve the intrinsic rhythmic patterns of physiological signals. Moreover, the lightweight design of our modules allows seamless integration into existing end-to-end rPPG architectures without additional preprocessing. Two regularization terms further enforce source consistency and identity preservation. Theoretically, we derive a generalization bound under conditional optimal transport. Extensive experiments across four rPPG benchmarks show that FLOW achieves state-of-the-art cross-domain performance with lightweight design and strong physiological fidelity.",
+      "authors": [
+        "Bo Zhao",
+        "Junzhe Cao",
+        "Dan Guo",
+        "Dongmin Huang",
+        "Wenjin Wang",
+        "Tao Tan",
+        "Yue Sun",
+        "Zitong YU"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-09-30",
+      "url": "https://arxiv.org/abs/2609.38913",
+      "pdf_url": "https://arxiv.org/pdf/2609.38913",
+      "relevance_score": 63,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "remote physiological measurement",
+        "photoplethysmography",
+        "ppg",
+        "physiological signal"
+      ]
+    },
+    {
+      "id": "2609.36607",
+      "title": "Pixel-wise Exposure for Highly Robust In-Vehicle Remote-PPG",
+      "abstract": "Remote photoplethysmography (rPPG) offers a promising non-contact solution for heart rate monitoring, yet its real-world robustness is fundamentally limited by an inherent hardware limitation: existing camera exposure control paradigms, whether fixed or auto-exposure, impose a uniform exposure time across all pixels within a frame. In high-dynamic-range scenes such as automotive cabins with strong directional sunlight, this spatially invariant exposure constraint inevitably leads to localized facial overexposure or underexposure, irreversibly corrupting the subtle pulsatile signals essential for rPPG at the point of capture, a physical degradation that no downstream algorithm can recover. To overcome this bottleneck, we propose PixExpo (Pixel-wise Exposure), a \"temporal-for-spatial\" framework that sequentially captures frames under a predefined cyclic exposure schedule and performs non-iterative pixel-wise fusion. At each pixel location, PixExpo selects the observation closest to an rPPG-motivated target intensity. This criterion seeks to reduce local saturation and severe underexposure rather than optimize perceptual appearance. PixExpo requires no sensor modification but assumes programmable frame-level exposure control. We validate the proposed PixExpo framework using our newly introduced MEX-Drive dataset, comprising 48 participants under real-world driving conditions. Experimental results demonstrate that PixExpo outperforms manufacture-default auto-exposure methods, reducing the mean absolute error (MAE) by 7.21 bpm (from 13.94 to 6.73 bpm) and increasing the success rate by 37.29 percentage points (from 25.95% to 63.24%) across challenging driving scenarios.",
+      "authors": [
+        "Jieying Wang",
+        "Xinqi Cai",
+        "Caifeng Shan",
+        "Wenjin Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-09-29",
+      "url": "https://arxiv.org/abs/2609.36607",
+      "pdf_url": "https://arxiv.org/pdf/2609.36607",
+      "relevance_score": 42,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2609.33790",
+      "title": "Multi-Aperture PPG with MAPIS: Spatial Optical and Temporal Coherence Fields",
+      "abstract": "Conventional reflectance photoplethysmography (PPG) typically reduces tissue optical responses to one or a few detector channels. Matrix Pinhole Image Sensing (MAPIS) instead simultaneously samples multiple aperture-dependent optical signals. We analyzed 44 recordings of 30 seconds each from a single MAPIS device to characterize the spatial relationships among DC intensity, pulsatile AC, perfusion index (PI), and temporal coherence across Red and infrared channels. AC increased sublinearly with DC at both wavelengths, resulting in higher PI toward lower-DC apertures, consistent with a first-order relative path-sensitivity interpretation. A second counterintuitive spatial trend was observed in temporal coherence: lower-DC and lower-AC apertures exhibited higher autocorrelation and greater cardiac-periodic spectral concentration. IR signals also showed consistently higher temporal coherence than corresponding Red signals. These observations demonstrate that multi-aperture PPG resolves reproducible spatial relationships among optical intensity, fractional pulsatile sensitivity, and waveform coherence that are largely averaged together in conventional single-channel PPG. The present study establishes within-device relationships and motivates controlled studies of the underlying photon-path mechanisms.",
+      "authors": [
+        "Shuguang Wang",
+        "Yuanjing Wang"
+      ],
+      "categories": [
+        "physics.optics",
+        "cs.CV"
+      ],
+      "date": "2026-09-27",
+      "url": "https://arxiv.org/abs/2609.33790",
+      "pdf_url": "https://arxiv.org/pdf/2609.33790",
+      "relevance_score": 18,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "cardiac"
+      ]
+    },
+    {
+      "id": "2609.33516",
+      "title": "PPG-LM: A Photoplethysmography-Language Model with Multi-Level Clinical Alignment",
+      "abstract": "Photoplethysmography (PPG) is widely recorded by clinical monitors and consumer wearables, providing a scalable source of continuous physiological information. These recordings offer an opportunity for physiological assessment at scale, but realizing this potential requires models to learn from both signal-derived physiological supervision and broader clinical context captured in electronic health records (EHRs). This involves aligning information spanning local observations, care events, and entire visits with PPG representations at corresponding temporal scales. However, existing PPG foundation models primarily rely on task-specific prediction heads, while the medical knowledge of large language models does not necessarily translate into waveform understanding. To bridge this gap, we introduce PPG-LM, the first PPG-language model family to learn physiological representations from both signal-derived supervision and broader clinical context captured in EHRs. To construct clinically grounded captions, we develop an automatic captioning pipeline that generates segment-, event-, and visit-level descriptions from signal measurements and structured EHR records. We then learn from these pairs through a two-stage framework that first establishes segment-language correspondence through contrastive learning and waveform-conditioned captioning, then extends alignment to events and visits through time-aware aggregation and temporal statement matching. Pretrained on approximately 73k hours of PPG, PPG-LM supports language-based recognition, cross-modal retrieval, and segment captioning. Experiments on MC-MED, MIMIC-III, and VitalDB show improved retrieval and caption factuality over language-model baselines and gains over PPG and time-series foundation models on multiple clinical prediction tasks.",
+      "authors": [
+        "Xiaoda Wang",
+        "Minxiao Wang",
+        "Maxwell A Xu",
+        "Patrick Langer",
+        "Kaiqiao Han",
+        "Defu Cao",
+        "Xiao Luo",
+        "Yuzhe Yang",
+        "Yan Liu",
+        "Xiao Hu",
+        "Yizhou Sun",
+        "Wei Wang",
+        "Carl Yang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-09-27",
+      "url": "https://arxiv.org/abs/2609.33516",
+      "pdf_url": "https://arxiv.org/pdf/2609.33516",
+      "relevance_score": 18,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "wearable",
+        "contrastive learning"
+      ]
+    },
     {
       "id": "2609.28539",
       "title": "$\\unicode{x1F493}$Heartian: Physiology-Aware Relightable Gaussian Head Avatar",
