@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-10-02T14:10:43.340252Z",
+  "updated_at": "2026-10-09T14:43:08.134261Z",
   "window_days": 90,
-  "paper_count": 26,
+  "paper_count": 29,
   "weeks": [
+    {
+      "week_end": "2026-10-09",
+      "week_start": "2026-10-02",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-10-02",
       "week_start": "2026-09-25",
@@ -62,14 +67,97 @@
       "week_end": "2026-07-17",
       "week_start": "2026-07-10",
       "paper_count": 0
-    },
-    {
-      "week_end": "2026-07-10",
-      "week_start": "2026-07-03",
-      "paper_count": 1
     }
   ],
   "papers": [
+    {
+      "id": "2610.12010",
+      "title": "PulseBound: Future-Beat State Forecasting Under an Explicit Information Boundary",
+      "abstract": "Predictive representation learning from photoplethysmography (PPG) can violate causal information access even with causal attention, as normalization, nonlocal transforms, or companion views may depend on withheld samples. We introduce PulseBound, a PPG representation learner combining physiologically structured future-beat prediction with an explicit stored-window information boundary. A content-independent cutoff separates the visible prefix from the prediction target. Prefix-only normalization, suffix replacement before derived-view construction, and aligned masking ensure that encoder inputs depend only on the visible prefix and cutoff. This yields stored-suffix invariance: with fixed model state, randomness, prefix, and cutoff, changing the stored suffix cannot change the forecast context. A shared horizon-conditioned head predicts nine rhythm and morphology descriptors for up to four extractor-valid future beats, using elementwise validity masks; optional ECG-derived pulse-arrival-time supervision is restricted to training. On MIMIC and VitalDB groups held out from PulseBound backbone pretraining, PulseBound reduces nine-state transformed-space MAE relative to last-visible-beat persistence by 28.06% and 22.22%, respectively, with gains in MAE, MAE-Skill, and Spearman correlation across all 40 source-cutoff-horizon cells. In a separate comparison of seven models on 13 downstream tasks, PulseBound achieves the best mean on nine frozen linear-probe and seven full-fine-tuning tasks. Stored-suffix interventions cause zero recorded changes in forecast contexts or predictions, with zero suffix-input gradients at audited precision under the stored-window interface. These findings separate three testable aspects of predictive physiological representation learning: information access, supervised future structure, and transfer.",
+      "authors": [
+        "Chenyang Xu",
+        "Donglin Xie",
+        "Xi Xiang",
+        "Xiaoyu Li",
+        "Yufan Lu",
+        "Jiqiun Gao",
+        "Yi Zhao",
+        "Xin-Yi Li",
+        "Guangpu Zhu",
+        "Zijian Wang",
+        "Xiwen Yang",
+        "Dezhen Wang",
+        "Lin Chen",
+        "Shenda Hong",
+        "Leilei Li"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-10-08",
+      "url": "https://arxiv.org/abs/2610.12010",
+      "pdf_url": "https://arxiv.org/pdf/2610.12010",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg"
+      ]
+    },
+    {
+      "id": "2610.08510",
+      "title": "Cylindrical Geodesic Flow Matching for Quasiperiodic Physiological Signal Transformation",
+      "abstract": "Paired translation between quasiperiodic physiological waveforms (i.e., recovering a target oscillatory signal from the source) is central to the interpretation of cardiovascular signals derived from wearables placed at different body locations. This source-to-target mapping in these problems carries inherent geometric structure: the phase wraps around the cycle and must be treated as a circular variable, the amplitude remains strictly positive, and the beat-to-beat alignment can drift unpredictably across cycles and subjects. While deep neural networks have been used for phase estimation and complex-valued signal modeling, prior work does not explicitly learn phase transport between paired signals. Consequently, neither endpoint-supervised regression nor the standard affine path used in flow matching accounts for this phase--amplitude structure. We introduce \\emph{cylindrical geodesic flow matching} for paired cardiovascular waveform translation. We show that the standard affine path used in flow matching distorts intermediate amplitude and instantaneous frequency when interpolating between quasiperiodic signals; replacing it with a closed-form geodesic on the phase--amplitude cylinder eliminates these artifacts and converts each training pair into dense, geometry-consistent velocity supervision. On zero-shot photoplethysmography and limited-support seismocardiography adaptation benchmarks, our method consistently outperforms interpolation baselines and matches or exceeds direct supervised prediction, reducing Hilbert Transform, $L_2$, and Dynamic Time Warping distance by up to ${\\sim}15\\%$ over the strongest competing baseline. These results suggest that bridge geometry is a critical inductive bias for flow matching on oscillatory signal translation.",
+      "authors": [
+        "Onur Selim Kilic",
+        "Afra Nawar",
+        "Cem Okan Yaldiz",
+        "Michael J. Cho",
+        "Ahmet Rasim Emirdagi",
+        "Demet Tangolar",
+        "Amirali Aghazadeh",
+        "Amit J. Shah",
+        "Omer T. Inan"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-10-06",
+      "url": "https://arxiv.org/abs/2610.08510",
+      "pdf_url": "https://arxiv.org/pdf/2610.08510",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "physiological signal",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2610.06823",
+      "title": "Deep Learning for Sleep Heart Rate Estimation from Accelerometers: Toward Population-Scale Cardiac Insight Without Optical Sensors",
+      "abstract": "Large longitudinal cohorts often contain wrist accelerometry without optical heart-rate sensing, motivating recovery of cardiac information from motion signals already collected during sleep. We present SeqSmoother, a transformer-based temporal corrector for sleep heart rate (HR) estimation from wrist accelerometry. SeqSmoother combines spectral descriptors with an intermediate Nightbeat-derived frequency anchor and a physics-motivated sub-harmonic feature designed to identify harmonic frequency lock-on. All inference-time features are derived from wrist accelerometry, while ECG is used only to construct reference HR labels and training-label quality weights. We evaluate SeqSmoother using 13 participant-disjoint held-out folds and compare it with the official Nightbeat implementation under a matched 60-s window and 15-s step protocol. Across all out-of-fold predictions, SeqSmoother achieved a participant-macro MAE of 1.60 bpm. On Nightbeat-retained matched intervals, Nightbeat achieved lower absolute error than SeqSmoother (0.615 versus 1.091 bpm), while SeqSmoother provided estimates over a larger portion of the eligible recording; Nightbeat produced final estimates for 72.85% of the SeqSmoother-eligible out-of-fold grid. Separately, the proposed sub-harmonic ratio achieved an AUROC of 0.972 for identifying reference-defined harmonic lock-on candidates. These findings reveal an accuracy-availability trade-off between learned temporal modeling and quality-gated signal processing while providing empirical support for a physics-informed approach to identifying frequency-tracking failures in accelerometer-based sleep HR estimation.",
+      "authors": [
+        "Tanbin Islam Rohan",
+        "Pranjol Sen Gupta",
+        "Tanusree Debi",
+        "Nazmus Sakib"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-10-05",
+      "url": "https://arxiv.org/abs/2610.06823",
+      "pdf_url": "https://arxiv.org/pdf/2610.06823",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate estimation",
+        "cardiac",
+        "signal processing"
+      ]
+    },
     {
       "id": "2609.38913",
       "title": "FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement",

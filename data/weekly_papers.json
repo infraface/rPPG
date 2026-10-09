@@ -1,120 +1,95 @@
 {
-  "week_start": "2026-09-25",
-  "week_end": "2026-10-02",
-  "updated_at": "2026-10-02T14:10:43.337499Z",
-  "paper_count": 4,
+  "week_start": "2026-10-02",
+  "week_end": "2026-10-09",
+  "updated_at": "2026-10-09T14:43:08.131389Z",
+  "paper_count": 3,
   "papers": [
     {
-      "id": "2609.38913",
-      "title": "FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement",
-      "abstract": "Remote photoplethysmography (rPPG) enables non-contact physiological measurement but remains vulnerable to domain shifts from illumination, motion, and sensors. We propose \\textbf{FLOW (Feature-Level Optimal Warping)}, an \\emph{optimal transport--driven} framework for domain-generalized rPPG. FLOW integrates a \\textbf{Temporal Refinement Module (TRM)} to stabilize temporal dynamics and a \\textbf{Prototype-based Cross-Temporal Optimal Transport (PCOT)} module to achieve domain-invariant alignment via learnable prototypes.Beyond feature alignment, FLOW employs soft cross-temporal correspondence modeling that aligns temporal features in a flexible manner, allowing the model to respect and preserve the intrinsic rhythmic patterns of physiological signals. Moreover, the lightweight design of our modules allows seamless integration into existing end-to-end rPPG architectures without additional preprocessing. Two regularization terms further enforce source consistency and identity preservation. Theoretically, we derive a generalization bound under conditional optimal transport. Extensive experiments across four rPPG benchmarks show that FLOW achieves state-of-the-art cross-domain performance with lightweight design and strong physiological fidelity.",
+      "id": "2610.08510",
+      "title": "Cylindrical Geodesic Flow Matching for Quasiperiodic Physiological Signal Transformation",
+      "abstract": "Paired translation between quasiperiodic physiological waveforms (i.e., recovering a target oscillatory signal from the source) is central to the interpretation of cardiovascular signals derived from wearables placed at different body locations. This source-to-target mapping in these problems carries inherent geometric structure: the phase wraps around the cycle and must be treated as a circular variable, the amplitude remains strictly positive, and the beat-to-beat alignment can drift unpredictably across cycles and subjects. While deep neural networks have been used for phase estimation and complex-valued signal modeling, prior work does not explicitly learn phase transport between paired signals. Consequently, neither endpoint-supervised regression nor the standard affine path used in flow matching accounts for this phase--amplitude structure. We introduce \\emph{cylindrical geodesic flow matching} for paired cardiovascular waveform translation. We show that the standard affine path used in flow matching distorts intermediate amplitude and instantaneous frequency when interpolating between quasiperiodic signals; replacing it with a closed-form geodesic on the phase--amplitude cylinder eliminates these artifacts and converts each training pair into dense, geometry-consistent velocity supervision. On zero-shot photoplethysmography and limited-support seismocardiography adaptation benchmarks, our method consistently outperforms interpolation baselines and matches or exceeds direct supervised prediction, reducing Hilbert Transform, $L_2$, and Dynamic Time Warping distance by up to ${\\sim}15\\%$ over the strongest competing baseline. These results suggest that bridge geometry is a critical inductive bias for flow matching on oscillatory signal translation.",
       "authors": [
-        "Bo Zhao",
-        "Junzhe Cao",
-        "Dan Guo",
-        "Dongmin Huang",
-        "Wenjin Wang",
-        "Tao Tan",
-        "Yue Sun",
-        "Zitong YU"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-09-30",
-      "url": "https://arxiv.org/abs/2609.38913",
-      "pdf_url": "https://arxiv.org/pdf/2609.38913",
-      "relevance_score": 63,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "remote physiological measurement",
-        "photoplethysmography",
-        "ppg",
-        "physiological signal"
-      ]
-    },
-    {
-      "id": "2609.36607",
-      "title": "Pixel-wise Exposure for Highly Robust In-Vehicle Remote-PPG",
-      "abstract": "Remote photoplethysmography (rPPG) offers a promising non-contact solution for heart rate monitoring, yet its real-world robustness is fundamentally limited by an inherent hardware limitation: existing camera exposure control paradigms, whether fixed or auto-exposure, impose a uniform exposure time across all pixels within a frame. In high-dynamic-range scenes such as automotive cabins with strong directional sunlight, this spatially invariant exposure constraint inevitably leads to localized facial overexposure or underexposure, irreversibly corrupting the subtle pulsatile signals essential for rPPG at the point of capture, a physical degradation that no downstream algorithm can recover. To overcome this bottleneck, we propose PixExpo (Pixel-wise Exposure), a \"temporal-for-spatial\" framework that sequentially captures frames under a predefined cyclic exposure schedule and performs non-iterative pixel-wise fusion. At each pixel location, PixExpo selects the observation closest to an rPPG-motivated target intensity. This criterion seeks to reduce local saturation and severe underexposure rather than optimize perceptual appearance. PixExpo requires no sensor modification but assumes programmable frame-level exposure control. We validate the proposed PixExpo framework using our newly introduced MEX-Drive dataset, comprising 48 participants under real-world driving conditions. Experimental results demonstrate that PixExpo outperforms manufacture-default auto-exposure methods, reducing the mean absolute error (MAE) by 7.21 bpm (from 13.94 to 6.73 bpm) and increasing the success rate by 37.29 percentage points (from 25.95% to 63.24%) across challenging driving scenarios.",
-      "authors": [
-        "Jieying Wang",
-        "Xinqi Cai",
-        "Caifeng Shan",
-        "Wenjin Wang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-09-29",
-      "url": "https://arxiv.org/abs/2609.36607",
-      "pdf_url": "https://arxiv.org/pdf/2609.36607",
-      "relevance_score": 42,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "photoplethysmography",
-        "ppg"
-      ]
-    },
-    {
-      "id": "2609.33790",
-      "title": "Multi-Aperture PPG with MAPIS: Spatial Optical and Temporal Coherence Fields",
-      "abstract": "Conventional reflectance photoplethysmography (PPG) typically reduces tissue optical responses to one or a few detector channels. Matrix Pinhole Image Sensing (MAPIS) instead simultaneously samples multiple aperture-dependent optical signals. We analyzed 44 recordings of 30 seconds each from a single MAPIS device to characterize the spatial relationships among DC intensity, pulsatile AC, perfusion index (PI), and temporal coherence across Red and infrared channels. AC increased sublinearly with DC at both wavelengths, resulting in higher PI toward lower-DC apertures, consistent with a first-order relative path-sensitivity interpretation. A second counterintuitive spatial trend was observed in temporal coherence: lower-DC and lower-AC apertures exhibited higher autocorrelation and greater cardiac-periodic spectral concentration. IR signals also showed consistently higher temporal coherence than corresponding Red signals. These observations demonstrate that multi-aperture PPG resolves reproducible spatial relationships among optical intensity, fractional pulsatile sensitivity, and waveform coherence that are largely averaged together in conventional single-channel PPG. The present study establishes within-device relationships and motivates controlled studies of the underlying photon-path mechanisms.",
-      "authors": [
-        "Shuguang Wang",
-        "Yuanjing Wang"
-      ],
-      "categories": [
-        "physics.optics",
-        "cs.CV"
-      ],
-      "date": "2026-09-27",
-      "url": "https://arxiv.org/abs/2609.33790",
-      "pdf_url": "https://arxiv.org/pdf/2609.33790",
-      "relevance_score": 18,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "photoplethysmography",
-        "ppg",
-        "cardiac"
-      ]
-    },
-    {
-      "id": "2609.33516",
-      "title": "PPG-LM: A Photoplethysmography-Language Model with Multi-Level Clinical Alignment",
-      "abstract": "Photoplethysmography (PPG) is widely recorded by clinical monitors and consumer wearables, providing a scalable source of continuous physiological information. These recordings offer an opportunity for physiological assessment at scale, but realizing this potential requires models to learn from both signal-derived physiological supervision and broader clinical context captured in electronic health records (EHRs). This involves aligning information spanning local observations, care events, and entire visits with PPG representations at corresponding temporal scales. However, existing PPG foundation models primarily rely on task-specific prediction heads, while the medical knowledge of large language models does not necessarily translate into waveform understanding. To bridge this gap, we introduce PPG-LM, the first PPG-language model family to learn physiological representations from both signal-derived supervision and broader clinical context captured in EHRs. To construct clinically grounded captions, we develop an automatic captioning pipeline that generates segment-, event-, and visit-level descriptions from signal measurements and structured EHR records. We then learn from these pairs through a two-stage framework that first establishes segment-language correspondence through contrastive learning and waveform-conditioned captioning, then extends alignment to events and visits through time-aware aggregation and temporal statement matching. Pretrained on approximately 73k hours of PPG, PPG-LM supports language-based recognition, cross-modal retrieval, and segment captioning. Experiments on MC-MED, MIMIC-III, and VitalDB show improved retrieval and caption factuality over language-model baselines and gains over PPG and time-series foundation models on multiple clinical prediction tasks.",
-      "authors": [
-        "Xiaoda Wang",
-        "Minxiao Wang",
-        "Maxwell A Xu",
-        "Patrick Langer",
-        "Kaiqiao Han",
-        "Defu Cao",
-        "Xiao Luo",
-        "Yuzhe Yang",
-        "Yan Liu",
-        "Xiao Hu",
-        "Yizhou Sun",
-        "Wei Wang",
-        "Carl Yang"
+        "Onur Selim Kilic",
+        "Afra Nawar",
+        "Cem Okan Yaldiz",
+        "Michael J. Cho",
+        "Ahmet Rasim Emirdagi",
+        "Demet Tangolar",
+        "Amirali Aghazadeh",
+        "Amit J. Shah",
+        "Omer T. Inan"
       ],
       "categories": [
         "cs.AI"
       ],
-      "date": "2026-09-27",
-      "url": "https://arxiv.org/abs/2609.33516",
-      "pdf_url": "https://arxiv.org/pdf/2609.33516",
-      "relevance_score": 18,
+      "date": "2026-10-06",
+      "url": "https://arxiv.org/abs/2610.08510",
+      "pdf_url": "https://arxiv.org/pdf/2610.08510",
+      "relevance_score": 15,
       "relevance_tier": "high",
       "matched_keywords": [
         "photoplethysmography",
-        "ppg",
-        "wearable",
-        "contrastive learning"
+        "physiological signal",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2610.06823",
+      "title": "Deep Learning for Sleep Heart Rate Estimation from Accelerometers: Toward Population-Scale Cardiac Insight Without Optical Sensors",
+      "abstract": "Large longitudinal cohorts often contain wrist accelerometry without optical heart-rate sensing, motivating recovery of cardiac information from motion signals already collected during sleep. We present SeqSmoother, a transformer-based temporal corrector for sleep heart rate (HR) estimation from wrist accelerometry. SeqSmoother combines spectral descriptors with an intermediate Nightbeat-derived frequency anchor and a physics-motivated sub-harmonic feature designed to identify harmonic frequency lock-on. All inference-time features are derived from wrist accelerometry, while ECG is used only to construct reference HR labels and training-label quality weights. We evaluate SeqSmoother using 13 participant-disjoint held-out folds and compare it with the official Nightbeat implementation under a matched 60-s window and 15-s step protocol. Across all out-of-fold predictions, SeqSmoother achieved a participant-macro MAE of 1.60 bpm. On Nightbeat-retained matched intervals, Nightbeat achieved lower absolute error than SeqSmoother (0.615 versus 1.091 bpm), while SeqSmoother provided estimates over a larger portion of the eligible recording; Nightbeat produced final estimates for 72.85% of the SeqSmoother-eligible out-of-fold grid. Separately, the proposed sub-harmonic ratio achieved an AUROC of 0.972 for identifying reference-defined harmonic lock-on candidates. These findings reveal an accuracy-availability trade-off between learned temporal modeling and quality-gated signal processing while providing empirical support for a physics-informed approach to identifying frequency-tracking failures in accelerometer-based sleep HR estimation.",
+      "authors": [
+        "Tanbin Islam Rohan",
+        "Pranjol Sen Gupta",
+        "Tanusree Debi",
+        "Nazmus Sakib"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-10-05",
+      "url": "https://arxiv.org/abs/2610.06823",
+      "pdf_url": "https://arxiv.org/pdf/2610.06823",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate estimation",
+        "cardiac",
+        "signal processing"
+      ]
+    },
+    {
+      "id": "2610.12010",
+      "title": "PulseBound: Future-Beat State Forecasting Under an Explicit Information Boundary",
+      "abstract": "Predictive representation learning from photoplethysmography (PPG) can violate causal information access even with causal attention, as normalization, nonlocal transforms, or companion views may depend on withheld samples. We introduce PulseBound, a PPG representation learner combining physiologically structured future-beat prediction with an explicit stored-window information boundary. A content-independent cutoff separates the visible prefix from the prediction target. Prefix-only normalization, suffix replacement before derived-view construction, and aligned masking ensure that encoder inputs depend only on the visible prefix and cutoff. This yields stored-suffix invariance: with fixed model state, randomness, prefix, and cutoff, changing the stored suffix cannot change the forecast context. A shared horizon-conditioned head predicts nine rhythm and morphology descriptors for up to four extractor-valid future beats, using elementwise validity masks; optional ECG-derived pulse-arrival-time supervision is restricted to training. On MIMIC and VitalDB groups held out from PulseBound backbone pretraining, PulseBound reduces nine-state transformed-space MAE relative to last-visible-beat persistence by 28.06% and 22.22%, respectively, with gains in MAE, MAE-Skill, and Spearman correlation across all 40 source-cutoff-horizon cells. In a separate comparison of seven models on 13 downstream tasks, PulseBound achieves the best mean on nine frozen linear-probe and seven full-fine-tuning tasks. Stored-suffix interventions cause zero recorded changes in forecast contexts or predictions, with zero suffix-input gradients at audited precision under the stored-window interface. These findings separate three testable aspects of predictive physiological representation learning: information access, supervised future structure, and transfer.",
+      "authors": [
+        "Chenyang Xu",
+        "Donglin Xie",
+        "Xi Xiang",
+        "Xiaoyu Li",
+        "Yufan Lu",
+        "Jiqiun Gao",
+        "Yi Zhao",
+        "Xin-Yi Li",
+        "Guangpu Zhu",
+        "Zijian Wang",
+        "Xiwen Yang",
+        "Dezhen Wang",
+        "Lin Chen",
+        "Shenda Hong",
+        "Leilei Li"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-10-08",
+      "url": "https://arxiv.org/abs/2610.12010",
+      "pdf_url": "https://arxiv.org/pdf/2610.12010",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg"
       ]
     }
   ]
