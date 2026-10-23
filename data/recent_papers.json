@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-10-16T12:45:35.648902Z",
+  "updated_at": "2026-10-23T12:52:55.673206Z",
   "window_days": 90,
-  "paper_count": 31,
+  "paper_count": 34,
   "weeks": [
+    {
+      "week_end": "2026-10-23",
+      "week_start": "2026-10-16",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-10-16",
       "week_start": "2026-10-09",
@@ -62,14 +67,82 @@
       "week_end": "2026-07-31",
       "week_start": "2026-07-03",
       "paper_count": 6
-    },
-    {
-      "week_end": "2026-07-24",
-      "week_start": "2026-07-17",
-      "paper_count": 0
     }
   ],
   "papers": [
+    {
+      "id": "2610.29091",
+      "title": "Context-Augmented, Session-Calibrated Blood Pressure Tracking from Photoplethysmography",
+      "abstract": "Objective.To distinguish the contributions of acquisition context and photoplethysmography (PPG) to session-calibrated blood pressure (BP) tracking.Approach. The original comparison used three repeats of five-fold participant-level cross-validation in 653 AuroraBP participants, excluding calibration-labelled prediction targets. Matched analyses separated context and PPG and removed elapsed-time terms. Later exploratory follow-ups retained PPG, accelerometer signals and three initial cuff readings. Separate studies evaluated pulse-rate fusion and an intraoperative VitalDB model. Main results.The original wearable-state model achieved participant-level mean absolute errors (MAEs) of 7.697/6.139 mmHg for systolic/diastolic BP (SBP/DBP). Added context reduced MAE by 0.436/0.126 mmHg (97.5% intervals 0.305-0.573/0.053-0.200). In the matched factorial without the external PPG prior, PPG improved on calibration, time and protocol-provided posture/activity by 0.214/0.135 mmHg; removing time left the DBP interval including zero. Standard PPG descriptors contributed, but additional nonlinear/attractor benefit was not established. In a separate follow-up series, a sensor-history ensemble achieved 7.299/5.445 mmHg versus its static-rich reference's 7.363/5.470, small gains of 0.064/0.025 mmHg. Larger DBP errors did not improve uniformly. Quality-weighted fusion reduced pulse-rate MAE from 3.985 to 3.690 beats per minute. VitalDB MAEs remained 15.375/8.833 mmHg despite small PPG gains. Significance. The contribution is a calibrated evaluation framework with explicit controls, reproducible feature-cache-to-results analyses and retained negative findings. The sensor-history gain is exploratory after repeated dataset reuse. Independently estimated wearable states, complete raw-signal reproduction of the supplied richer features, external transfer and clinical adequacy remain unestablished.",
+      "authors": [
+        "Farouk Ganiyu Adewumi",
+        "Timothy Oladunni"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-10-21",
+      "url": "https://arxiv.org/abs/2610.29091",
+      "pdf_url": "https://arxiv.org/pdf/2610.29091",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2610.28693",
+      "title": "Interaction-Gated Time-Frequency Learning for Parameter-Efficient PPG-Based Heart Rate Estimation",
+      "abstract": "Photoplethysmography (PPG) enables low-cost and non-invasive heart rate (HR) monitoring but remains sensitive to waveform distortion, physiological variability, and measurement interference. Temporal waveform characteristics and frequency-domain periodicity provide complementary information for HR estimation; however, effectively exploring and integrating these representations within a compact model remains challenging. This paper proposes TF-IG, a parameter-efficient interaction-gated time-frequency learning framework for PPG-based HR estimation. TF-IG employs a dual-branch architecture in which a temporal branch captures pulse morphology via dilated depthwise-separable convolutions, while a frequency branch extracts cardiac periodicity information from bounded log-spectrogram representations. To combine the two domains, we introduce an interaction-gated fusion module that explicitly models feature agreement and discrepancy, while also learning feature-wise weights to balance temporal and spectral information. A parameter-shared regression head further maps the temporal, spectral, and fused representations into the final HR prediction space. Experiments on the benchmark BIDMC PPG and Respiration Dataset using a subject-exclusive training, validation, and test protocol show that TF-IG achieves a mean absolute error (MAE) of 1.227 BPM, a root mean square error (RMSE) of 2.060 BPM, a Pearson correlation coefficient of 0.9934, and 92.28 percent of estimates within 3 BPM, while remaining parameter-efficient with only 84.6K parameters. Ablation results further demonstrate the complementary contributions of the temporal and frequency branches, interaction-gated fusion, and shared regression head. These results indicate that explicitly modeling cross-domain interactions provides an effective accuracy-complexity trade-off for lightweight PPG-based HR estimation.",
+      "authors": [
+        "Anh Khoi Pham",
+        "Phat Lam",
+        "Thien Truong Nguyen Ly",
+        "Lam Pham"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "eess.SP"
+      ],
+      "date": "2026-10-20",
+      "url": "https://arxiv.org/abs/2610.28693",
+      "pdf_url": "https://arxiv.org/pdf/2610.28693",
+      "relevance_score": 24,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "heart rate estimation",
+        "cardiac"
+      ]
+    },
+    {
+      "id": "2610.24138",
+      "title": "From Spectrograms to Shallow Speech SSL: Audio-Frontend Design for Generator-Disjoint and Low-Latency Audio--Visual Deepfake Detection",
+      "abstract": "Video-mediated conversational systems rely on synchronized speech and facial video, making audio--visual input integrity important for reliable perception. We study audio-frontend design in a fixed MRDF (Modality-Regularization-based DeepFake)-based pipeline with AV-HuBERT visual processing and an MSCT (multi-scale cross-modal transformer) fusion encoder. We compare spectrogram-style log-filterbank features with frozen wav2vec~2.0 and WavLM representations, dual-SSL fusion, executed depth, and shallow-layer aggregation. Across three training runs, full wav2vec~2.0 improves mean macro AUROC from $84.19\\%$ to $87.19\\%$ on generator-disjoint MMDF. Six-layer execution further improves detection, and learned non-uniform aggregation adds $2.53$ percentage points, reaching $90.61\\%$. Shallow execution reduces measured inference latency relative to full-depth wav2vec~2.0 across the tested input durations; first-second evaluation reaches $86.85\\%$ macro AUROC. In a single-run comparison, dual-SSL concatenation outperforms either single stream, while one-way cross-attention yields lower detection performance and higher latency than concatenation. Layer-weight analysis shows greater emphasis on early speech layers, while removing the selector's visual input has little effect on detection performance.",
+      "authors": [
+        "Qiwu Wen",
+        "Jahangir Alam",
+        "Eric Charton"
+      ],
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "eess.AS"
+      ],
+      "date": "2026-10-16",
+      "url": "https://arxiv.org/abs/2610.24138",
+      "pdf_url": "https://arxiv.org/pdf/2610.24138",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "facial video",
+        "deepfake detection"
+      ]
+    },
     {
       "id": "2610.19052",
       "title": "Why Do VLMs Fail at Remote Physiological Measurement? Rethinking with Physiological Grounding and Numerical Alignment",
