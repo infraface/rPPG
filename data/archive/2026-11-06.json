@@ -1,0 +1,86 @@
+{
+  "week_start": "2026-10-30",
+  "week_end": "2026-11-06",
+  "updated_at": "2026-11-06T15:25:18.994263Z",
+  "paper_count": 3,
+  "papers": [
+    {
+      "id": "2611.02715",
+      "title": "MURFormer: Attention-Based Lightweight Multi-Scale Uncertainty-Guided Refinement Framework for PPG Denoising",
+      "abstract": "Photoplethysmography (PPG) is a widely used physiological signal for its convenience but is highly susceptible to motion artifacts that degrade waveform quality and limit downstream analysis. This paper proposes MURFormer, a lightweight multi-scale uncertainty-guided refinement framework for PPG denoising through noisy-to-clean PPG mapping. MURFormer employs a newly proposed Multi-Scale Attention-Conv Fusion (MACF) block, which is designed to efficiently capture multi-scale temporal dynamics of PPG, as the fundamental building block and performs uncertainty-guided two-pass refinement prioritizing unreliable regions. The method was evaluated on the publicly available CIME dataset and on a Daily Activities dataset collected in this work, comprising paired noisy-clean PPG recordings from 24 subjects. Experimental results show that MURFormer improves both signal quality and physiological fidelity over the raw noisy input, yielding 129\\% and 105\\% relative signal-to-noise ratio (SNR) improvements, and 66\\% and 81\\% relative reductions in heart-rate mean absolute error (MAE), on the Daily Activities and CIME datasets, respectively. MURFormer also outperforms an existing denoising baseline on both datasets with a relatively small parameter count while preserving beat-level timing and waveform morphology. In addition, the model maintains strong denoising performance across varying input window lengths, suggesting that MURFormer is an effective and robust framework for practical PPG denoising. The implementation of MURFormer is publicly available at https://github.com/k-hram/MURFormer.git",
+      "authors": [
+        "Haram Kwon",
+        "Chaeeun Hwang",
+        "Seayul Choi",
+        "Sungho Jo"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "date": "2026-11-02",
+      "url": "https://arxiv.org/abs/2611.02715",
+      "pdf_url": "https://arxiv.org/pdf/2611.02715",
+      "relevance_score": 21,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "physiological signal",
+        "motion artifact"
+      ]
+    },
+    {
+      "id": "2611.01978",
+      "title": "Multimodal BVP and Respiration for Automated Pain Recognition with Hankel-FCN",
+      "abstract": "Automated pain recognition is a fundamental challenge for the advancement of clinical care and empathetic human-computer interaction, due to the subjective and dynamic nature of pain. In this study, we propose a deep learning framework for objective pain assessment based on multimodal physiological signals from the AI4Pain dataset. The approach focuses on Blood Volume Pulse (BVP) and Respiration (RESP), capturing complementary aspects of autonomic responses to nociceptive stimulation. To explicitly model their temporal dynamics, the signals are transformed into structured trajectory representations using Hankel matrix embeddings, enabling the learning of dynamical patterns beyond conventional time-series representations. These embeddings are processed by modality-specific Fully Convolutional Networks, and their outputs are integrated through a late fusion strategy for three-class classification (No Pain, Low Pain, High Pain). Experimental results demonstrate that the proposed method achieves an accuracy of 67.09% and an F1-score of 66.41%, providing competitive performance compared to existing approaches, while relying on no handcrafted feature engineering. Multimodal fusion significantly outperformed either modality alone, and the Hankel embedding showed a trend towards further improvement. Further validation is required to establish generalisability to broader populations and clinical settings.",
+      "authors": [
+        "Valentina Becchetti",
+        "Muhammad Umar Khan",
+        "Stefanos Gkikas",
+        "Alessandro Giuseppi",
+        "Raul Fernandez Rojas"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-11-01",
+      "url": "https://arxiv.org/abs/2611.01978",
+      "pdf_url": "https://arxiv.org/pdf/2611.01978",
+      "relevance_score": 18,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "blood volume pulse",
+        "bvp",
+        "physiological signal"
+      ]
+    },
+    {
+      "id": "2611.01853",
+      "title": "Privacy-Preserving ECG-HRV Emotion Classification for Mood Swing Detection using Federated Learning on Constrained Edge Devices",
+      "abstract": "This paper presents a privacy-preserving mood monitoring framework that classifies emotional states from ECG-derived heart rate variability (HRV) features. The framework is evaluated on three public datasets comprising 74 participants and further validated using a wearable device in a pilot study. Leave-One-Participant-Out cross-validation (LOPO-CV) is used to assess generalization to unseen individuals. A series of experiments investigates the impact of temporal windowing, HRV feature selection, and class balancing on both four-class valence-arousal and binary valence classification. Results show that class balancing substantially improves minority-class recall, while Logistic Regression consistently outperforms five alternative classifiers and achieves competitive performance against HRV-based baselines. Pilot validation using a Polar H10 wearable achieves 75% binary valence accuracy on an unseen individual without calibration, demonstrating the feasibility of real-world deployment. To preserve privacy, the framework is also implemented using federated learning on a six-node Raspberry Pi cluster. Federated Logistic Regression achieves performance comparable to centralized training without sharing raw physiological data. These results demonstrate the potential of interpretable and privacy-preserving mood monitoring for continuous mental health assessment in clinical and community settings.",
+      "authors": [
+        "Chidike Vincent",
+        "Muhammad Aslam Jarwar",
+        "Najam Ul Hasan",
+        "Laurence Hirsch",
+        "Jonathan Zasada-James",
+        "Hem Raj Dadra"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "date": "2026-11-01",
+      "url": "https://arxiv.org/abs/2611.01853",
+      "pdf_url": "https://arxiv.org/pdf/2611.01853",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "heart rate variability",
+        "hrv",
+        "wearable"
+      ]
+    }
+  ]
+}
