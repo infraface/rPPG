@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-11-06T15:25:18.996343Z",
+  "updated_at": "2026-11-13T15:43:23.183056Z",
   "window_days": 90,
-  "paper_count": 31,
+  "paper_count": 32,
   "weeks": [
+    {
+      "week_end": "2026-11-13",
+      "week_start": "2026-11-06",
+      "paper_count": 3
+    },
     {
       "week_end": "2026-11-06",
       "week_start": "2026-10-30",
@@ -62,14 +67,91 @@
       "week_end": "2026-08-21",
       "week_start": "2026-08-14",
       "paper_count": 3
-    },
-    {
-      "week_end": "2026-08-14",
-      "week_start": "2026-08-07",
-      "paper_count": 2
     }
   ],
   "papers": [
+    {
+      "id": "2611.13992",
+      "title": "Pulse or Provenance? What rPPG-Based Deepfake Detectors Learn",
+      "abstract": "Remote photoplethysmography (rPPG) has been proposed as a physiological cue for deepfake detection, based on the premise that synthesized faces lack a genuine cardiac signal. We examine what rPPG-style detectors learn on Celeb-DF++ (22 forgery methods) and FaceForensics++ (FF++), using one identically sampled window per real and fake video. On talking-face forgeries, simple chrominance traces reach an AUC of 0.998, exceeding a dedicated rPPG extractor (0.87). Controlled experiments indicate that this signal is not physiological in origin. On fully synthesized forgeries, it is equally discriminative when extracted from background regions or from full frames without face detection, and it is concentrated above the 0.7 to 4 Hz heart-rate band. It is largely removed by shuffling frame order but persists after normalizing resolution, frame rate and encoding, and an independent reimplementation reproduces these findings. Removing high-frequency content makes most synthesized videos appear real, adding it makes real videos appear fake, and injecting a synthetic pulse has little effect. In controlled self-reenactment experiments with two generators, animating a face from a single frame introduces the same high-frequency signal, whereas reconstructing each frame from its own source does not. Face-based chrominance detectors trained on Celeb-DF++ classify over 99% of real FF++ videos as fake, indicating that they largely encode video source rather than manipulation, and a CLIP-based detector exhibits the same behavior. A frozen CLIP backbone matches or exceeds fusions of CLIP with rPPG and frequency features. Finally, we show that the official Celeb-DF and Celeb-DF++ splits share identities and source-video content between training and test, and that custom protocols reusing test videos and identities in training inflate weaker detectors by up to 0.30 AUC.",
+      "authors": [
+        "Othmane Harraq",
+        "Tamer Aldwairi"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "date": "2026-11-10",
+      "url": "https://arxiv.org/abs/2611.13992",
+      "pdf_url": "https://arxiv.org/pdf/2611.13992",
+      "relevance_score": 57,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "rppg",
+        "remote photoplethysmography",
+        "photoplethysmography",
+        "ppg",
+        "cardiac",
+        "deepfake detection",
+        "face detection"
+      ]
+    },
+    {
+      "id": "2611.11800",
+      "title": "Ultrasound-Assisted Biometric Watermarking Against Face Video Deepfakes",
+      "abstract": "Currently, artificial intelligence-generated content (AIGC) poses a severe threat to facial video deepfakes, and many AIGC companies employ video watermarking to mitigate unauthorized fake video usage, but its effectiveness is limited due to watermark tampering and private-model forgery. Additionally, some schemes actively add watermarks to user videos. However, current approaches focus primarily on the quality of watermark embedding in offline scenarios, and no existing work offers a solution for protecting human facial videos in real-time online applications. To fill this gap, we propose, to the best of our knowledge, a novel biometric video watermarking method, UltraGuard, for the first time. It uses the smartphone's built-in speaker and microphone to emit ultrasonic signals and capture biometric features, which are then fused with spatio-temporal dynamic features derived from the video content. The fused features are encoded as watermarks and embedded into videos in real time, enabling dynamic, content-aware watermarking throughout transmission and propagation. Extensive experimental validation demonstrates that UltraGuard can effectively defend against malicious attacks such as forgery and editing, both at the source and during propagation, proving the system's efficacy. In the future, it can be deployed on users' mobile devices to provide real-time protection for users' facial videos, thereby preventing security and privacy breaches caused by various malicious attacks.",
+      "authors": [
+        "Guodong Liu",
+        "Lei Wang",
+        "Dongxu Liu",
+        "Qianran Qiao",
+        "Meng Li",
+        "Haipeng Dai",
+        "He Huang",
+        "Guihai Chen"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "date": "2026-11-09",
+      "url": "https://arxiv.org/abs/2611.11800",
+      "pdf_url": "https://arxiv.org/pdf/2611.11800",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "facial video",
+        "face video",
+        "spatio-temporal"
+      ]
+    },
+    {
+      "id": "2611.10739",
+      "title": "Pulse waveform morphology encodes haemodynamic signatures of impending stroke",
+      "abstract": "Stroke is a disorder of the circulation, yet the haemodynamic state that immediately precedes it has rarely been observed, because continuous physiological recordings before a stroke are seldom available. Photoplethysmography (PPG), recorded by every pulse oximeter and by hundreds of millions of wearable devices, captures the peripheral pulse beat by beat, but its morphology is largely discarded. Here we ask whether pulse waveform morphology encodes haemodynamic signatures of impending stroke. Using in-hospital stroke as a natural experiment that provides continuous PPG before physician-adjudicated stroke recognition, we studied intensive-care (MIMIC-III, $n=176$) and emergency-department (MC-MED, $n=154$) cohorts and described each beat with interpretable descriptors of pulse timing, amplitude, contour and variability. At a nominal 360-min horizon, morphology separated pre-recognition from stable windows with $F_1$ scores of 0.941 and 0.989 (sensitivity 0.998 and 0.980), with models transferred unchanged to the second cohort, and outperformed heart rate alone on identical windows. The signature was dominated by systolic crest time and its change from each patient's own baseline, feature attribution was concordant across cohorts (Spearman $ρ=0.865$), and morphology recorded in the first two hours of care stratified the subsequent clinical course ($F_1$ 0.714 and 0.691). In high-risk patients without stroke, 29% and 14% of windows were positive, but five-window persistence rules limited alerts to 17% and 2% of patients. The results demonstrate that the routinely recorded pulse thus carries haemodynamic imprint of the period preceding stroke, positioning pulse morphology as a candidate continuous cerebrovascular biomarker.",
+      "authors": [
+        "Cheng Ding",
+        "Jiaming Liu",
+        "Jian Wu",
+        "Hongxia Xu",
+        "Daoqiang Zhang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-11-07",
+      "url": "https://arxiv.org/abs/2611.10739",
+      "pdf_url": "https://arxiv.org/pdf/2611.10739",
+      "relevance_score": 15,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "photoplethysmography",
+        "ppg",
+        "wearable"
+      ]
+    },
     {
       "id": "2611.02715",
       "title": "MURFormer: Attention-Based Lightweight Multi-Scale Uncertainty-Guided Refinement Framework for PPG Denoising",
@@ -854,57 +936,6 @@
         "facial video",
         "cardiac",
         "motion artifact"
-      ]
-    },
-    {
-      "id": "2608.13064",
-      "title": "Learning Unified Video and Image Representation for Video Face Forgery Detection",
-      "abstract": "Face forgery detection is crucial for preserving the security and integrity of facial data given the rapid developments in face manipulation techniques and deep generative models. Existing methods for video face forgery detection typically assume that all frames in a forged video are manipulated, while detecting partially forged videos that contain only a subset of altered frames remains challenging. To address this issue, we propose a novel framework, UVIF, that utilizes additional annotated images to provide fine-grained supervision for detecting partial forgeries in videos. UVIF employs a unified encoder and a multi-task learning paradigm to jointly model facial videos and images for boosted video face forgery detection. A 2D backbone with temporal fusion modules is employed as the unified encoder. A pseudo labeling process is designed for video frames to bridge their representations with those of static images. A video-oriented feature alignment strategy is further introduced to reduce the distribution gap between videos and images. Extensive experiments on benchmark datasets demonstrate the effectiveness of our framework, which outperforms state-of-theart methods in detecting partially forged videos while introducing no additional computational overhead. Our code is available at https://github.com/haotianll/UVIF.",
-      "authors": [
-        "Haotian Liu",
-        "Yang Liu",
-        "Guoying Zhao",
-        "Xiaobai Li"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "date": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.13064",
-      "pdf_url": "https://arxiv.org/pdf/2608.13064",
-      "relevance_score": 12,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "facial video",
-        "face forgery"
-      ]
-    },
-    {
-      "id": "2608.07759",
-      "title": "CFD-Guided Detection of Concept Drift in Multimodal Physiologic Signals",
-      "abstract": "Cardiovascular AI models can classify clean elec- trocardiogram (ECG) signals, but real wearable signals change because of motion, breathing, posture, sensor contact, and true clinical deterioration. This paper asks when a model should keep its prediction, change it, or flag uncertainty. We propose a physiologic stability framework, called PECS, that compares changes inside the model with measurable changes in the signal. ECG is treated as the main cardiac signal, photoplethysmography (PPG) adds pulse and vascular information, and respiration is used only when ECG and PPG disagree. We test the framework on PTB-XL at pilot and full scales and on synchronized BIDMC and MIMIC waveform cohorts. The PTB-XL pilot and full- scale analyses selected different domain pairs, and the strongest cross-modal pair also changed across BIDMC and MIMIC, showing that adding every available signal is not always the best choice. PECS outperformed the evaluated drift-detection baseline implementations, reaching drift classification accuracy (DCA) of 0.8786 on expanded BIDMC and 0.9560 on MIMIC. The MIMIC results also showed that respiration can help during disagreement cases, but it should be used selectively rather than as an automatic override. Overall, the results support PECS as a candidate monitoring framework for wearable cardiovascular AI while highlighting the need for scale-aware domain selection and interpretable trust routing",
-      "authors": [
-        "Farouk Ganiyu Adewumi",
-        "Timothy Oladunni",
-        "Rochak Ghimire",
-        "Kosisochukwu Ogbuanya",
-        "Sanaa Reeves",
-        "Sandy Akoy"
-      ],
-      "categories": [
-        "eess.SP",
-        "cs.AI"
-      ],
-      "date": "2026-08-07",
-      "url": "https://arxiv.org/abs/2608.07759",
-      "pdf_url": "https://arxiv.org/pdf/2608.07759",
-      "relevance_score": 21,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "photoplethysmography",
-        "ppg",
-        "cardiac",
-        "wearable"
       ]
     }
   ]
