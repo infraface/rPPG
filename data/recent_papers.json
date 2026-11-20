@@ -1,8 +1,13 @@
 {
-  "updated_at": "2026-11-13T15:43:23.183056Z",
+  "updated_at": "2026-11-20T16:26:18.832927Z",
   "window_days": 90,
-  "paper_count": 32,
+  "paper_count": 34,
   "weeks": [
+    {
+      "week_end": "2026-11-20",
+      "week_start": "2026-11-13",
+      "paper_count": 5
+    },
     {
       "week_end": "2026-11-13",
       "week_start": "2026-11-06",
@@ -62,14 +67,168 @@
       "week_end": "2026-08-28",
       "week_start": "2026-08-21",
       "paper_count": 2
-    },
-    {
-      "week_end": "2026-08-21",
-      "week_start": "2026-08-14",
-      "paper_count": 3
     }
   ],
   "papers": [
+    {
+      "id": "2611.26367",
+      "title": "Contactless Estimation of Respiratory Frequency Using 3D-CNN on Thermal Images",
+      "abstract": "Monitoring physiological parameters such as respiratory rate ($f_R$) is essential for diagnosing and managing various pathological conditions. Thermal imaging offers a promising contactless alternative to traditional methods, which often rely on partially invasive sensors or obtrusive wearable systems. However, existing approaches for $f_R$ estimation from thermal signals typically require extensive pre-processing and manual or semi-automatic region-of-interest (ROI) tracking, limiting their practical applicability. This study proposes a deep learning-based method for estimating $f_R$ directly from thermal videos, eliminating the need for complex pre-processing and ROI tracking. A 3D Convolutional Neural Network (3D-CNN) is developed to operate on raw thermal video data. To address challenges related to small datasets, the model is trained using data augmentation and transfer learning from synthetic datasets. Experimental results demonstrate that the proposed approach achieves a validation $R^2$ score of approximately 0.61 on both pre-processed and raw thermal videos. By simplifying the workflow, this method holds promise for enhancing the feasibility of thermal imaging in real-world applications, such as remote healthcare and driver monitoring in automotive applications.",
+      "authors": [
+        "Federica Gioia",
+        "Filippo Pura",
+        "Alberto Greco",
+        "Dario Piga",
+        "Arcangelo Merla",
+        "Marco Forgione"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-11-19",
+      "url": "https://arxiv.org/abs/2611.26367",
+      "pdf_url": "https://arxiv.org/pdf/2611.26367",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "respiratory rate",
+        "wearable",
+        "transfer learning"
+      ]
+    },
+    {
+      "id": "2611.23925",
+      "title": "Cardiac MRI-informed electrocardiography enables biologically grounded cardiomyopathy detection",
+      "abstract": "Precise myocardial phenotyping at population scale is limited by the cost and accessibility of cardiac magnetic resonance (CMR), whereas electrocardiography (ECG) is widely available but reflects electrical rather than structural and functional information. Here we develop MyoECG, a cross-modal representation learning framework that distils myocardial structural and functional knowledge from CMR into standard 12-lead ECGs, enabling imaging-informed cardiomyopathy detection and subtype classification from ECGs alone. MyoECG was pretrained on 45,241 paired ECG-CMR examinations from UK Biobank and a tertiary cardiovascular centre, then developed and validated across more than 1.8 million ECGs from seven independent datasets. Across internal and external datasets spanning prevalences of 0.2-54.7%, MyoECG outperformed five pretrained ECG foundation models, with AUROCs of 0.800-0.974 for cardiomyopathy detection. In a multi-reader study of six cardiologists, MyoECG assistance improved mean sensitivity by 0.109 (95% CI, 0.041-0.175; P = 0.009) and specificity by 0.056 (95% CI, 0.004-0.108; P = 0.040). In 41,128 UK Biobank participants, the MyoECG score showed genetic correlations with cardiomyopathy (rg = 0.409) and dilated cardiomyopathy (rg = 0.371), genome-wide associations at four loci, including regions mapped to NFIA and KCNQ1, and associations with 69 circulating proteins related to myocardial stress, cell adhesion, vascular biology and metabolism. The cardiomyopathy correlation attenuated to non-significance after adjustment for 27 measured CMR traits (rg = 0.131; P = 0.143), indicating that the score captures CMR-derived information rather than dataset-specific shortcuts. MyoECG offers a scalable route to CMR-informed cardiomyopathy assessment and a strategy for transferring knowledge from resource-intensive imaging to widely deployable physiological signals.",
+      "authors": [
+        "Zhengyao Ding",
+        "Kewen Wang",
+        "Yujian Hu",
+        "Ziyu Li",
+        "Yiheng Mao",
+        "Yue Wang",
+        "Haitao Li",
+        "Dengnan Zhang",
+        "Xuanhong Liu",
+        "Yue Wang",
+        "Jing Wang",
+        "Yue Chen",
+        "Longbo Wang",
+        "Mengjia Chen",
+        "Chengchen Zhao",
+        "Xuesen Chu",
+        "Yubin Zhang",
+        "Mor Peleg",
+        "Judith Somekh",
+        "Mingxuan Yuan"
+      ],
+      "categories": [
+        "cs.AI",
+        "q-bio.QM"
+      ],
+      "date": "2026-11-18",
+      "url": "https://arxiv.org/abs/2611.23925",
+      "pdf_url": "https://arxiv.org/pdf/2611.23925",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "physiological signal",
+        "cardiac"
+      ]
+    },
+    {
+      "id": "2611.21419",
+      "title": "Quality and Similarity Indicators for Video-Based Heart Rate and Respiratory Rate Fusion: A Controlled Evaluation",
+      "abstract": "Camera-based heart rate (HR) and respiratory rate (RR) estimates vary in reliability from window to window, and a common remedy is to fuse several extraction methods with weights from reference-free signal quality indicators. However, few studies test whether these indicators identify the most accurate method in each window or outperform simpler fusion. We evaluate 11 quality indicators and 8 inter-method similarity measures for fusing 7 HR and 10 RR extractors on four public datasets (75 test subjects). Filters, indicator directions, weighting parameters and a learned ridge baseline are selected on a separate five-subject set before testing. Fusion is compared with equal averaging, a constant typical-rate predictor, the best single method selected in advance and in hindsight, and a per-window oracle with a permutation-based null, using subject-level bootstrap confidence intervals. For HR, quality-weighted fusion reduced mean absolute error by 10.9% [5.2, 18.4] relative to averaging and by 15.6% [8.1, 23.1] relative to the method selected in advance, and was statistically indistinguishable from the best method selected in hindsight. Weighting methods by their agreement did not improve on averaging. For RR, the indicators could not identify the more accurate estimates: sharpened quality weighting increased error (-2.6% [-4.8, -0.8]), fused estimates were uncorrelated with the reference (r <= 0.22), and averaging was less accurate than the typical-rate predictor (-3.1% [-6.1, -0.4]). With a second respiratory reference, apparent RR gains reflected estimates moving toward its typical rate. Quality-guided fusion is worthwhile for video HR; for RR, 30-s windows improved estimates but not fusion.",
+      "authors": [
+        "Nhi Nguyen",
+        "Le Nguyen",
+        "Manuel Lage Cañellas",
+        "Miguel Bordallo López",
+        "Constantino Álvarez Casado"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "date": "2026-11-16",
+      "url": "https://arxiv.org/abs/2611.21419",
+      "pdf_url": "https://arxiv.org/pdf/2611.21419",
+      "relevance_score": 36,
+      "relevance_tier": "core",
+      "matched_keywords": [
+        "video-based heart rate",
+        "camera-based heart rate",
+        "respiratory rate"
+      ]
+    },
+    {
+      "id": "2611.20187",
+      "title": "Cyber-Secure Wearable, Ultra-Low-Power Networked Sensors for Soldier Health Monitoring: Insights from the CAPSARII project",
+      "abstract": "The CAPSARII project advances a cyber-secure, ultra-low-power wearable platform and Internet of Battlefield Things (IoBT) framework to support real-time monitoring of military personnel and data-driven decision support. The architecture integrates smart-textile sensing, a body/squad area mesh, edge-deployed AI on secure RISC-V microcontrollers, and cloud/federated analytics for cross-mission learning and comparative studies. Two representative use cases--pilot fatigue and warfighters operating in harsh environments--guide requirements, validation, and interface design (including HUD and haptic feedback). As an initial step toward embedded models, we benchmark stress classification on a public wearable dataset: tree-ensemble baselines achieve state-of-the-art performance for accuracy and F1 (e.g., XGBoost: $\\mathrm{Accuracy}=0.901\\!\\pm\\!0.023$, $\\mathrm{F1}=0.920\\!\\pm\\!0.019$), while a feature-based Transformer attains the highest AUC ($0.963\\!\\pm\\!0.025$), informing feature-engineering and compression choices for edge deployment. Building on these results, CAPSARII employs HW/SW co-design, model compression (pruning, quantization, distillation), and precision tuning to meet stringent energy and memory budgets; it further investigates Processing-in-Memory accelerators for future efficiency gains. A structured gap analysis highlights the remaining challenges: establishing validation standards for physiological signal quality and textile durability; achieving low-latency, scalable BAN/SAN communications under mobility and interference; and deploying hybrid lightweight/post-quantum cryptography with robust device identity and side-channel resilience on constrained endpoints. By consolidating these elements into a coherent, secure IoBT stack, CAPSARII delineates a practical roadmap from laboratory baselines to mission-ready soldier monitoring in both training and operational scenarios.",
+      "authors": [
+        "Luciano Bozzi",
+        "Christian Celidonio",
+        "Umberto Nuzzi",
+        "Massimo Biagini",
+        "Stefano Cherubin",
+        "Asbjørn Djupdal",
+        "Tor Andre Haugdahl",
+        "Andrea Aliverti",
+        "Alessandra Angelucci",
+        "Giovanni Agosta",
+        "Gerardo Pelosi",
+        "Paolo Belluco",
+        "Samuele Polistina",
+        "Gaia Strada",
+        "Luigi Sossi Ortega",
+        "Alexandra-Ioana Albu",
+        "Riccardo Volpi",
+        "Luigi Malagò",
+        "Michael Schneider",
+        "Xabier Eguiluz"
+      ],
+      "categories": [
+        "cs.ET",
+        "cs.AI",
+        "cs.AR",
+        "cs.CR",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "date": "2026-11-15",
+      "url": "https://arxiv.org/abs/2611.20187",
+      "pdf_url": "https://arxiv.org/pdf/2611.20187",
+      "relevance_score": 12,
+      "relevance_tier": "medium",
+      "matched_keywords": [
+        "physiological signal",
+        "health monitoring",
+        "wearable"
+      ]
+    },
+    {
+      "id": "2611.17819",
+      "title": "Causally Constrained and Uncertainty-Aware Cardiopulmonary Risk Prediction",
+      "abstract": "Routine chest computed tomography (CT) captures pulmonary, cardiac, and vascular phenotypes that jointly stratify lung cancer and cardiovascular disease, the two leading causes of death in lung-screening populations. Yet clinical risk calculators evaluate each disease in isolation and omit CT findings, whereas unconstrained machine learning overfits small hospital cohorts, learns treatment- and illness-confounded risk directions, and conceals uncertainty when patient records are incomplete. Here we present the Causal Envelope Agent (CE-Agent), a two-stage framework that compiles peer-reviewed epidemiological evidence into explicit constraints on risk-factor weights before any outcome is seen, while estimating local baseline risk and newly added CT phenotypes from cohort data. At deployment, closed-form uncertainty propagation accounts for missing clinical or CT inputs within milliseconds per patient, running over two orders of magnitude faster than Monte Carlo sampling and returning calibrated risk intervals that direct chart review and selective imaging to borderline patients. Across 53,452 lung-screening participants from 33 US hospitals and 6,814 multi-ethnic adults, CE-Agent outperforms cardiovascular calculators in lung screening, exceeds the Pooled Cohort Equations on hard atherosclerotic events while correcting their 1.7-fold risk overestimation, and generalizes from a single hospital or CT scanner to external sites while lowering required sample sizes up to fivefold. Applied unchanged to lung cancer, CE-Agent matches established screening models with accurate calibration even when restricted to risk-factor directions alone, and pairing both predictions improves joint cardiopulmonary triage from a single screening visit.",
+      "authors": [
+        "Yuxiang Lai",
+        "Jiashuo Zhang",
+        "Liang Zhao",
+        "Xiaofeng Yang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "date": "2026-11-13",
+      "url": "https://arxiv.org/abs/2611.17819",
+      "pdf_url": "https://arxiv.org/pdf/2611.17819",
+      "relevance_score": 12,
+      "relevance_tier": "high",
+      "matched_keywords": [
+        "cardiac",
+        "cardiopulmonary"
+      ]
+    },
     {
       "id": "2611.13992",
       "title": "Pulse or Provenance? What rPPG-Based Deepfake Detectors Learn",
@@ -855,87 +1014,6 @@
         "cardiac",
         "health monitoring",
         "wearable"
-      ]
-    },
-    {
-      "id": "2608.18711",
-      "title": "EgoHRV: Continuous Heart Rate Variability Estimation from Egocentric Systems for Autonomic Response and Skill Assessment",
-      "abstract": "Egocentric vision systems capture human behavior from visible cues, but overlook physiological indicators of autonomic states such as stress, engagement, and attention. Heart rate variability (HRV) is a widely used noninvasive marker of autonomic regulation under stress. HRV reflects small timing differences between successive heartbeats and has so far been out of reach for egocentric platforms, where motion and noise in gaze video mask exactly this fine-grained timing. We propose EgoHRV, a method that estimates HRV as well as heart rate (HR) from the gaze cameras that are already integrated into egocentric headsets. Our pipeline combines a 3D backbone with a novel low--high decomposition module that extracts the blood volume pulse (BVP) signal from gaze video. Our cross-domain pretraining aligns the frequency-domain representations of contact-based and camera-derived signals. This alignment gives EgoHRV the temporal precision to recover HRV from the subtle fluctuations in gaze video. EgoHRV achieves state-of-the-art accuracy for HR and HRV estimation from egocentric video, and its uncertainty-aware design improves downstream behavioral modeling. Integrating our HRV estimates and confidence measures into EgoExo4D's proficiency estimator raises accuracy by 17.8%. Beyond skill, continuous HRV estimation also opens egocentric systems to stress- and arousal-aware estimation tasks. Code: https://github.com/eth-siplab/EgoHRV",
-      "authors": [
-        "Berken Utku Demirel",
-        "Christian Holz"
-      ],
-      "categories": [
-        "cs.CV",
-        "eess.SP"
-      ],
-      "date": "2026-08-19",
-      "url": "https://arxiv.org/abs/2608.18711",
-      "pdf_url": "https://arxiv.org/pdf/2608.18711",
-      "relevance_score": 24,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "heart rate variability",
-        "hrv",
-        "blood volume pulse",
-        "bvp"
-      ]
-    },
-    {
-      "id": "2608.18639",
-      "title": "Change Point--Aware Evaluation and Re-Calibration of PPG-Based Blood Pressure Estimation",
-      "abstract": "Non-invasive continuous blood pressure (BP) monitoring using photoplethysmography (PPG) is a promising alternative to cuff-based measurements. However, existing PPG-based BP estimation studies predominantly rely on aggregated performance metrics (e.g., mean absolute error) computed over entire evaluation intervals, which can obscure model failures during rapid BP fluctuations and limit clinical relevance. In this work, we propose a fluctuation-aware evaluation framework for PPG-based BP estimation based on time-series change point detection. Instead of heuristic BP thresholding (e.g., $Δ\\mathrm{BP} > 10\\mathrm{mmHg}$), we identify BP change points by capturing abrupt distributional shifts in BP trajectories and evaluate estimation performance specifically during these fluctuation periods. Our analysis shows that several state-of-the-art models exhibit substantial performance degradation around BP change points, and that periodic test-time calibration is insufficient to handle such dynamic BP variations. To address this limitation, we introduce a targeted re-calibration framework triggered by detected BP change points, improving robustness without modifying model architectures. To the best of our knowledge, this is the first systematic evaluation of PPG-based BP estimation from a BP change point perspective, highlighting the importance of fluctuation-aware evaluation and calibration for real-world continuous BP monitoring.",
-      "authors": [
-        "Yunwon Tae",
-        "Minje Park",
-        "Gyunho Rho",
-        "Dongjoon Yoo",
-        "Sunghoon Joo"
-      ],
-      "categories": [
-        "eess.SP",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "date": "2026-08-19",
-      "url": "https://arxiv.org/abs/2608.18639",
-      "pdf_url": "https://arxiv.org/pdf/2608.18639",
-      "relevance_score": 12,
-      "relevance_tier": "high",
-      "matched_keywords": [
-        "photoplethysmography",
-        "ppg"
-      ]
-    },
-    {
-      "id": "2608.15831",
-      "title": "CardiacMamba: Fair and Robust RGB-RF Fusion for Remote Heart Rate Estimation via State Space Modeling",
-      "abstract": "Remote photoplethysmography (rPPG) enables non-contact heart rate (HR) monitoring from facial videos, but RGB-only methods are vulnerable to illumination changes, motion artifacts, and skin-tone-dependent optical reflectance. We propose CardiacMamba, a fair and robust RGB-RF fusion framework that integrates optical facial cues and radio-frequency cardiac motion cues through state space modeling. CardiacMamba introduces a Temporal Difference Mamba Module (TDMM) to enhance subtle RF temporal variations, a bidirectional SSM-based interaction mechanism to align heterogeneous RGB-RF dynamics, and a Channel-wise Fast Fourier Transform (CFFT) module for channel-domain spectral refinement. On the EquiPleth dataset, CardiacMamba achieves state-of-the-art performance with 0.96 bpm MAE, 3.06 bpm RMSE, and 0.97 Pearson correlation, while reducing the observed light-dark skin-tone MAE gap to 0.26 bpm and maintaining robustness under RGB degradation and RF-missing conditions",
-      "authors": [
-        "Bo Zhao",
-        "Zheng Wu",
-        "Yiping Xie",
-        "Zitong YU"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "date": "2026-08-16",
-      "url": "https://arxiv.org/abs/2608.15831",
-      "pdf_url": "https://arxiv.org/pdf/2608.15831",
-      "relevance_score": 78,
-      "relevance_tier": "core",
-      "matched_keywords": [
-        "rppg",
-        "remote photoplethysmography",
-        "non-contact heart rate",
-        "photoplethysmography",
-        "ppg",
-        "heart rate estimation",
-        "facial video",
-        "cardiac",
-        "motion artifact"
       ]
     }
   ]
